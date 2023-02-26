@@ -1,4 +1,5 @@
 ![builds](https://github.com/maciejskorski/software_engineering/actions/workflows/build_test.yaml/badge.svg?branch=template/python)
+![license](https://img.shields.io/pypi/l/fpvgcc.svg?color=blue)
 
 # Software Engineering
 
@@ -12,4 +13,3 @@ Preparation:
 * Project templating: [use Cookiecutter tool](https://cookiecutter.readthedocs.io/en/1.7.0/README.html#a-pantry-full-of-cookiecutters) to create a minimal Python or Java project.
 * Add simple tests and [enable continuous integration by GitHub Actions](https://docs.github.com/en/actions/automating-builds-and-tests)
 * Add a [workflow badge](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge) to your repo, to confirm that it builds and tests properly!
-
