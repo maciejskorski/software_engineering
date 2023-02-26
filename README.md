@@ -1,4 +1,4 @@
-![builds](https://github.com/maciejskorski/software_engineering/actions/workflows/build_test.yaml/badge.svg)
+![builds](https://github.com/maciejskorski/software_engineering/actions/workflows/build_test.yaml/badge.svg?branch=template/python)
 
 # Software Engineering
 
