@@ -28,4 +28,4 @@ jobs:
       with:
         gradle-version: current
         arguments: build
-        build-root-directory: simpleapp
+        build-root-directory: simpleapp/src
