@@ -23,7 +23,8 @@ jobs:
       with:
         java-version: '17'
         distribution: 'oracle'
-    - name: Setup Gradle
+    - name: Setup and execute Gradle
       uses: gradle/gradle-build-action@v2
-    - name: Execute Gradle build
-      run: ./simpleapp/gradlew build
+      with:
+        arguments: build
+        build-root-directory: simpleapp
