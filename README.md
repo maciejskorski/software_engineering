@@ -1,4 +1,6 @@
-![builds](https://github.com/maciejskorski/software_engineering/actions/workflows/build_test.yaml/badge.svg)
+![builds](https://github.com/maciejskorski/software_engineering/actions/workflows/build_test.yaml/badge.svg?branch=template/java)
+![license](https://img.shields.io/pypi/l/fpvgcc.svg?color=blue)
+
 
 # Software Engineering
 
