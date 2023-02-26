@@ -8,5 +8,5 @@ Preparation:
 * Repository: Create GitHub accounts and test [SSH access](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
 * IDE: install [Visual Studio Code](https://code.visualstudio.com/) and integrate with GitHub
 * Project templating: [use Cookiecutter tool](https://cookiecutter.readthedocs.io/en/1.7.0/README.html#a-pantry-full-of-cookiecutters) to create a minimal Python or Java project.
-* Add some minimal content and [enable continuous integration](https://docs.github.com/en/actions/automating-builds-and-tests)
+* Add some minimal content and [enable continuous integration by GitHub Actions](https://docs.github.com/en/actions/automating-builds-and-tests)
 
