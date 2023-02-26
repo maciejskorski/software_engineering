@@ -22,9 +22,10 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'
-        distribution: 'temurin'
+        distribution: temurin
     - name: Setup and execute Gradle
       uses: gradle/gradle-build-action@v2
       with:
+        gradle-version: current
         arguments: build
         build-root-directory: simpleapp
