@@ -13,4 +13,4 @@ Preparation:
 * Add simple tests and [enable continuous integration by GitHub Actions](https://docs.github.com/en/actions/automating-builds-and-tests)
 * Add a [workflow badge](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge) to your repo, to confirm that it builds and tests properly!
 
-Note: the branches @template/java and @template/python show minimal projects in Java and Python.
+Note: the branches #template/java and #template/python show minimal projects in Java and Python.
