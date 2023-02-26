@@ -1,4 +1,4 @@
-name: Java Simple CI
+name: Java App
 
 on:
   push:
