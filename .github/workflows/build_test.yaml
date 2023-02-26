@@ -27,5 +27,7 @@ jobs:
       uses: gradle/gradle-build-action@v2
       with:
         gradle-version: current
-        arguments: build
-        build-root-directory: simpleapp/src
+        arguments: |
+          build 
+          --debug
+        build-root-directory: simpleapp
