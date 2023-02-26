@@ -28,6 +28,6 @@ jobs:
       with:
         gradle-version: current
         arguments: |
+          check
           build 
-          --debug
         build-root-directory: simpleapp
