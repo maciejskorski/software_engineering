@@ -23,4 +23,4 @@ jobs:
           build
           test
           --info
-        build-root-directory: simpleapp
+        build-root-directory: sampleapp
