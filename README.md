@@ -1,4 +1,4 @@
-![example branch parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?branch=template/java)
+![builds](https://github.com/maciejskorski/software_engineering/actions/workflows/build_test.yaml/badge.svg)
 
 # Software Engineering
 
