@@ -4,7 +4,7 @@
 
 Materials for my class “software engineering” (University of Warsaw, 2023).
 
-## Class 1
+## Class 1: Modern Development Environment
 
 Preparation: 
 * Repository: Create GitHub accounts and test [SSH access](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
