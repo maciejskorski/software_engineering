@@ -29,5 +29,6 @@ jobs:
         gradle-version: current
         arguments: |
           check
-          build 
+          build
+          --info
         build-root-directory: simpleapp
