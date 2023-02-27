@@ -2,7 +2,7 @@
 
 # Software Engineering
 
-Materials for my class “software engineering” (University of Warsaw, 2023).
+Materials for my class “Software Engineering” at University of Warsaw, 2023.
 
 ## Class 1: Modern Development Environment
 
