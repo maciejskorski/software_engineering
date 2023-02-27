@@ -1,4 +1,4 @@
 format: jb-article
-root: docs/index
+root: docs/intro
 sections:
 - file: docs/about
