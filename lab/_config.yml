@@ -1,0 +1,12 @@
+title : Software Engineering
+author: Maciej Skórski
+
+# Short description
+description: >-
+  Software engineering laboratory.
+execute:
+  execute_notebooks           : cache
+
+# HTML-specific settings
+html:
+  home_page_in_navbar         : false
