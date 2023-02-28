@@ -4,10 +4,10 @@
 
 ## Overview
 
-Materials for my class “Software Engineering” at University of Warsaw, 2023.
+Materials for my class “Software Engineering” at University of Warsaw, 2023. See also [this version](https://maciejskorski.github.io/software_engineering).
 
 Goal: working, tested, and documented minimum viable product iterated few times in a team (Scrum).
 
 The materials here aim to demonstrate modern coding tools and good practices.
 
-* [Class 1](docs/modern_dev_environ.md): GitHub: SSH access, Cookiecutter templates and Continous Integration by Actions
+* [Class 1](docs/modern_dev_environ.md): GitHub: SSH access, Cookiecutter templates and Continous Integration by GitHub Actions
