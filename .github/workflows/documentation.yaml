@@ -18,6 +18,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         #if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         with:
-          github_token: ${{ secrets.PAT }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./docs/_build/html
