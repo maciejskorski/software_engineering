@@ -8,4 +8,4 @@ Goal: working, tested, and documented minimum viable product iterated few times 
 
 The materials here aim to practice some modern coding tools and practices.
 
-[Class 1](./docs/class1.md)
+[Class 1](docs/modern_dev_environ.md)
