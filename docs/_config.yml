@@ -6,6 +6,6 @@ description: >-
   Software engineering laboratory, University of Warsaw 2023.
 
 repository:
-  url: https://github.com/{your-book-url}
+  url: https://github.com/maciejskorski/software_engineering
 html:
   use_repository_button: true
