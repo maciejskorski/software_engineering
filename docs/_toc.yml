@@ -2,3 +2,4 @@ format: jb-article
 root: intro
 sections:
 - file: modern_dev_environ.md
+- file: sample_projects.md
