@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; Software Engineering</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Class 1: Modern Development Environment &#8212; Software Engineering</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -49,8 +50,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="#" />
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="TBD" href="sample_projects.html" />
+    <link rel="prev" title="Software Engineering" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -105,9 +108,9 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="modern_dev_environ.html">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Class 1: Modern Development Environment
   </a>
  </li>
@@ -194,6 +197,52 @@ title="Source repository"
 
 </a>
 
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/modern_dev_environ.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
     </div>
 </div>
 
@@ -205,7 +254,7 @@ title="Source repository"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1></h1>
+                <h1>Class 1: Modern Development Environment</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -217,13 +266,38 @@ title="Source repository"
                 
               <div>
                 
+  <section class="tex2jax_ignore mathjax_ignore" id="class-1-modern-development-environment">
+<h1>Class 1: Modern Development Environment<a class="headerlink" href="#class-1-modern-development-environment" title="Permalink to this headline">#</a></h1>
+<p>Preparation:</p>
+<ul class="simple">
+<li><p>Repository: Create GitHub accounts and test <a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">SSH access</a></p></li>
+<li><p>IDE: install locally <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a> and integrate with GitHub; alternatively, look into cloud-powered <a class="reference external" href="https://docs.github.com/en/codespaces/overview/">GitHub CodeSpaces</a></p></li>
+<li><p>Project templating: <a class="reference external" href="https://cookiecutter.readthedocs.io/en/1.7.0/README.html#a-pantry-full-of-cookiecutters">use Cookiecutter tool</a> to create a minimal Python or Java project.</p></li>
+<li><p>Add <a class="reference external" href="https://docs.github.com/en/actions/automating-builds-and-tests">continuous integration by GitHub Actions</a></p></li>
+<li><p>Add a <a class="reference external" href="https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge">workflow badge</a> to your repo, to confirm that it builds and tests properly!</p></li>
+</ul>
+<p>Note: the branches <code class="docutils literal notranslate"><span class="pre">template/java</span></code> and <code class="docutils literal notranslate"><span class="pre">template/python</span></code> show minimal projects in Java and Python.</p>
+</section>
 
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
-</div>
-
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -232,6 +306,20 @@ title="Source repository"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Software Engineering</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="sample_projects.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">TBD</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
