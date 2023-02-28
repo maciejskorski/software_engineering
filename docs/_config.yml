@@ -3,10 +3,9 @@ author: Maciej Skórski
 
 # Short description
 description: >-
-  Software engineering laboratory.
-execute:
-  execute_notebooks           : cache
+  Software engineering laboratory, University of Warsaw 2023.
 
-# HTML-specific settings
+repository:
+  url: https://github.com/{your-book-url}
 html:
-  home_page_in_navbar         : false
+  use_repository_button: true
