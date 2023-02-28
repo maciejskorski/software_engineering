@@ -2,3 +2,8 @@ format: jb-article
 root: intro
 sections:
 - file: modern_dev_environ.md
+
+repository:
+  url: https://github.com/{your-book-url}
+html:
+  use_repository_button: true
