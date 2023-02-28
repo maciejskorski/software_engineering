@@ -12,5 +12,6 @@ Goal: working, tested, and documented minimum viable product iterated few times 
 The materials here aim to demonstrate modern coding tools and good practices.
 
 * [Class 1](docs/modern_dev_environ.md): GitHub: SSH access, Cookiecutter templates and Continous Integration by GitHub Actions
+* Class 2: TBA
 
 * [Example Projects](docs/sample_projects.md): please think of your own ideas!
