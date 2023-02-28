@@ -4,7 +4,7 @@
 
 ## Overview
 
-Materials for my class “Software Engineering” at University of Warsaw, 2023. See also [this version](https://maciejskorski.github.io/software_engineering).
+Materials for my class “Software Engineering” at University of Warsaw, 2023. See also [the online version](https://maciejskorski.github.io/software_engineering).
 
 Goal: working, tested, and documented minimum viable product iterated few times in a team (Scrum).
 
