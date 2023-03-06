@@ -12,6 +12,11 @@ The environment, once built, looks like in the figure below:
 
 ## Static Code Analysis
 
+Create a virtual environment in the repo root directory, by `python -m venv .venv` and activate with `source .venv/bin/activate`. 
+
+
+## More examples
+
 Check out this [implementation of ML models used in weather forecast](https://github.com/jieyu97/mvpp).
 Run the Python linter. What errors/bugs have you spot?
 
