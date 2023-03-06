@@ -493,10 +493,15 @@ Open the main file: <code class="docutils literal notranslate"><span class="pre"
 <p><img alt="linter report" src="_images/linter_report.png" /></p>
 <p>Some issues are opinionated (formatting), some are breaking (missing imports in view of no install instructions).
 You can also run <code class="docutils literal notranslate"><span class="pre">pylint</span> <span class="pre">--errors-only</span> <span class="pre">--recursive=y</span> <span class="pre">code</span></code> to scan the whole code base.</p>
-<p>We consider the repository fixed once the basic call <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">code/score.py</span> <span class="pre">--clustering_algo</span> <span class="pre">KMeans</span> <span class="pre">--entities</span> <span class="pre">word2vec</span> <span class="pre">--vocab</span> <span class="pre">vocab.txt</span></code> runs.</p>
+<p>Fix the reposity only up to the point when the basic call <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">code/score.py</span> <span class="pre">--clustering_algo</span> <span class="pre">KMeans</span> <span class="pre">--entities</span> <span class="pre">word2vec</span> <span class="pre">--vocab</span> <span class="pre">vocab.txt</span></code> runs.</p>
 <p>Try to <em>fix critical issues</em> by adding missing packages to the environment with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;missing_package&gt;</span></code>.
-Comment out huge modules not used for this call, such as <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> or <code class="docutils literal notranslate"><span class="pre">fasttext</span></code> (to avoid out-of-memory).
-Once the command runs, use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">freeze</span> <span class="pre">&gt;</span> <span class="pre">requirements.txt</span></code> to export requirements.</p>
+To avoid out-of-memory issues, do the following optimizations:</p>
+<ul class="simple">
+<li><p>comment out huge modules not used for this call, such as <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> or <code class="docutils literal notranslate"><span class="pre">fasttext</span></code></p></li>
+<li><p>adapt the code to work with <a class="reference external" href="https://github.com/eyaler/word2vec-slim/raw/master/GoogleNews-vectors-negative300-SLIM.bin.gz">a smaller GoogleNews model</a>
+For meaningful results, store an English dictionary in <code class="docutils literal notranslate"><span class="pre">vocab.txt</span></code> (for instance, copy the content of <code class="docutils literal notranslate"><span class="pre">usr/share/dict/words</span></code>).</p></li>
+</ul>
+<p>Once the command runs, use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">freeze</span> <span class="pre">&gt;</span> <span class="pre">requirements.txt</span></code> to export requirements.</p>
 </section>
 <section id="more-examples">
 <h2>More examples<a class="headerlink" href="#more-examples" title="Permalink to this heading">#</a></h2>
