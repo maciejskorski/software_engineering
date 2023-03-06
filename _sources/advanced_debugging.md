@@ -10,7 +10,7 @@ The environment, once built, looks like in the figure below (resembling VS Code)
 
 ![built Codespaces](figures/built_codespaces.png)
 
-## Static Code Analysis: Case Study
+## Static Code Analysis: Fixing Machine-Learning Repo (Case Study)
 
 We will use static code analysis to fix reproducibility problems of an [implementation from a major NLP conference](https://aclanthology.org/2020.emnlp-main.135.PDF). 
 Note: the instruction below are for VS Code locally / Codespaces remote, but you may use an IDE of your choice.
