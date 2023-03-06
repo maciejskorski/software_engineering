@@ -495,7 +495,7 @@ Open the main file: <code class="docutils literal notranslate"><span class="pre"
 <p>Some issues are opinionated (formatting), some are breaking (missing imports in view of no install instructions).
 You can also run <code class="docutils literal notranslate"><span class="pre">pylint</span> <span class="pre">--errors-only</span> <span class="pre">--recursive=y</span> <span class="pre">code</span></code> to scan the whole code base.</p>
 <p>Fix the reposity only up to the point when the basic call runs:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">code</span><span class="o">/</span><span class="n">score</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">clustering_algo</span> <span class="n">KMeans</span> <span class="o">--</span><span class="n">entities</span> <span class="n">word2vec</span> <span class="o">--</span><span class="n">vocab</span> <span class="n">vocab</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <p>Try to <em>fix critical issues</em> by adding missing packages to the environment with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;missing_package&gt;</span></code>.

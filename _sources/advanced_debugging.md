@@ -26,7 +26,8 @@ Some issues are opinionated (formatting), some are breaking (missing imports in 
 You can also run `pylint --errors-only --recursive=y code` to scan the whole code base.
 
 Fix the reposity only up to the point when the basic call runs:
-```python code/score.py --clustering_algo KMeans --entities word2vec --vocab vocab.txt
+```python 
+code/score.py --clustering_algo KMeans --entities word2vec --vocab vocab.txt
 ```
 
 Try to *fix critical issues* by adding missing packages to the environment with `pip install <missing_package>`.
