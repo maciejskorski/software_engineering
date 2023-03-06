@@ -450,8 +450,8 @@ title="Print to PDF"
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#remote-development-on-github">
-   Remote Development on GitHub
+  <a class="reference internal nav-link" href="#development-in-cloud">
+   Development in Cloud
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -475,24 +475,28 @@ title="Print to PDF"
               
   <section class="tex2jax_ignore mathjax_ignore" id="class-2-advanced-debugging">
 <h1>Class 2: Advanced Debugging<a class="headerlink" href="#class-2-advanced-debugging" title="Permalink to this heading">#</a></h1>
-<section id="remote-development-on-github">
-<h2>Remote Development on GitHub<a class="headerlink" href="#remote-development-on-github" title="Permalink to this heading">#</a></h2>
+<section id="development-in-cloud">
+<h2>Development in Cloud<a class="headerlink" href="#development-in-cloud" title="Permalink to this heading">#</a></h2>
 <p>Recently <a class="reference external" href="https://github.com/features/codespaces">GitHub lunched cloud-powered developent environments</a> called Codespaces.
 The environment can be created for every repo and is available as a <code class="docutils literal notranslate"><span class="pre">Codespaces</span></code> tab under the green button <code class="docutils literal notranslate"><span class="pre">Code</span></code>.
 <img alt="start Codespaces" src="_images/start_codespaces.png" /></p>
-<p>The environment, once built, looks like in the figure below (resembling VS Code)</p>
+<p>The environment, once built, looks like in the figure below (resembling VS Code).</p>
 <p><img alt="built Codespaces" src="_images/built_codespaces.png" /></p>
 </section>
 <section id="static-code-analysis-fixing-machine-learning-repo-case-study">
 <h2>Static Code Analysis: Fixing Machine-Learning Repo (Case Study)<a class="headerlink" href="#static-code-analysis-fixing-machine-learning-repo-case-study" title="Permalink to this heading">#</a></h2>
 <p>We will use static code analysis to fix reproducibility problems of an <a class="reference external" href="https://aclanthology.org/2020.emnlp-main.135.PDF">implementation from a major NLP conference</a>.
-Note: the instruction below are for VS Code locally / Codespaces remote, but you may use an IDE of your choice.</p>
-<p>Fork <code class="docutils literal notranslate"><span class="pre">https://github.com/maciejskorski/Cluster-Analysis</span></code> and open in <code class="docutils literal notranslate"><span class="pre">Codespaces</span></code>. Create a virtual environment in the repo root directory, by <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">.venv</span></code> and activate with <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">.venv/bin/activate</span></code>.</p>
+Note: the instruction below assume the use of VS Code locally / Codespaces remote, but you may adapt it to an IDE of your choice.</p>
+<p>Fork <code class="docutils literal notranslate"><span class="pre">https://github.com/maciejskorski/Cluster-Analysis</span></code> and open in <code class="docutils literal notranslate"><span class="pre">Codespaces</span></code>. Create a virtual environment in the repo root directory, by <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">.venv</span></code> and activate with <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">.venv/bin/activate</span></code>. Select this version <code class="docutils literal notranslate"><span class="pre">.venv/bin/python</span></code> as the active Python interpreter.</p>
 <p>Check <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> of the editor to ensure that <a class="reference external" href="https://code.visualstudio.com/docs/python/linting">Python linters</a> are enabled.
-Then open the main file: <code class="docutils literal notranslate"><span class="pre">code/score.py</span></code>. You should see about 100 problems reported by Python linters.</p>
+Open the main file: <code class="docutils literal notranslate"><span class="pre">code/score.py</span></code>, you should see about 100 problems reported by Python linters.</p>
 <p><img alt="linter report" src="_images/linter_report.png" /></p>
 <p>Some issues are opinionated (formatting), some are breaking (missing imports in view of no install instructions).
-Try to <em>fix runtime issues</em> by adding missing packages one by one with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;missing_package&gt;</span></code>.</p>
+You can also run <code class="docutils literal notranslate"><span class="pre">pylint</span> <span class="pre">--errors-only</span> <span class="pre">--recursive=y</span> <span class="pre">code</span></code> to scan the whole code base.</p>
+<p>We consider the repository fixed once the basic call <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">code/score.py</span> <span class="pre">--clustering_algo</span> <span class="pre">KMeans</span> <span class="pre">--entities</span> <span class="pre">word2vec</span> <span class="pre">--vocab</span> <span class="pre">vocab.txt</span></code> runs.</p>
+<p>Try to <em>fix critical issues</em> by adding missing packages to the environment with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;missing_package&gt;</span></code>.
+Comment out huge modules not used for this call, such as <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> or <code class="docutils literal notranslate"><span class="pre">fasttext</span></code> (to avoid out-of-memory).
+Once the command runs, use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">freeze</span> <span class="pre">&gt;</span> <span class="pre">requirements.txt</span></code> to export requirements.</p>
 </section>
 <section id="more-examples">
 <h2>More examples<a class="headerlink" href="#more-examples" title="Permalink to this heading">#</a></h2>
@@ -561,8 +565,8 @@ Run the Python linter. What errors/bugs have you spot?</p>
 <nav id="bd-toc-nav" class="page-toc">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#remote-development-on-github">
-   Remote Development on GitHub
+  <a class="reference internal nav-link" href="#development-in-cloud">
+   Development in Cloud
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
