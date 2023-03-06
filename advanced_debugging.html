@@ -499,7 +499,7 @@ To avoid out-of-memory issues, do the following optimizations:</p>
 <ul class="simple">
 <li><p>comment out huge modules not used for this call, such as <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> or <code class="docutils literal notranslate"><span class="pre">fasttext</span></code></p></li>
 <li><p>adapt the code to work with <a class="reference external" href="https://github.com/eyaler/word2vec-slim/raw/master/GoogleNews-vectors-negative300-SLIM.bin.gz">a smaller GoogleNews model</a>
-For meaningful results, store an English dictionary in <code class="docutils literal notranslate"><span class="pre">vocab.txt</span></code> (for instance, copy the content of <code class="docutils literal notranslate"><span class="pre">usr/share/dict/words</span></code>).</p></li>
+For meaningful results, store an English dictionary in <code class="docutils literal notranslate"><span class="pre">vocab.txt</span></code> (for instance, copy the content of <code class="docutils literal notranslate"><span class="pre">/usr/share/dict/words</span></code>).</p></li>
 </ul>
 <p>Once the command runs, use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">freeze</span> <span class="pre">&gt;</span> <span class="pre">requirements.txt</span></code> to export requirements. Congrats!</p>
 </section>
