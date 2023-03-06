@@ -20,6 +20,8 @@ Fork `https://github.com/maciejskorski/Cluster-Analysis` and open in `Codespaces
 Check `settings.json` of the editor to ensure that [Python linters](https://code.visualstudio.com/docs/python/linting) are enabled.
 Then open the main file: `code/score.py`. You should see about 100 problems reported by Python linters.
 
+![linter report](figures/linter_report.png)
+
 Some issues are opinionated (formatting), some are breaking (missing imports in view of no install instructions).
 Try to *fix runtime issues* by adding missing packages one by one with `pip install <missing_package>`.
 
