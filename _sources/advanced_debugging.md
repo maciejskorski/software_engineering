@@ -1,4 +1,4 @@
-# Class 2: Advanced Debugging
+git a# Class 2: Advanced Debugging
 
 ## Development in Cloud
 
@@ -25,7 +25,9 @@ Open the main file: `code/score.py`, you should see about 100 problems reported 
 Some issues are opinionated (formatting), some are breaking (missing imports in view of no install instructions).
 You can also run `pylint --errors-only --recursive=y code` to scan the whole code base.
 
-Fix the reposity only up to the point when the basic call `python code/score.py --clustering_algo KMeans --entities word2vec --vocab vocab.txt` runs.
+Fix the reposity only up to the point when the basic call runs:
+```python code/score.py --clustering_algo KMeans --entities word2vec --vocab vocab.txt
+```
 
 Try to *fix critical issues* by adding missing packages to the environment with `pip install <missing_package>`.
 To avoid out-of-memory issues, do the following optimizations:
