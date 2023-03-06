@@ -1,4 +1,4 @@
-git a# Class 2: Advanced Debugging
+# Class 2: Advanced Debugging
 
 ## Development in Cloud
 

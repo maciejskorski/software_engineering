@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Development in Cloud &#8212; Software Engineering</title>
+    <title>Class 2: Advanced Debugging &#8212; Software Engineering</title>
   
   
   
@@ -151,7 +151,7 @@ const thebe_selector_output = ".output, .cell_output"
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
-                        Development in Cloud
+                        Class 2: Advanced Debugging
                       </a>
                     </li>
                 
@@ -241,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
 
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="#">
-                        Development in Cloud
+                        Class 2: Advanced Debugging
                       </a>
                     </li>
                 
@@ -321,9 +321,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="modern_dev_environ.html">Class 1: Modern Development Environment</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Development in Cloud</a></li>
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Class 2: Advanced Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="project_ideas.html">Project Ideas</a></li>
 </ul>
 
@@ -441,7 +439,7 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Development in Cloud</h1>
+    <h1>Class 2: Advanced Debugging</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -451,17 +449,17 @@ title="Print to PDF"
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#development-in-cloud">
    Development in Cloud
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#static-code-analysis-fixing-machine-learning-repo-case-study">
    Static Code Analysis: Fixing Machine-Learning Repo (Case Study)
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#more-examples">
    More examples
   </a>
@@ -475,9 +473,10 @@ title="Print to PDF"
 
             <article class="bd-article" role="main">
               
-  <p>git a# Class 2: Advanced Debugging</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="class-2-advanced-debugging">
+<h1>Class 2: Advanced Debugging<a class="headerlink" href="#class-2-advanced-debugging" title="Permalink to this heading">#</a></h1>
 <section id="development-in-cloud">
-<h1>Development in Cloud<a class="headerlink" href="#development-in-cloud" title="Permalink to this heading">#</a></h1>
+<h2>Development in Cloud<a class="headerlink" href="#development-in-cloud" title="Permalink to this heading">#</a></h2>
 <p>Recently <a class="reference external" href="https://github.com/features/codespaces">GitHub lunched cloud-powered developent environments</a> called Codespaces.
 The environment can be created for every repo and is available as a <code class="docutils literal notranslate"><span class="pre">Codespaces</span></code> tab under the green button <code class="docutils literal notranslate"><span class="pre">Code</span></code>.
 <img alt="start Codespaces" src="_images/start_codespaces.png" /></p>
@@ -485,7 +484,7 @@ The environment can be created for every repo and is available as a <code class=
 <p><img alt="built Codespaces" src="_images/built_codespaces.png" /></p>
 </section>
 <section id="static-code-analysis-fixing-machine-learning-repo-case-study">
-<h1>Static Code Analysis: Fixing Machine-Learning Repo (Case Study)<a class="headerlink" href="#static-code-analysis-fixing-machine-learning-repo-case-study" title="Permalink to this heading">#</a></h1>
+<h2>Static Code Analysis: Fixing Machine-Learning Repo (Case Study)<a class="headerlink" href="#static-code-analysis-fixing-machine-learning-repo-case-study" title="Permalink to this heading">#</a></h2>
 <p>We will use static code analysis to fix reproducibility problems of an <a class="reference external" href="https://aclanthology.org/2020.emnlp-main.135.PDF">implementation from a major NLP conference</a>.
 Note: the instruction below assume the use of VS Code locally / Codespaces remote, but you may adapt it to an IDE of your choice.</p>
 <p>Fork <code class="docutils literal notranslate"><span class="pre">https://github.com/maciejskorski/Cluster-Analysis</span></code> and open in <code class="docutils literal notranslate"><span class="pre">Codespaces</span></code>. Create a virtual environment in the repo root directory, by <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">.venv</span></code> and activate with <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">.venv/bin/activate</span></code>. Select this version <code class="docutils literal notranslate"><span class="pre">.venv/bin/python</span></code> as the active Python interpreter.</p>
@@ -508,10 +507,11 @@ For meaningful results, store an English dictionary in <code class="docutils lit
 <p>Once the command runs, use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">freeze</span> <span class="pre">&gt;</span> <span class="pre">requirements.txt</span></code> to export requirements. Congrats!</p>
 </section>
 <section id="more-examples">
-<h1>More examples<a class="headerlink" href="#more-examples" title="Permalink to this heading">#</a></h1>
+<h2>More examples<a class="headerlink" href="#more-examples" title="Permalink to this heading">#</a></h2>
 <p>Check out this <a class="reference external" href="https://github.com/jieyu97/mvpp">implementation of ML models used in weather forecast</a>.
 Run the Python linter. What errors/bugs have you spot?</p>
 <p>TBD: more examples</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -572,17 +572,17 @@ Run the Python linter. What errors/bugs have you spot?</p>
 </div>
 <nav id="bd-toc-nav" class="page-toc">
     <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#development-in-cloud">
    Development in Cloud
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#static-code-analysis-fixing-machine-learning-repo-case-study">
    Static Code Analysis: Fixing Machine-Learning Repo (Case Study)
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#more-examples">
    More examples
   </a>
