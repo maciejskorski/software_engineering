@@ -2,7 +2,9 @@
 
 ## Developing in Cloud
 
-Recently [GitHub lunched cloud-powered developent environments](https://github.com/features/codespaces) called Codespaces, 
+Recently [GitHub lunched cloud-powered developent environments](https://github.com/features/codespaces) called Codespaces.
+
+![Codespaces](docs/github_codespaces.png)
 
 ## Static Code Analysis
 
