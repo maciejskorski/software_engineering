@@ -43,7 +43,7 @@ To avoid out-of-memory issues, consider the following optimizations:
 ```
 For meaningful results, store an English dictionary in `vocab.txt` (for instance, copy the content of `/usr/share/dict/words`).
 
-Once the command runs successfuly, you should see the output similar to
+Once the command runs successfuly, you should see the topics/keywords proposed by the algorithm, similar to:
 ```console
 -0.3393 interface systems software devices hardware device technology components adapter computer
 -0.57277 guess suppose thought damn stupid thinking yeah thing anymore afraid
