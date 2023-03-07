@@ -46,7 +46,10 @@ For meaningful results, store an English dictionary in `vocab.txt` (for instance
 Once the command runs, use `pip freeze > requirements.txt` to export requirements. 
 Commit this file and changes to the source code. Congrats!
 
+## Debugging CircleCI with SSH
 
+Add a "build-test" job to the above reposiroty using [CircleCI jobs](https://circleci.com/docs/language-python/).
+The job should install dependencies and run a minimal model.
 
 
 ## More examples
