@@ -487,7 +487,12 @@ The environment can be created for every repo and is available as a <code class=
 <h2>Static Code Analysis: Fixing Machine-Learning Repo (Case Study)<a class="headerlink" href="#static-code-analysis-fixing-machine-learning-repo-case-study" title="Permalink to this heading">#</a></h2>
 <p>We will use static code analysis to fix reproducibility problems of an <a class="reference external" href="https://aclanthology.org/2020.emnlp-main.135.PDF">implementation from a major NLP conference</a>.
 Note: the instruction below assume the use of VS Code locally / Codespaces remote, but you may adapt it to an IDE of your choice.</p>
-<p>Fork <code class="docutils literal notranslate"><span class="pre">https://github.com/maciejskorski/Cluster-Analysis</span></code> and open in <code class="docutils literal notranslate"><span class="pre">Codespaces</span></code>. Create a virtual environment in the repo root directory, by <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">.venv</span></code> and activate with <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">.venv/bin/activate</span></code>. Select this version <code class="docutils literal notranslate"><span class="pre">.venv/bin/python</span></code> as the active Python interpreter.</p>
+<p>Fork <code class="docutils literal notranslate"><span class="pre">https://github.com/maciejskorski/Cluster-Analysis</span></code> and open in <code class="docutils literal notranslate"><span class="pre">Codespaces</span></code>. Create and activate a virtual environment in the repo root directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</pre></div>
+</div>
+<p>Select this version <code class="docutils literal notranslate"><span class="pre">.venv/bin/python</span></code> as the active Python interpreter in the code editor.</p>
 <p>Check <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> of the editor to ensure that <a class="reference external" href="https://code.visualstudio.com/docs/python/linting">Python linters</a> are enabled.
 Open the main file: <code class="docutils literal notranslate"><span class="pre">code/score.py</span></code>, you should see about 100 problems reported by Python linters.</p>
 <p><img alt="linter report" src="_images/linter_report.png" /></p>
