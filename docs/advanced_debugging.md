@@ -54,6 +54,8 @@ Add a "build-test" job to the above reposiroty using [CircleCI jobs](https://cir
 
 The job should install dependencies and run a minimal model (downloading binaries when necessary).
 
+Enter the CircleCI environment via SSH, try to connect with IDE.
+
 
 ## More examples
 
