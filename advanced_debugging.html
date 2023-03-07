@@ -460,6 +460,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#debugging-circleci-with-ssh">
+   Debugging CircleCI with SSH
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#more-examples">
    More examples
   </a>
@@ -514,6 +519,11 @@ You can also run <code class="docutils literal notranslate"><span class="pre">py
 <p>For meaningful results, store an English dictionary in <code class="docutils literal notranslate"><span class="pre">vocab.txt</span></code> (for instance, copy the content of <code class="docutils literal notranslate"><span class="pre">/usr/share/dict/words</span></code>).</p>
 <p>Once the command runs, use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">freeze</span> <span class="pre">&gt;</span> <span class="pre">requirements.txt</span></code> to export requirements.
 Commit this file and changes to the source code. Congrats!</p>
+</section>
+<section id="debugging-circleci-with-ssh">
+<h2>Debugging CircleCI with SSH<a class="headerlink" href="#debugging-circleci-with-ssh" title="Permalink to this heading">#</a></h2>
+<p>Add a “build-test” job to the above reposiroty using <a class="reference external" href="https://circleci.com/docs/language-python/">CircleCI jobs</a>.
+The job should install dependencies and run a minimal model.</p>
 </section>
 <section id="more-examples">
 <h2>More examples<a class="headerlink" href="#more-examples" title="Permalink to this heading">#</a></h2>
@@ -589,6 +599,11 @@ Run the Python linter. What errors/bugs have you spot?</p>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#static-code-analysis-fixing-machine-learning-repo-case-study">
    Static Code Analysis: Fixing Machine-Learning Repo (Case Study)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#debugging-circleci-with-ssh">
+   Debugging CircleCI with SSH
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
