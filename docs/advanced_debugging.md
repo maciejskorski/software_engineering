@@ -103,6 +103,12 @@ workflows:
     - build
 ```
 
+```{note}
+Use YAML validator to work with job configs. The schema should be automatically recognized by an app (see the figure below).
+```
+
+![yaml_validation](figures/yaml_validation.png)
+
 Enter the CircleCI environment via SSH, try to connect with IDE.
 
 
