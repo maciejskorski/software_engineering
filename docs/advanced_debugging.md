@@ -12,7 +12,8 @@ The environment, once built, looks like in the figure below (resembling VS Code)
 
 ## Static Code Analysis: Fixing Machine-Learning Repo (Case Study)
 
-We will use static code analysis to fix reproducibility problems of an [implementation from a major NLP conference](https://aclanthology.org/2020.emnlp-main.135.PDF). 
+We will use static code analysis to *fix reproducibility problems* of an [implementation from a major NLP conference](https://aclanthology.org/2020.emnlp-main.135.PDF). 
+
 Note: the instruction below assume the use of VS Code locally / Codespaces remote, but you may adapt it to an IDE of your choice.
 
 Fork `https://github.com/maciejskorski/Cluster-Analysis` and open in `Codespaces`. Create and activate a virtual environment in the repo root directory: 
@@ -79,14 +80,12 @@ Commit this file and changes to the source code. Congrats!
 
 ## Debugging CircleCI with SSH
 
-Add a "build-test" job to the above reposiroty using [CircleCI jobs](https://circleci.com/docs/language-python/). Connect this job to a [CircleCI account](https://app.circleci.com/).
-
-![circleci](figures/circleci.png)
+In this example we will add a *"build-test" job* to the previous reposiroty using [CircleCI jobs](https://circleci.com/docs/language-python/). 
 
 The job should install dependencies and run a minimal model (downloading binaries if necessary). 
 Best practice: recycle `orbs` that are predefined building blocks and receipes from documentation.
 
-An example `.circleci/config.yml` file looks like this:
+An example `.circleci/config.yml` file looks like below:
 
 ```yaml
 version: 2.1
@@ -94,26 +93,29 @@ orbs:
   python: circleci/python@2.0.3 # provides predefined jobs and commands
 
 jobs:
-  build: # prepare environment (name chosen)
+  build_and_test: # prepare environment (name chosen)
     executor: python/default
     steps:
       - checkout # predefined
-      - python/install-packages: # optimized with cache, comes with the orb (inspect CircleCI for details)
+      - python/install-packages: # comes with the orb (inspect CircleCI for details)
           pkg-manager: pip
       - run:
           name: install dependencies
           command: pip install -r requirements.txt
       - run:
-          name: download model
-          command: wget https://github.com/eyaler/word2vec-slim/raw/master/GoogleNews-vectors-negative300-SLIM.bin.gz
-  test: # test minimal scope
-
-
+          name: download model binaries # requires external binaries
+          command: |
+            apt-get install wget
+            wget https://github.com/eyaler/word2vec-slim/raw/master/GoogleNews-vectors-negative300-SLIM.bin.gz
+            gzip -d GoogleNews-vectors-negative300-SLIM.bin.gz
+      - run:
+          name: test algorithm # run with minimal scope
+          command: python3 code/score.py --clustering_algo KMeans --vocab english_dict.txt --entities word2vec
 
 workflows:
   build_and_test:
     jobs:
-    - build
+    - build_and_test
 ```
 
 ```{note}
@@ -121,6 +123,10 @@ Use YAML validator to work with job configs. The schema is automatically linked 
 ```
 
 ![yaml_validation](figures/yaml_validation.png)
+
+Connect this job to a [CircleCI account](https://app.circleci.com/).
+![circleci](figures/circleci.png)
+
 
 Enter the CircleCI environment via SSH, try to connect with the IDE and diagnose problems with the workflow.
 The workflow has to run in the SSH mode from the CircleCI account, as shown below.
