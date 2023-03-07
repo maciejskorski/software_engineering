@@ -550,7 +550,33 @@ Commit this file and changes to the source code. Congrats!</p>
 <h2>Debugging CircleCI with SSH<a class="headerlink" href="#debugging-circleci-with-ssh" title="Permalink to this heading">#</a></h2>
 <p>Add a “build-test” job to the above reposiroty using <a class="reference external" href="https://circleci.com/docs/language-python/">CircleCI jobs</a>. Connect this job to a <a class="reference external" href="https://app.circleci.com/">CircleCI account</a>.</p>
 <p><img alt="circleci" src="_images/circleci.png" /></p>
-<p>The job should install dependencies and run a minimal model (downloading binaries when necessary).</p>
+<p>The job should install dependencies and run a minimal model (downloading binaries when necessary). For example</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.1</span>
+<span class="nt">orbs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">circleci/python@2.0.3</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">build</span><span class="p">:</span><span class="w"> </span><span class="c1"># this can be any name you choose</span>
+<span class="w">    </span><span class="nt">executor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python/default</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">checkout</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">python/install-packages</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">pkg-manager</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">install dependencies</span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
+
+<span class="nt">workflows</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">build_and_test</span><span class="p">:</span><span class="w"> </span><span class="c1"># this can be any name you choose</span>
+<span class="w">    </span><span class="nt">jobs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use YAML validator to work with job configs. The schema should be automatically recognized by an app (see the figure below).</p>
+</div>
+<p><img alt="yaml_validation" src="figures/yaml_validation.png" /></p>
 <p>Enter the CircleCI environment via SSH, try to connect with IDE.</p>
 </section>
 <section id="more-examples">
