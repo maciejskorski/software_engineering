@@ -490,8 +490,8 @@ The environment can be created for every repo and is available as a <code class=
 </section>
 <section id="static-code-analysis-fixing-machine-learning-repo-case-study">
 <h2>Static Code Analysis: Fixing Machine-Learning Repo (Case Study)<a class="headerlink" href="#static-code-analysis-fixing-machine-learning-repo-case-study" title="Permalink to this heading">#</a></h2>
-<p>We will use static code analysis to fix reproducibility problems of an <a class="reference external" href="https://aclanthology.org/2020.emnlp-main.135.PDF">implementation from a major NLP conference</a>.
-Note: the instruction below assume the use of VS Code locally / Codespaces remote, but you may adapt it to an IDE of your choice.</p>
+<p>We will use static code analysis to <em>fix reproducibility problems</em> of an <a class="reference external" href="https://aclanthology.org/2020.emnlp-main.135.PDF">implementation from a major NLP conference</a>.</p>
+<p>Note: the instruction below assume the use of VS Code locally / Codespaces remote, but you may adapt it to an IDE of your choice.</p>
 <p>Fork <code class="docutils literal notranslate"><span class="pre">https://github.com/maciejskorski/Cluster-Analysis</span></code> and open in <code class="docutils literal notranslate"><span class="pre">Codespaces</span></code>. Create and activate a virtual environment in the repo root directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
 <span class="nb">source</span><span class="w"> </span>.venv/bin/activate
@@ -552,36 +552,38 @@ Commit this file and changes to the source code. Congrats!</p>
 </section>
 <section id="debugging-circleci-with-ssh">
 <h2>Debugging CircleCI with SSH<a class="headerlink" href="#debugging-circleci-with-ssh" title="Permalink to this heading">#</a></h2>
-<p>Add a “build-test” job to the above reposiroty using <a class="reference external" href="https://circleci.com/docs/language-python/">CircleCI jobs</a>. Connect this job to a <a class="reference external" href="https://app.circleci.com/">CircleCI account</a>.</p>
-<p><img alt="circleci" src="_images/circleci.png" /></p>
+<p>In this example we will add a <em>“build-test” job</em> to the previous reposiroty using <a class="reference external" href="https://circleci.com/docs/language-python/">CircleCI jobs</a>.</p>
 <p>The job should install dependencies and run a minimal model (downloading binaries if necessary).
 Best practice: recycle <code class="docutils literal notranslate"><span class="pre">orbs</span></code> that are predefined building blocks and receipes from documentation.</p>
-<p>An example <code class="docutils literal notranslate"><span class="pre">.circleci/config.yml</span></code> file looks like this:</p>
+<p>An example <code class="docutils literal notranslate"><span class="pre">.circleci/config.yml</span></code> file looks like below:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.1</span>
 <span class="nt">orbs</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">circleci/python@2.0.3</span><span class="w"> </span><span class="c1"># provides predefined jobs and commands</span>
 
 <span class="nt">jobs</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">build</span><span class="p">:</span><span class="w"> </span><span class="c1"># prepare environment (name chosen)</span>
+<span class="w">  </span><span class="nt">build_and_test</span><span class="p">:</span><span class="w"> </span><span class="c1"># prepare environment (name chosen)</span>
 <span class="w">    </span><span class="nt">executor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python/default</span>
 <span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">checkout</span><span class="w"> </span><span class="c1"># predefined</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">python/install-packages</span><span class="p">:</span><span class="w"> </span><span class="c1"># optimized with cache, comes with the orb (inspect CircleCI for details)</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">python/install-packages</span><span class="p">:</span><span class="w"> </span><span class="c1"># comes with the orb (inspect CircleCI for details)</span>
 <span class="w">          </span><span class="nt">pkg-manager</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">install dependencies</span>
 <span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">download model</span>
-<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wget https://github.com/eyaler/word2vec-slim/raw/master/GoogleNews-vectors-negative300-SLIM.bin.gz</span>
-<span class="w">  </span><span class="nt">test</span><span class="p">:</span><span class="w"> </span><span class="c1"># test minimal scope</span>
-
-
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">download model binaries</span><span class="w"> </span><span class="c1"># requires external binaries</span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">            </span><span class="no">apt-get install wget</span>
+<span class="w">            </span><span class="no">wget https://github.com/eyaler/word2vec-slim/raw/master/GoogleNews-vectors-negative300-SLIM.bin.gz</span>
+<span class="w">            </span><span class="no">gzip -d GoogleNews-vectors-negative300-SLIM.bin.gz</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test algorithm</span><span class="w"> </span><span class="c1"># run with minimal scope</span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3 code/score.py --clustering_algo KMeans --vocab english_dict.txt --entities word2vec</span>
 
 <span class="nt">workflows</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">build_and_test</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">jobs</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build_and_test</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -589,6 +591,8 @@ Best practice: recycle <code class="docutils literal notranslate"><span class="p
 <p>Use YAML validator to work with job configs. The schema is automatically linked by the validator app (see the figure below).</p>
 </div>
 <p><img alt="yaml_validation" src="_images/yaml_validation.png" /></p>
+<p>Connect this job to a <a class="reference external" href="https://app.circleci.com/">CircleCI account</a>.
+<img alt="circleci" src="_images/circleci.png" /></p>
 <p>Enter the CircleCI environment via SSH, try to connect with the IDE and diagnose problems with the workflow.
 The workflow has to run in the SSH mode from the CircleCI account, as shown below.</p>
 <p><img alt="circleci_ssh" src="_images/circleci_ssh.png" /></p>
