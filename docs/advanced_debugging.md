@@ -15,7 +15,12 @@ The environment, once built, looks like in the figure below (resembling VS Code)
 We will use static code analysis to fix reproducibility problems of an [implementation from a major NLP conference](https://aclanthology.org/2020.emnlp-main.135.PDF). 
 Note: the instruction below assume the use of VS Code locally / Codespaces remote, but you may adapt it to an IDE of your choice.
 
-Fork `https://github.com/maciejskorski/Cluster-Analysis` and open in `Codespaces`. Create a virtual environment in the repo root directory, by `python -m venv .venv` and activate with `source .venv/bin/activate`. Select this version `.venv/bin/python` as the active Python interpreter.
+Fork `https://github.com/maciejskorski/Cluster-Analysis` and open in `Codespaces`. Create and activate a virtual environment in the repo root directory: 
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+Select this version `.venv/bin/python` as the active Python interpreter in the code editor.
 
 Check `settings.json` of the editor to ensure that [Python linters](https://code.visualstudio.com/docs/python/linting) are enabled.
 Open the main file: `code/score.py`, you should see about 100 problems reported by Python linters.
