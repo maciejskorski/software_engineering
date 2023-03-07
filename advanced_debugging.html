@@ -555,7 +555,7 @@ Commit this file and changes to the source code. Congrats!</p>
 <p>In this example we will add a <em>“build-test” job</em> to the previous reposiroty using <a class="reference external" href="https://circleci.com/docs/language-python/">CircleCI jobs</a>.</p>
 <p>The job should install dependencies and run a minimal model (downloading binaries if necessary).
 Best practice: recycle <code class="docutils literal notranslate"><span class="pre">orbs</span></code> that are predefined building blocks and receipes from documentation.</p>
-<p>An example <code class="docutils literal notranslate"><span class="pre">.circleci/config.yml</span></code> file looks like below:</p>
+<p>An example <code class="docutils literal notranslate"><span class="pre">.circleci/config.yml</span></code> file looks like below (write your own!)</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.1</span>
 <span class="nt">orbs</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">python</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">circleci/python@2.0.3</span><span class="w"> </span><span class="c1"># provides predefined jobs and commands</span>
@@ -594,7 +594,7 @@ Best practice: recycle <code class="docutils literal notranslate"><span class="p
 <p>Connect this job to a <a class="reference external" href="https://app.circleci.com/">CircleCI account</a>.
 <img alt="circleci" src="_images/circleci.png" /></p>
 <p>Enter the CircleCI environment via SSH, try to connect with the IDE and diagnose problems with the workflow.
-The workflow has to run in the SSH mode from the CircleCI account, as shown below.</p>
+The workflow has to be rerun in the SSH mode from the CircleCI account, as shown below.</p>
 <p><img alt="circleci_ssh" src="_images/circleci_ssh.png" /></p>
 <p>Once the job is fixed, <a class="reference external" href="https://circleci.com/docs/status-badges/">confirm this by adding the status badge</a>. Congrats!</p>
 <p><img alt="status_badge" src="_images/repo_status.png" /></p>

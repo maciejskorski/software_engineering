@@ -85,7 +85,7 @@ In this example we will add a *"build-test" job* to the previous reposiroty usin
 The job should install dependencies and run a minimal model (downloading binaries if necessary). 
 Best practice: recycle `orbs` that are predefined building blocks and receipes from documentation.
 
-An example `.circleci/config.yml` file looks like below:
+An example `.circleci/config.yml` file looks like below (write your own!)
 
 ```yaml
 version: 2.1
@@ -129,7 +129,7 @@ Connect this job to a [CircleCI account](https://app.circleci.com/).
 
 
 Enter the CircleCI environment via SSH, try to connect with the IDE and diagnose problems with the workflow.
-The workflow has to run in the SSH mode from the CircleCI account, as shown below.
+The workflow has to be rerun in the SSH mode from the CircleCI account, as shown below.
 
 ![circleci_ssh](figures/circleci_ssh.png)
 
