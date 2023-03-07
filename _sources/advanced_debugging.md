@@ -36,7 +36,7 @@ python code/score.py --clustering_algo KMeans --entities word2vec --vocab vocab.
 ```
 
 Try to *fix critical issues* by adding missing packages to the environment with `pip install <missing_package>`.
-```note
+```{note}
 To avoid out-of-memory issues, consider the following optimizations:
 * comment out huge modules not used for this call, such as `tensorflow` or `fasttext` 
 * adapt the code to work with [a smaller GoogleNews model](https://github.com/eyaler/word2vec-slim/raw/master/GoogleNews-vectors-negative300-SLIM.bin.gz)
