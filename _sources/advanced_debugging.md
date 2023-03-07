@@ -43,7 +43,34 @@ To avoid out-of-memory issues, consider the following optimizations:
 ```
 For meaningful results, store an English dictionary in `vocab.txt` (for instance, copy the content of `/usr/share/dict/words`).
 
-Once the command runs, use `pip freeze > requirements.txt` to export requirements. 
+Once the command runs successfuly, you should see the output similar to
+```bash
+-0.3393 interface systems software devices hardware device technology components adapter computer
+-0.57277 guess suppose thought damn stupid thinking yeah thing anymore afraid
+-0.2009 wanted attempting unable hoping failed decided intended needed forced supposed
+-0.4871 specific larger actual significant limited additional smaller multiple similar major
+-0.74313 services operations business management agency organization service development company communications
+-0.55365 discussion comments answers responses conclusions questions answer explanation suggestions recommendations
+-0.40731 means simply reasoning implies context necessarily logic meaning sense essence
+-0.14021 game play games season score playing league played team match
+-0.76696 turned brought moved stuck thrown left leaving coming arrived caught
+-0.39309 government religious religion democracy society political morality religions military citizens
+-0.33467 children mother parents child kids patients doctor family father people
+-0.34227 good great easy nice difficult decent perfect tough important excellent
+-0.12439 give bring provide make accept find apply ignore obtain choose
+-0.45445 inside front side line corner back wall edge rear angle
+-0.8108 noted acknowledged suggested mentioned cited revealed stated referred confirmed presented
+-0.65448 divine eternal evil humanity heaven gods soul lord scriptures scripture
+-0.52838 north area south east west town city highway southern northern
+-0.60428 costs rates prices rate cost price increases increase higher demand
+0.10042 pages text copy page document articles read books quote book
+-0.14741 month week months weeks year days years million earlier time
+NPMI:-0.42526
+NPMI Mean:-0.46147
+NPMI Var:0.00123
+```
+
+Use `pip freeze > requirements.txt` to export requirements. 
 Commit this file and changes to the source code. Congrats!
 
 ## Debugging CircleCI with SSH
