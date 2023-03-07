@@ -555,7 +555,7 @@ Commit this file and changes to the source code. Congrats!</p>
 <p>Add a “build-test” job to the above reposiroty using <a class="reference external" href="https://circleci.com/docs/language-python/">CircleCI jobs</a>. Connect this job to a <a class="reference external" href="https://app.circleci.com/">CircleCI account</a>.</p>
 <p><img alt="circleci" src="_images/circleci.png" /></p>
 <p>The job should install dependencies and run a minimal model (downloading binaries if necessary).
-Recycle <code class="docutils literal notranslate"><span class="pre">orbs</span></code> that are predefined building blocks and receipes from documentation.</p>
+Best practice: recycle <code class="docutils literal notranslate"><span class="pre">orbs</span></code> that are predefined building blocks and receipes from documentation.</p>
 <p>An example <code class="docutils literal notranslate"><span class="pre">.circleci/config.yml</span></code> file looks like this:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.1</span>
 <span class="nt">orbs</span><span class="p">:</span>
@@ -566,7 +566,7 @@ Recycle <code class="docutils literal notranslate"><span class="pre">orbs</span>
 <span class="w">    </span><span class="nt">executor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python/default</span>
 <span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">checkout</span><span class="w"> </span><span class="c1"># predefined</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">python/install-packages</span><span class="p">:</span><span class="w"> </span><span class="c1"># comes with the orb (inspect CircleCI for details)</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">python/install-packages</span><span class="p">:</span><span class="w"> </span><span class="c1"># optimized with cache, comes with the orb (inspect CircleCI for details)</span>
 <span class="w">          </span><span class="nt">pkg-manager</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">install dependencies</span>
@@ -589,7 +589,9 @@ Recycle <code class="docutils literal notranslate"><span class="pre">orbs</span>
 <p>Use YAML validator to work with job configs. The schema is automatically linked by the validator app (see the figure below).</p>
 </div>
 <p><img alt="yaml_validation" src="_images/yaml_validation.png" /></p>
-<p>Enter the CircleCI environment via SSH, try to connect with IDE.</p>
+<p>Enter the CircleCI environment via SSH, try to connect with the IDE and diagnose problems with the workflow.</p>
+<p><img alt="circleci_ssh" src="figures/circleci_ssh.png" /></p>
+<p>Once the job is fixed, <a class="reference external" href="https://circleci.com/docs/status-badges/">confirm this by adding the status badge</a>.</p>
 </section>
 <section id="more-examples">
 <h2>More examples<a class="headerlink" href="#more-examples" title="Permalink to this heading">#</a></h2>

@@ -84,7 +84,7 @@ Add a "build-test" job to the above reposiroty using [CircleCI jobs](https://cir
 ![circleci](figures/circleci.png)
 
 The job should install dependencies and run a minimal model (downloading binaries if necessary). 
-Recycle `orbs` that are predefined building blocks and receipes from documentation.
+Best practice: recycle `orbs` that are predefined building blocks and receipes from documentation.
 
 An example `.circleci/config.yml` file looks like this:
 
@@ -98,7 +98,7 @@ jobs:
     executor: python/default
     steps:
       - checkout # predefined
-      - python/install-packages: # comes with the orb (inspect CircleCI for details)
+      - python/install-packages: # optimized with cache, comes with the orb (inspect CircleCI for details)
           pkg-manager: pip
       - run:
           name: install dependencies
@@ -122,8 +122,11 @@ Use YAML validator to work with job configs. The schema is automatically linked 
 
 ![yaml_validation](figures/yaml_validation.png)
 
-Enter the CircleCI environment via SSH, try to connect with IDE.
+Enter the CircleCI environment via SSH, try to connect with the IDE and diagnose problems with the workflow.
 
+![circleci_ssh](figures/circleci_ssh.png)
+
+Once the job is fixed, [confirm this by adding the status badge](https://circleci.com/docs/status-badges/).
 
 ## More examples
 
