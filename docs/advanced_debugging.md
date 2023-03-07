@@ -43,7 +43,8 @@ To avoid out-of-memory issues, consider the following optimizations:
 ```
 For meaningful results, store an English dictionary in `vocab.txt` (for instance, copy the content of `/usr/share/dict/words`).
 
-Once the command runs, use `pip freeze > requirements.txt` to export requirements. Congrats!
+Once the command runs, use `pip freeze > requirements.txt` to export requirements. 
+Commit this file and changes to the source code. Congrats!
 
 
 
