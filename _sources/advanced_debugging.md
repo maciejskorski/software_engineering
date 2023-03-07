@@ -83,32 +83,41 @@ Add a "build-test" job to the above reposiroty using [CircleCI jobs](https://cir
 
 ![circleci](figures/circleci.png)
 
-The job should install dependencies and run a minimal model (downloading binaries when necessary). For example
+The job should install dependencies and run a minimal model (downloading binaries if necessary). 
+Recycle `orbs` that are predefined building blocks and receipes from documentation.
+
+An example `.circleci/config.yml` file looks like this:
 
 ```yaml
 version: 2.1
 orbs:
-  python: circleci/python@2.0.3
+  python: circleci/python@2.0.3 # provides predefined jobs and commands
 
 jobs:
-  build: # this can be any name you choose
+  build: # prepare environment (name chosen)
     executor: python/default
     steps:
-      - checkout
-      - python/install-packages:
+      - checkout # predefined
+      - python/install-packages: # comes with the orb (inspect CircleCI for details)
           pkg-manager: pip
       - run:
           name: install dependencies
           command: pip install -r requirements.txt
+      - run:
+          name: download model
+          command: wget https://github.com/eyaler/word2vec-slim/raw/master/GoogleNews-vectors-negative300-SLIM.bin.gz
+  test: # test minimal scope
+
+
 
 workflows:
-  build_and_test: # this can be any name you choose
+  build_and_test:
     jobs:
     - build
 ```
 
 ```{note}
-Use YAML validator to work with job configs. The schema should be automatically recognized by an app (see the figure below).
+Use YAML validator to work with job configs. The schema is automatically linked by the validator app (see the figure below).
 ```
 
 ![yaml_validation](figures/yaml_validation.png)
