@@ -48,8 +48,11 @@ Commit this file and changes to the source code. Congrats!
 
 ## Debugging CircleCI with SSH
 
-Add a "build-test" job to the above reposiroty using [CircleCI jobs](https://circleci.com/docs/language-python/).
-The job should install dependencies and run a minimal model.
+Add a "build-test" job to the above reposiroty using [CircleCI jobs](https://circleci.com/docs/language-python/). Connect this job to a [CircleCI account](https://app.circleci.com/).
+
+![circleci](figures/circleci.png)
+
+The job should install dependencies and run a minimal model (downloading binaries when necessary).
 
 
 ## More examples
