@@ -2,7 +2,7 @@
 
 ## Development in Cloud
 
-Recently [GitHub lunched cloud-powered developent environments](https://github.com/features/codespaces) called Codespaces.
+Recently [GitHub launched cloud-powered developent environments](https://github.com/features/codespaces) called Codespaces.
 The environment can be created for every repo and is available as a `Codespaces` tab under the green button `Code`. 
 ![start Codespaces](figures/start_codespaces.png)
 
