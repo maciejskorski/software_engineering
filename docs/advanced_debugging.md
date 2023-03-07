@@ -123,6 +123,7 @@ Use YAML validator to work with job configs. The schema is automatically linked 
 ![yaml_validation](figures/yaml_validation.png)
 
 Enter the CircleCI environment via SSH, try to connect with the IDE and diagnose problems with the workflow.
+The workflow has to run in the SSH mode from the CircleCI account, as shown below.
 
 ![circleci_ssh](figures/circleci_ssh.png)
 
