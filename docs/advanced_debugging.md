@@ -126,7 +126,9 @@ Enter the CircleCI environment via SSH, try to connect with the IDE and diagnose
 
 ![circleci_ssh](figures/circleci_ssh.png)
 
-Once the job is fixed, [confirm this by adding the status badge](https://circleci.com/docs/status-badges/).
+Once the job is fixed, [confirm this by adding the status badge](https://circleci.com/docs/status-badges/). Congrats!
+
+![status_badge](figures/repo_status.png)
 
 ## More examples
 
