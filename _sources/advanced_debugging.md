@@ -30,6 +30,10 @@ Open the main file: `code/score.py`, you should see about 100 problems reported 
 Some issues are opinionated (formatting), some are breaking (missing imports in view of no install instructions).
 You can also run `pylint --errors-only --recursive=y code` to scan the whole code base.
 
+```{note}
+When working with Python apps, double-check that the right environment is enabled.
+```
+
 Fix the reposity only up to the point when the basic call runs:
 ```bash 
 python code/score.py --clustering_algo KMeans --entities word2vec --vocab vocab.txt

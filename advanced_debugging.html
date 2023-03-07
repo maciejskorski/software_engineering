@@ -503,6 +503,10 @@ Open the main file: <code class="docutils literal notranslate"><span class="pre"
 <p><img alt="linter report" src="_images/linter_report.png" /></p>
 <p>Some issues are opinionated (formatting), some are breaking (missing imports in view of no install instructions).
 You can also run <code class="docutils literal notranslate"><span class="pre">pylint</span> <span class="pre">--errors-only</span> <span class="pre">--recursive=y</span> <span class="pre">code</span></code> to scan the whole code base.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When working with Python apps, double-check that the right environment is enabled.</p>
+</div>
 <p>Fix the reposity only up to the point when the basic call runs:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>code/score.py<span class="w"> </span>--clustering_algo<span class="w"> </span>KMeans<span class="w"> </span>--entities<span class="w"> </span>word2vec<span class="w"> </span>--vocab<span class="w"> </span>vocab.txt
 </pre></div>
