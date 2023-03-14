@@ -1,4 +1,4 @@
-# Software project tracking
+# Class 3: Software project tracking
 
 1. Set up a project repository on GitHub and invite team members
 2. Set up a JIRA account and connect to the GitHub repo
