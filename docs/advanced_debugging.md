@@ -128,7 +128,7 @@ Connect this job to a [CircleCI account](https://app.circleci.com/).
 ![circleci](figures/circleci.png)
 
 
-Enter the CircleCI environment via SSH, try to connect with the IDE and diagnose problems with the workflow.
+Ensure [SSH access to CircleCI](https://circleci.com/docs/ssh-access-jobs/), try to connect with the IDE and diagnose problems with the workflow.
 The workflow has to be rerun in the SSH mode from the CircleCI account, as shown below.
 
 ![circleci_ssh](figures/circleci_ssh.png)
