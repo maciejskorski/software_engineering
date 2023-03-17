@@ -7,3 +7,5 @@ During this class we will create a backlog of tasks, assign them to project meme
 See this roadmap with tasks mapped to sprints:
 
 ![planned_tasks](figures/class_harmonogram.png)
+
+The recommended strategy of working with git is to use [github flow](https://docs.github.com/en/get-started/quickstart/github-flow)
