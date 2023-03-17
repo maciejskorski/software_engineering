@@ -8,6 +8,6 @@ See this roadmap with tasks mapped to sprints:
 
 ![planned_tasks](figures/class_harmonogram.png)
 
-The recommended strategy of working with git is to use [github flow](https://docs.github.com/en/get-started/quickstart/github-flow).
+The recommended collaborative work strategy is to follow [github flow](https://docs.github.com/en/get-started/quickstart/github-flow).
 
 Roughly speaking, a developer is *working on tasks in dedicated branches* and *integrates via reviewed pull requests* once a feature or a bug fix is ready.
