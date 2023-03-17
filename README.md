@@ -9,6 +9,17 @@ Materials for my class “Software Engineering” at University of Warsaw, 2023.
 
 Goal: working, tested, and documented minimum viable product (MVP) iterated few times in a team (Scrum).
 
+## Grading
+
+These aspects are evaluated when assigning a final score:
+
+* Team work planning (workload planned and split accordingly)
+* Delivery of promised features (minimum viable product)
+* Quality of project documentation (GitHub documentation, Jira tasks)
+* Quality of software development (code review, tests, CI/CD pipeline)
+
+
+## Topics covered
 The materials here aim to demonstrate modern coding tools and good practices.
 
 * [Class 1](docs/modern_dev_environ.md): *GitHub*: SSH access, Cookiecutter templates and Continous Integration by GitHub Actions
