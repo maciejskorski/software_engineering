@@ -3,5 +3,6 @@ root: intro
 sections:
 - file: modern_dev_environ.md
 - file: advanced_debugging.md
+- file: project_tracking.md
 - file: project_management.md
 - file: project_ideas.md

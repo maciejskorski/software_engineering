@@ -1,17 +1,9 @@
-# Class 3: Software project tracking
+# Class 4: Software project management
 
-1. Set up a project repository on GitHub and invite team members
+Jira (also in its free plan) allows teams to organise tasks in sprints, track and document the progress.
 
-2. Set up a JIRA project (use the Scrum template) and connect to the GitHub repo
-![Jira app for GitHub](figures/Jira_GitHub_app.png)
+During this class we will create a backlog of tasks, assign them to project memebers and map them to sprints.
 
-```{note}
-The Scrum template on Jira presents the roadmap as a "waterfall" of sprints, as shown below.
-```
+See this roadmap with tasks mapped to sprints:
 
-3. Test that GitHub changes are tracked by Jira, by committing with issue keys!
-![Jira tracking GitHub](figures/Jira_GitHub_tracking.png)
-
-```{note}
-Remember to reference Jira's issue keys in git commits, to ensure proper tracking.
-```
+![planned_tasks](figures/class_harmonogram.png)
