@@ -4,6 +4,10 @@ Jira (also in its free plan) allows teams to organise tasks in sprints, track an
 
 During this class we will create a backlog of tasks, assign them to project memebers and map them to sprints.
 
+```{note}
+[Stories/tasks should occupy one sprint](https://community.atlassian.com/t5/Jira-Software-questions/Jira-Roadmaps-how-to-extend-stories-across-multiple-sprints/qaq-p/1793636).
+```
+
 See this roadmap with tasks mapped to sprints:
 
 ![planned_tasks](figures/class_harmonogram.png)

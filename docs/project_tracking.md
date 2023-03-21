@@ -15,3 +15,5 @@ The Scrum template on Jira presents the roadmap as a "waterfall" of sprints, as 
 ```{note}
 Remember to reference Jira's issue keys in git commits, to ensure proper tracking.
 ```
+
+4. The advantage of Jira over Trello (as of now, March 2023) is Scrum support in its free plan.
