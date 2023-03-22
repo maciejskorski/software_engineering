@@ -19,13 +19,15 @@ actor User as user
 participant "Application" as app
 participant "GitHub" as github
 
-user -> app: challenge request
-app -> github: sample a repo
-github -> app: return the repo information
-app -> user: puzzle
-note left of app: question about filetypes/locations
-user -> app: answer
-app -> user: evaluation
+loop until user ends
+    user -> app: challenge request
+    app -> github: sample a repo
+    github -> app: return the repo information
+    app -> user: puzzle
+    note left of app: question about filetypes/locations
+    user -> app: answer
+    app -> user: evaluation
+end 
 @enduml
 ```
 we create the following sequence diagram ([test it live here](http://www.plantuml.com/)):
@@ -41,12 +43,14 @@ sequenceDiagram
     participant app as Application
     participant github as GitHub
 
-    user ->> app: challenge request
-    app ->> github: sample a repo
-    github ->> app: return the repo information
-    app ->> user: puzzle
-    note left of app: question about filetypes/locations
-    user ->> app: answer
-    app ->> user: evaluation
+    loop until user ends
+        user ->> app: challenge request
+        app ->> github: sample a repo
+        github ->> app: return the repo information
+        app ->> user: puzzle
+        note left of app: question about filetypes/locations
+        user ->> app: answer
+        app ->> user: evaluation
+    end
 ```
 
