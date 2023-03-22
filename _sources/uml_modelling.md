@@ -1,6 +1,10 @@
 # Class 5: System modelling
 
-![GitHub educational game](http://www.plantuml.com/plantuml/proxy?cache=no&src=figures/diagrams/game_github.iuml)
+UML diagrams are powerfull tools to anal can be created by many tools 
+
+
+![GitHub educational game](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/maciejskorski/software_engineering/main/docs/figures/diagrams/game_github.iuml)
+
 
 ```mermaid
 sequenceDiagram
