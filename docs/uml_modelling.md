@@ -37,6 +37,7 @@ sequenceDiagram
     app -> github: sample a repo
     github -> app: return the repo information
     app -> user: puzzle
+    note left of app: question about filetypes/locations
     user -> app: answer
     app -> user: evaluation
 ```
