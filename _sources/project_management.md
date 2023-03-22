@@ -13,6 +13,9 @@ See this roadmap with tasks mapped to sprints:
 
 ![planned_tasks](figures/class_harmonogram.png)
 
+Jira offers a lot of configurable features. Under the project settings you can enable reporting modules, notifications rules, and so on.
+ 
+
 The recommended collaborative work strategy is to follow [github flow](https://docs.github.com/en/get-started/quickstart/github-flow).
 
 Roughly speaking, a developer is *working on tasks in dedicated branches* and *integrates via reviewed pull requests* once a feature or a bug fix is ready.
