@@ -34,7 +34,7 @@ we create the following sequence diagram ([test it live here](http://www.plantum
 
 ![GitHub educational game](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/maciejskorski/software_engineering/main/docs/figures/diagrams/game_github.iuml)
 
-A similar diagram is created by Mermaid, with slightly different syntax  ([test it live here](https://mermaid.live/)).
+A very similar diagram is created by Mermaid, with slightly different syntax  ([test it live here](https://mermaid.live/)).
 ```
 sequenceDiagram
     autonumber
