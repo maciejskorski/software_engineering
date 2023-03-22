@@ -26,7 +26,7 @@ user -> app: answer
 app -> user: evaluation
 @enduml
 ```
-we create the following diagram:
+we create the following diagram ([test it live here](http://www.plantuml.com/)):
 
 ![GitHub educational game](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/maciejskorski/software_engineering/main/docs/figures/diagrams/game_github.iuml)
 
