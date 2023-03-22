@@ -302,7 +302,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -318,6 +320,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-github-game">Example: GitHub Game</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -330,8 +340,11 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="class-5-system-modelling-with-uml-diagrams">
 <h1>Class 5: System modelling with UML diagrams<a class="headerlink" href="#class-5-system-modelling-with-uml-diagrams" title="Permalink to this heading">#</a></h1>
 <p>UML diagrams can be created by many tools. Those into graphic design may like drawing tools like <a class="reference external" href="https://www.diagrams.net/">diagrams.net</a>,
-while developers should appreciate diagrams created from concise markup descriptions via <a class="reference external" href="https://plantuml.com/">PlantUML</a> or <a class="reference external" href="https://mermaid.js.org/">Mermaid</a>.
-It is worth looking into examples shared online, see in particular <a class="reference external" href="https://real-world-plantuml.com/">https://real-world-plantuml.com/</a> or <a class="reference external" href="https://www.planttext.com/">https://www.planttext.com/</a>.</p>
+while developers should appreciate <em>diagrams created from markup descriptions</em> via <a class="reference external" href="https://plantuml.com/">PlantUML</a> or <a class="reference external" href="https://mermaid.js.org/">Mermaid</a>.
+It is worth looking into examples shared online, see in particular <a class="reference external" href="https://real-world-plantuml.com/">https://real-world-plantuml.com/</a> or <a class="reference external" href="https://www.planttext.com/">https://www.planttext.com/</a>.
+For more on UML modelling, see dedicated courses like <a class="reference external" href="https://nus-cs2103-ay1718s2.github.io/website/book/uml/">here</a>.</p>
+<section id="example-github-game">
+<h2>Example: GitHub Game<a class="headerlink" href="#example-github-game" title="Permalink to this heading">#</a></h2>
 <p>As an exmple, let’s model an educational game which challenges users with questions about coding practices based on Github repositories.</p>
 <p>With the PlantUML code snippet shown below</p>
 <div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
@@ -370,6 +383,7 @@ app -&gt; user: evaluation
     app -&gt;&gt; user: evaluation
 </pre></div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -424,6 +438,20 @@ app -&gt; user: evaluation
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-github-game">Example: GitHub Game</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
