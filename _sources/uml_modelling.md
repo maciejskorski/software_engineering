@@ -33,11 +33,11 @@ sequenceDiagram
     participant app as Application
     participant github as GitHub
 
-    user -> app: challenge request
-    app -> github: sample a repo
-    github -> app: return the repo information
-    app -> user: puzzle
+    user ->> app: challenge request
+    app ->> github: sample a repo
+    github ->> app: return the repo information
+    app ->> user: puzzle
     note left of app: question about filetypes/locations
-    user -> app: answer
-    app -> user: evaluation
+    user ->> app: answer
+    app ->> user: evaluation
 ```

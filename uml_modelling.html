@@ -352,13 +352,13 @@ app -&gt; user: evaluation
     participant app as Application
     participant github as GitHub
 
-    user -&gt; app: challenge request
-    app -&gt; github: sample a repo
-    github -&gt; app: return the repo information
-    app -&gt; user: puzzle
+    user -&gt;&gt; app: challenge request
+    app -&gt;&gt; github: sample a repo
+    github -&gt;&gt; app: return the repo information
+    app -&gt;&gt; user: puzzle
     note left of app: question about filetypes/locations
-    user -&gt; app: answer
-    app -&gt; user: evaluation
+    user -&gt;&gt; app: answer
+    app -&gt;&gt; user: evaluation
 </pre></div>
 </div>
 </section>
