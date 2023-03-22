@@ -327,6 +327,21 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="class-5-system-modelling">
 <h1>Class 5: System modelling<a class="headerlink" href="#class-5-system-modelling" title="Permalink to this heading">#</a></h1>
 <p><img alt="GitHub educational game" src="http://www.plantuml.com/plantuml/proxy?cache=no&amp;src=figures/diagrams/game_github.iuml" /></p>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>sequenceDiagram
+    autonumber
+
+    actor user as User
+    participant app as Application
+    participant github as GitHub
+
+    user -&gt; app: challenge request
+    app -&gt; github: sample a repo
+    github -&gt; app: return the repo information
+    app -&gt; user: puzzle
+    user -&gt; app: answer
+    app -&gt; user: evaluation
+</pre></div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
