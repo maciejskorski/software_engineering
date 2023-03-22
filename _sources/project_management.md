@@ -13,8 +13,10 @@ See this roadmap with tasks mapped to sprints:
 
 ![planned_tasks](figures/class_harmonogram.png)
 
-Jira offers a lot of configurable features. Under the project settings you can enable reporting modules, notifications rules, and so on.
- 
+Jira offers a lot of configurable features. Under the project settings you can enable reporting modules, adjust notifications, and so on.
+
+![configuring_jira](figures/Jira_configuration.png)
+
 
 The recommended collaborative work strategy is to follow [github flow](https://docs.github.com/en/get-started/quickstart/github-flow).
 
