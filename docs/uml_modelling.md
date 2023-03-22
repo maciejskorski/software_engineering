@@ -1,7 +1,7 @@
 # Class 5: System modelling
 
 UML diagrams can be created by many tools. Those into graphic design may like drawing tools like [diagrams.net](https://www.diagrams.net/), 
-while developers should appreciate generating diagrams from concise markup descriptions via [PlantUML](https://plantuml.com/) or [Mermaid](https://mermaid.js.org/).
+while developers should appreciate diagrams created from concise markup descriptions via [PlantUML](https://plantuml.com/) or [Mermaid](https://mermaid.js.org/).
 
 As an exmple, let's model an educational game which challenges users with questions about coding practices based on Github repositories.
 
