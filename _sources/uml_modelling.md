@@ -1,6 +1,7 @@
 # Class 5: System modelling
 
-UML diagrams are powerfull tools to anal can be created by many tools 
+UML diagrams can be created by many tools. Those into graphic design may like drawing tools like [diagrams.net](https://www.diagrams.net/), 
+while developers should appreciate generating diagrams from concise markup descriptions via [PlantUML](https://plantuml.com/) or [Mermaid](https://mermaid.js.org/).
 
 
 ![GitHub educational game](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/maciejskorski/software_engineering/main/docs/figures/diagrams/game_github.iuml)
