@@ -11,7 +11,7 @@ As an exmple, let's model an educational game which challenges users with questi
 
 With the PlantUML code snippet shown below
 
-```plantuml
+```
 @startuml
 autonumber
 
