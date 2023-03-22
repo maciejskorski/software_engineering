@@ -5,7 +5,9 @@ while developers should appreciate diagrams created from concise markup descript
 
 As an exmple, let's model an educational game which challenges users with questions about coding practices based on Github repositories.
 
-```plainuml
+With the plantuml code snippet below
+
+```plantuml
 @startuml
 autonumber
 
@@ -22,7 +24,7 @@ user -> app: answer
 app -> user: evaluation
 @enduml
 ```
-
+we create the following diagram:
 
 ![GitHub educational game](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/maciejskorski/software_engineering/main/docs/figures/diagrams/game_github.iuml)
 
@@ -43,3 +45,4 @@ sequenceDiagram
     user ->> app: answer
     app ->> user: evaluation
 ```
+

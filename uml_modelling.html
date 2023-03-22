@@ -332,7 +332,8 @@ document.write(`
 <p>UML diagrams can be created by many tools. Those into graphic design may like drawing tools like <a class="reference external" href="https://www.diagrams.net/">diagrams.net</a>,
 while developers should appreciate diagrams created from concise markup descriptions via <a class="reference external" href="https://plantuml.com/">PlantUML</a> or <a class="reference external" href="https://mermaid.js.org/">Mermaid</a>.</p>
 <p>As an exmple, let’s model an educational game which challenges users with questions about coding practices based on Github repositories.</p>
-<div class="highlight-plainuml notranslate"><div class="highlight"><pre><span></span>@startuml
+<p>With the plantuml code snippet below</p>
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
 autonumber
 
 actor User as user
@@ -349,6 +350,7 @@ app -&gt; user: evaluation
 @enduml
 </pre></div>
 </div>
+<p>we create the following diagram:</p>
 <p><img alt="GitHub educational game" src="http://www.plantuml.com/plantuml/proxy?cache=no&amp;src=https://raw.githubusercontent.com/maciejskorski/software_engineering/main/docs/figures/diagrams/game_github.iuml" /></p>
 <div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>sequenceDiagram
     autonumber
