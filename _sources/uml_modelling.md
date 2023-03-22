@@ -3,7 +3,7 @@
 UML diagrams can be created by many tools. Those into graphic design may like drawing tools like [diagrams.net](https://www.diagrams.net/), 
 while developers should appreciate *diagrams created from markup descriptions* via [PlantUML](https://plantuml.com/) or [Mermaid](https://mermaid.js.org/).
 It is worth looking into examples shared online, see in particular https://real-world-plantuml.com/ or https://www.planttext.com/.
-For more on UML modelling, see dedicated courses like [here](https://nus-cs2103-ay1718s2.github.io/website/book/uml/).
+For more on UML modelling, see dedicated courses like [here](https://nus-cs2103-ay1718s2.github.io/website/book/uml/) or [here](https://www.uml-diagrams.org/).
 
 ## Example: GitHub Game
 
