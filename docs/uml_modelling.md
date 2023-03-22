@@ -1,4 +1,4 @@
-# Class 5: System modelling
+# Class 5: System modelling with UML diagrams
 
 UML diagrams can be created by many tools. Those into graphic design may like drawing tools like [diagrams.net](https://www.diagrams.net/), 
 while developers should appreciate diagrams created from concise markup descriptions via [PlantUML](https://plantuml.com/) or [Mermaid](https://mermaid.js.org/).
