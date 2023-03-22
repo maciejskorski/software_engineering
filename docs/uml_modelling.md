@@ -7,7 +7,7 @@ It is worth looking into examples shared online, in particular on https://real-w
 
 As an exmple, let's model an educational game which challenges users with questions about coding practices based on Github repositories.
 
-With the plantuml code snippet below
+With the PlantUML code snippet below
 
 ```plantuml
 @startuml
@@ -30,7 +30,7 @@ we create the following diagram ([test it live here](http://www.plantuml.com/)):
 
 ![GitHub educational game](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/maciejskorski/software_engineering/main/docs/figures/diagrams/game_github.iuml)
 
-
+With only slightly different syntax in Mermaid ([test it live here](https://mermaid.live/))
 ```mermaid
 sequenceDiagram
     autonumber
