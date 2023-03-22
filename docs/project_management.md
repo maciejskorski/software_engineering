@@ -6,7 +6,10 @@ During this class we will create a backlog of tasks, assign them to project meme
 
 ```{note}
 [Stories/tasks should occupy one sprint](https://community.atlassian.com/t5/Jira-Software-questions/Jira-Roadmaps-how-to-extend-stories-across-multiple-sprints/qaq-p/1793636).
-Remember the [INVEST](https://www.agilealliance.org/glossary/invest/) acronym: a story is *I*ndependent, *N*egotiable, *V*aluable, *E*stimable, *S*mall and *T*estable
+
+Remember the [INVEST](https://www.agilealliance.org/glossary/invest/) acronym: a story is *I*ndependent, *N*egotiable, *V*aluable, *E*stimable, *S*mall and *T*estable.
+
+The common pattern of a story: `As a {user/role} I need {functionality} so that {benefit}`.
 ```
 
 See this roadmap with tasks mapped to sprints:
