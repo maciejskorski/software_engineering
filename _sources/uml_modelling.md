@@ -53,3 +53,7 @@ sequenceDiagram
         app ->> user: evaluation
     end
 ```
+
+## More examples
+
+For an overview of various diagrams modelling an ATM, see [this example](https://github.com/mehedi9339/UML-Diagrams---ATM-System/blob/master/ATM%20System.pdf).
