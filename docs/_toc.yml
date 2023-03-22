@@ -5,4 +5,5 @@ sections:
 - file: advanced_debugging.md
 - file: project_tracking.md
 - file: project_management.md
+- file: uml_modelling.md
 - file: project_ideas.md
