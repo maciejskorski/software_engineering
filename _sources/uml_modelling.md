@@ -6,6 +6,7 @@ while developers should appreciate generating diagrams from concise markup descr
 As an exmple, let's model an educational game which challenges users with questions about coding practices based on Github repositories.
 
 ```plainuml
+@startuml
 autonumber
 
 actor User as user
@@ -16,9 +17,10 @@ user -> app: challenge request
 app -> github: sample a repo
 github -> app: return the repo information
 app -> user: puzzle
-note bottom: question about filetypes/locations
+note left of app: question about filetypes/locations
 user -> app: answer
 app -> user: evaluation
+@enduml
 ```
 
 
