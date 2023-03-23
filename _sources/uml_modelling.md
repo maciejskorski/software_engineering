@@ -60,3 +60,4 @@ sequenceDiagram
 
 * [an overview of various diagrams for an ATM system](https://github.com/mehedi9339/UML-Diagrams---ATM-System/blob/master/ATM%20System.pdf)
 * [a research paper of modelling ETL processes](https://www.sciencedirect.com/science/article/pii/S0950584910001023)
+* [an article the Model-View-Controller (MVC) Framework](https://www.cybermedian.com/what-is-model-view-controller-mvc-framework-model-mvc-with-uml-robustness-analysis/)
