@@ -104,7 +104,7 @@ deactivate user
 
 and renders as follows
 
-![Web Application with Backend](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/maciejskorski/software_engineering/main/docs/figures/diagrams/game_github.iuml)
+![Web Application with Backend](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/maciejskorski/software_engineering/main/docs/figures/diagrams/webapp.iuml)
 
 ## More examples
 
