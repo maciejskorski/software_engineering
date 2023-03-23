@@ -1,7 +1,7 @@
 # Class 5: Modelling with UML diagrams
 
 UML diagrams can be created by many tools. Those into graphic design may like drawing tools like [diagrams.net](https://www.diagrams.net/), 
-while developers should appreciate *diagrams created from markup descriptions* via [PlantUML](https://plantuml.com/) or [Mermaid](https://mermaid.js.org/).
+while developers should appreciate *diagrams created from markup descriptions* with [PlantUML](https://plantuml.com/) or simplistic [Mermaid](https://mermaid.js.org/).
 It is worth looking into examples shared online, see in particular https://real-world-plantuml.com/ or https://www.planttext.com/.
 For more on UML modelling, see dedicated courses like [here](https://nus-cs2103-ay1718s2.github.io/website/book/uml/) or [here](https://www.uml-diagrams.org/).
 
@@ -55,6 +55,56 @@ sequenceDiagram
         app ->> user: evaluation
     end
 ```
+
+## Example: Web App by Model-View-Controller
+
+The example below illustrates the application of the *Model-View-Controller* framework which separates interface and business logic. To do so, it distinguish element roles - such as *boundary, control or entity objects*, called  *stereotypes*. The system depicted is a web application which summarizes data scrapped daily from web resources. 
+
+The code snipppet is shown below
+
+```plantuml
+@startuml
+
+actor User as user
+boundary Dashboard as view
+control Logic as logic
+entity Database as db
+control Scrapper as scrape
+entity WebSources as web
+
+activate db
+activate view
+
+loop daily
+    scrape -> web: get
+    activate scrape
+    web --> scrape: page
+    scrape -> scrape: process
+    note right of scrape: parsing
+    scrape --> db: upload data
+    deactivate scrape
+end
+
+user -> view: information request
+activate user
+view -> logic: pass request
+activate logic
+logic -> db: read
+db --> logic:  data
+logic -> logic: process
+note right of logic: computation
+logic --> view: response
+deactivate logic
+view -> user: update
+note left of view: notify/refresh
+deactivate user
+
+@enduml
+```
+
+and renders as follows
+
+![Web Application with Backend](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/maciejskorski/software_engineering/main/docs/figures/diagrams/game_github.iuml)
 
 ## More examples
 

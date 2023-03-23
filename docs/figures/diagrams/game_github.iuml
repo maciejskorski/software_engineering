@@ -5,7 +5,7 @@ actor User as user
 participant "Application" as app
 participant "GitHub" as github
 
-loop until user ends
+loop until user quits
     user -> app: challenge request
     app -> github: sample a repo
     github -> app: return the repo information
