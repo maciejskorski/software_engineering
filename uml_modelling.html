@@ -328,6 +328,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-github-game">Example: GitHub Game</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-web-app-by-model-view-controller">Example: Web App by Model-View-Controller</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-examples">More examples</a></li>
 </ul>
             </nav>
@@ -343,7 +344,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="class-5-modelling-with-uml-diagrams">
 <h1>Class 5: Modelling with UML diagrams<a class="headerlink" href="#class-5-modelling-with-uml-diagrams" title="Permalink to this heading">#</a></h1>
 <p>UML diagrams can be created by many tools. Those into graphic design may like drawing tools like <a class="reference external" href="https://www.diagrams.net/">diagrams.net</a>,
-while developers should appreciate <em>diagrams created from markup descriptions</em> via <a class="reference external" href="https://plantuml.com/">PlantUML</a> or <a class="reference external" href="https://mermaid.js.org/">Mermaid</a>.
+while developers should appreciate <em>diagrams created from markup descriptions</em> with <a class="reference external" href="https://plantuml.com/">PlantUML</a> or simplistic <a class="reference external" href="https://mermaid.js.org/">Mermaid</a>.
 It is worth looking into examples shared online, see in particular <a class="reference external" href="https://real-world-plantuml.com/">https://real-world-plantuml.com/</a> or <a class="reference external" href="https://www.planttext.com/">https://www.planttext.com/</a>.
 For more on UML modelling, see dedicated courses like <a class="reference external" href="https://nus-cs2103-ay1718s2.github.io/website/book/uml/">here</a> or <a class="reference external" href="https://www.uml-diagrams.org/">here</a>.</p>
 <section id="example-github-game">
@@ -392,6 +393,52 @@ For more on UML modelling, see dedicated courses like <a class="reference extern
     end
 </pre></div>
 </div>
+</section>
+<section id="example-web-app-by-model-view-controller">
+<h2>Example: Web App by Model-View-Controller<a class="headerlink" href="#example-web-app-by-model-view-controller" title="Permalink to this heading">#</a></h2>
+<p>The example below illustrates the application of the <em>Model-View-Controller</em> framework which separates interface and business logic. To do so, it distinguish element roles - such as <em>boundary, control or entity objects</em>, called  <em>stereotypes</em>. The system depicted is a web application which summarizes data scrapped daily from web resources.</p>
+<p>The code snipppet is shown below</p>
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
+
+actor User as user
+boundary Dashboard as view
+control Logic as logic
+entity Database as db
+control Scrapper as scrape
+entity WebSources as web
+
+activate db
+activate view
+
+loop daily
+    scrape -&gt; web: get
+    activate scrape
+    web --&gt; scrape: page
+    scrape -&gt; scrape: process
+    note right of scrape: parsing
+    scrape --&gt; db: upload data
+    deactivate scrape
+end
+
+user -&gt; view: information request
+activate user
+view -&gt; logic: pass request
+activate logic
+logic -&gt; db: read
+db --&gt; logic:  data
+logic -&gt; logic: process
+note right of logic: computation
+logic --&gt; view: response
+deactivate logic
+view -&gt; user: update
+note left of view: notify/refresh
+deactivate user
+
+@enduml
+</pre></div>
+</div>
+<p>and renders as follows</p>
+<p><img alt="Web Application with Backend" src="http://www.plantuml.com/plantuml/proxy?cache=no&amp;src=https://raw.githubusercontent.com/maciejskorski/software_engineering/main/docs/figures/diagrams/game_github.iuml" /></p>
 </section>
 <section id="more-examples">
 <h2>More examples<a class="headerlink" href="#more-examples" title="Permalink to this heading">#</a></h2>
@@ -465,6 +512,7 @@ For more on UML modelling, see dedicated courses like <a class="reference extern
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-github-game">Example: GitHub Game</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-web-app-by-model-view-controller">Example: Web App by Model-View-Controller</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-examples">More examples</a></li>
 </ul>
   </nav></div>
