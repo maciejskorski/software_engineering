@@ -72,6 +72,8 @@ entity Database as db
 control Scrapper as scrape
 entity WebSources as web
 
+skinparam actorStyle awesome
+
 activate db
 activate view
 
