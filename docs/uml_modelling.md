@@ -58,7 +58,7 @@ sequenceDiagram
 
 ## Example: Web App by Model-View-Controller
 
-The example below illustrates the application of the *Model-View-Controller* framework which separates interface and business logic. To do so, it distinguish element roles - such as *boundary, control or entity objects*, called  *stereotypes*. The system depicted is a web application which visualizes data scrapped on a daily basis from web resources. 
+The example below illustrates the application of the *Model-View-Controller* framework which separates interface and business logic. To do so, it uses elements with distinguished roles - such as *boundary, control or entity objects*, called  *stereotypes*. The system depicted is a web application which visualizes data scrapped on a daily basis from web resources. 
 
 The code snipppet is shown below
 
