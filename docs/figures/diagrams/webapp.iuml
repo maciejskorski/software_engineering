@@ -1,0 +1,38 @@
+@startuml
+
+actor User as user
+boundary Dashboard as view
+control Logic as logic
+entity Database as db
+control Scrapper as scrape
+entity WebSources as web
+
+activate db
+activate view
+
+loop daily
+    scrape -> web: get
+    activate scrape
+    web --> scrape: page
+    scrape -> scrape: process
+    note right of scrape: parsing
+    scrape --> db: upload data
+    deactivate scrape
+end
+
+user -> view: information request
+activate user
+view -> logic: pass request
+activate logic
+logic -> db: read
+db --> logic:  data
+logic -> logic: process
+note right of logic: computation
+logic --> view: response
+deactivate logic
+view -> user: update
+note left of view: notify/refresh
+deactivate user
+
+
+@enduml
