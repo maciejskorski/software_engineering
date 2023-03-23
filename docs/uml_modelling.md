@@ -19,6 +19,8 @@ actor User as user
 participant "Application" as app
 participant "GitHub" as github
 
+skinparam actorStyle awesome
+
 loop until user ends
     user -> app: challenge request
     app -> github: sample a repo
@@ -56,5 +58,5 @@ sequenceDiagram
 
 ## More examples
 
-* [an overview of various diagrams for an ATM system](https://github.com/mehedi9339/UML-Diagrams---ATM-System/blob/master/ATM%20System.pdf).
+* [an overview of various diagrams for an ATM system](https://github.com/mehedi9339/UML-Diagrams---ATM-System/blob/master/ATM%20System.pdf)
 * [a research paper of modelling ETL processes](https://www.sciencedirect.com/science/article/pii/S0950584910001023)
