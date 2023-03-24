@@ -35,7 +35,7 @@ The recommended collaborative work strategy is to follow [github flow](https://d
 
 Roughly speaking, developers *work on tasks in dedicated branches* and *integrate with main branch via reviewed pull requests* once a feature or a bug fix is ready.
 
-```{uml}
+```{plantuml}
 @startuml
 start
 :task;
