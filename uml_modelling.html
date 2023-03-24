@@ -348,19 +348,16 @@ It is worth looking into examples shared online, see in particular <a class="ref
 For more on UML modelling, see dedicated courses like <a class="reference external" href="https://nus-cs2103-ay1718s2.github.io/website/book/uml/">here</a> or <a class="reference external" href="https://www.uml-diagrams.org/">here</a>.</p>
 <section id="example-card-payment">
 <h2>Example: Card Payment<a class="headerlink" href="#example-card-payment" title="Permalink to this heading">#</a></h2>
-<p>User stories are best illustrated with (high-level) <em>use-case diagram</em>, which visualize how actors interract with a system to accomplish some actions.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><a class="reference external" href="https://www.ibm.com/docs/en/rational-soft-arch/9.6.1?topic=model-lesson-13-identify-actors">Actors can be computer systems as well as human users</a>.</p>
-</div>
-<p>The example below visualizes a “card payment” process.</p>
+<p>User stories are best illustrated with (high-level) <em>use-case diagram</em>, which visualize how actors interract with a system to accomplish some actions. Note
+that <a class="reference external" href="https://www.ibm.com/docs/en/rational-soft-arch/9.6.1?topic=model-lesson-13-identify-actors">actors can be computer systems as well as human users</a>.</p>
+<p>The example below visualizes a “card transaction” process:</p>
 <p class="plantuml">
-<img src="_images/plantuml-9ed41322ea4656e538ea3831f13f1f1e54b32f11.png" alt="&#64;startuml
+<img src="_images/plantuml-10f6d7aacb016f5e6a1eab047093848e68cf476a.png" alt="&#64;startuml
 
 actor Customer
 actor Shop
 actor PaymentService
-package CardPayment {
+package CardTransaction {
     usecase &quot;Checkout&quot; as UC1
     usecase &quot;Payment&quot; as UC2
     UC1 .&gt; UC2 :include
@@ -371,7 +368,7 @@ PaymentService --&gt; UC2
 
 &#64;enduml"/>
 </p>
-<p>This was generated with the PlantUML code snippet</p>
+<p>This was generated with the following PlantUML code snippet:</p>
 <div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
 
 actor Customer
@@ -393,7 +390,9 @@ PaymentService --&gt; UC2
 <section id="example-github-game">
 <h2>Example: GitHub Game<a class="headerlink" href="#example-github-game" title="Permalink to this heading">#</a></h2>
 <p>As an exmple, let’s model an educational game which challenges users with questions about coding practices based on Github repositories.</p>
-<p>With the PlantUML code snippet shown below</p>
+<p>To this end, we create the following <em>sequence diagram</em> showing interaction steps  (<a class="reference external" href="http://www.plantuml.com/plantuml/uml/ROynJWGn34NxdCBQ7j5lWPOABi01F8Dd9v9ZcyG6iQSdaqW814sYn4_F_r-QO_Ked31S9Sf2DILSNIkyDAg03QBVoJgMrsme3gT7CyuhUbOv7GIQ_GQUiZ_7CcRNx7iiAR6gGOXd7a8WUMq90ERhxk6Gd67TaPdaIb3fBQZvGFhe8ARg30sBCG5sndG0S_9jgUHH1NodWK2MJMiPUN_unkOpMDnkJEDVr0cODWVTfcbao2g0YuR3bfdyqwZTiyx-_tH0QHzK_owYT-IO8NfvI9T-Hk4l">test it live here</a>):</p>
+<p><img alt="GitHub educational game" src="http://www.plantuml.com/plantuml/proxy?cache=no&amp;src=https://raw.githubusercontent.com/maciejskorski/software_engineering/main/docs/figures/diagrams/game_github.iuml" /></p>
+<p>The corresponding PlantUML code snippet is</p>
 <div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
 autonumber
 
@@ -415,8 +414,6 @@ end
 @enduml
 </pre></div>
 </div>
-<p>we create the following <em>sequence diagram</em> showing interaction steps  (<a class="reference external" href="http://www.plantuml.com/plantuml/uml/ROynJWGn34NxdCBQ7j5lWPOABi01F8Dd9v9ZcyG6iQSdaqW814sYn4_F_r-QO_Ked31S9Sf2DILSNIkyDAg03QBVoJgMrsme3gT7CyuhUbOv7GIQ_GQUiZ_7CcRNx7iiAR6gGOXd7a8WUMq90ERhxk6Gd67TaPdaIb3fBQZvGFhe8ARg30sBCG5sndG0S_9jgUHH1NodWK2MJMiPUN_unkOpMDnkJEDVr0cODWVTfcbao2g0YuR3bfdyqwZTiyx-_tH0QHzK_owYT-IO8NfvI9T-Hk4l">test it live here</a>):</p>
-<p><img alt="GitHub educational game" src="http://www.plantuml.com/plantuml/proxy?cache=no&amp;src=https://raw.githubusercontent.com/maciejskorski/software_engineering/main/docs/figures/diagrams/game_github.iuml" /></p>
 <p>A very similar diagram is created by Mermaid, with slightly different syntax  (<a class="reference external" href="https://mermaid.live/edit#pako:eNp1UsFqwzAM_RXhc8fuORQGg-0-dstFcZTE4MieLW20pf8-O2mWQplO5r3H05Pki7GhJ9OYTF9KbOnV4ZhwbhlKoUpgnTtKLd8QKyGBZkqAGT5zZSoeMYmzLiILYIyVfInRO4viAj9qRieTdlX25uRdu83fhxBBWZxfmxD3eWVqLdDT8VhbNGAn9J54JEg1fJZdWCNU3dqmgYxz9ARYlDHssluKP8dEoolBJlqE4HgIab4b4d67hmkg6vnsaWc5CIGnQSAMq-kSrTgAdkEFBudJTpHysw_rdv4dEDn_bAt-7Ezf6PUuW1mVOZiZSmDXl4teKtyaMsxMrWnKs6cB1UtrWr4Wab3ux4mtaSQpHYzGHmX7ACt4_QUfk7MV">test it live here</a>).</p>
 <div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>sequenceDiagram
     autonumber

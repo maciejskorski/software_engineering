@@ -7,13 +7,10 @@ For more on UML modelling, see dedicated courses like [here](https://nus-cs2103-
 
 ## Example: Card Payment
 
-User stories are best illustrated with (high-level) *use-case diagram*, which visualize how actors interract with a system to accomplish some actions.
+User stories are best illustrated with (high-level) *use-case diagram*, which visualize how actors interract with a system to accomplish some actions. Note
+that [actors can be computer systems as well as human users](https://www.ibm.com/docs/en/rational-soft-arch/9.6.1?topic=model-lesson-13-identify-actors).
 
-```{note}
-[Actors can be computer systems as well as human users](https://www.ibm.com/docs/en/rational-soft-arch/9.6.1?topic=model-lesson-13-identify-actors).
-```
-
-The example below visualizes a "card payment" process.
+The example below visualizes a "card transaction" process:
 
 ```{uml}
 @startuml
@@ -21,7 +18,7 @@ The example below visualizes a "card payment" process.
 actor Customer
 actor Shop
 actor PaymentService
-package CardPayment {
+package CardTransaction {
     usecase "Checkout" as UC1
     usecase "Payment" as UC2
     UC1 .> UC2 :include
@@ -33,7 +30,7 @@ PaymentService --> UC2
 @enduml
 ```
 
-This was generated with the PlantUML code snippet
+This was generated with the following PlantUML code snippet:
 ```plantuml
 @startuml
 
@@ -58,7 +55,11 @@ PaymentService --> UC2
 
 As an exmple, let's model an educational game which challenges users with questions about coding practices based on Github repositories.
 
-With the PlantUML code snippet shown below
+To this end, we create the following *sequence diagram* showing interaction steps  ([test it live here](http://www.plantuml.com/plantuml/uml/ROynJWGn34NxdCBQ7j5lWPOABi01F8Dd9v9ZcyG6iQSdaqW814sYn4_F_r-QO_Ked31S9Sf2DILSNIkyDAg03QBVoJgMrsme3gT7CyuhUbOv7GIQ_GQUiZ_7CcRNx7iiAR6gGOXd7a8WUMq90ERhxk6Gd67TaPdaIb3fBQZvGFhe8ARg30sBCG5sndG0S_9jgUHH1NodWK2MJMiPUN_unkOpMDnkJEDVr0cODWVTfcbao2g0YuR3bfdyqwZTiyx-_tH0QHzK_owYT-IO8NfvI9T-Hk4l)):
+
+![GitHub educational game](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/maciejskorski/software_engineering/main/docs/figures/diagrams/game_github.iuml)
+
+The corresponding PlantUML code snippet is
 
 ```plantuml
 @startuml
@@ -81,9 +82,6 @@ loop until user ends
 end 
 @enduml
 ```
-we create the following *sequence diagram* showing interaction steps  ([test it live here](http://www.plantuml.com/plantuml/uml/ROynJWGn34NxdCBQ7j5lWPOABi01F8Dd9v9ZcyG6iQSdaqW814sYn4_F_r-QO_Ked31S9Sf2DILSNIkyDAg03QBVoJgMrsme3gT7CyuhUbOv7GIQ_GQUiZ_7CcRNx7iiAR6gGOXd7a8WUMq90ERhxk6Gd67TaPdaIb3fBQZvGFhe8ARg30sBCG5sndG0S_9jgUHH1NodWK2MJMiPUN_unkOpMDnkJEDVr0cODWVTfcbao2g0YuR3bfdyqwZTiyx-_tH0QHzK_owYT-IO8NfvI9T-Hk4l)):
-
-![GitHub educational game](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/maciejskorski/software_engineering/main/docs/figures/diagrams/game_github.iuml)
 
 A very similar diagram is created by Mermaid, with slightly different syntax  ([test it live here](https://mermaid.live/edit#pako:eNp1UsFqwzAM_RXhc8fuORQGg-0-dstFcZTE4MieLW20pf8-O2mWQplO5r3H05Pki7GhJ9OYTF9KbOnV4ZhwbhlKoUpgnTtKLd8QKyGBZkqAGT5zZSoeMYmzLiILYIyVfInRO4viAj9qRieTdlX25uRdu83fhxBBWZxfmxD3eWVqLdDT8VhbNGAn9J54JEg1fJZdWCNU3dqmgYxz9ARYlDHssluKP8dEoolBJlqE4HgIab4b4d67hmkg6vnsaWc5CIGnQSAMq-kSrTgAdkEFBudJTpHysw_rdv4dEDn_bAt-7Ezf6PUuW1mVOZiZSmDXl4teKtyaMsxMrWnKs6cB1UtrWr4Wab3ux4mtaSQpHYzGHmX7ACt4_QUfk7MV)).
 
