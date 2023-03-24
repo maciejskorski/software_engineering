@@ -372,22 +372,6 @@ document.write(`
 <h2>Git Workflow<a class="headerlink" href="#git-workflow" title="Permalink to this heading">#</a></h2>
 <p>The recommended collaborative work strategy is to follow <a class="reference external" href="https://docs.github.com/en/get-started/quickstart/github-flow">github flow</a>.</p>
 <p>Roughly speaking, developers <em>work on tasks in dedicated branches</em> and <em>integrate with main branch via reviewed pull requests</em> once a feature or a bug fix is ready.</p>
-<div class="highlight-uml notranslate"><div class="highlight"><pre><span></span>@startuml
-start
-:task;
-:dedicated branch;
-:code the feature;
-:pull request;
-repeat 
-    :review;
-    :address comments;
-repeat while (approved?) is (no)
--&gt; yes;
-:merge into main;
-stop
-@enduml
-</pre></div>
-</div>
 </section>
 </section>
 
