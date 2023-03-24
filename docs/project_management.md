@@ -4,13 +4,22 @@ Jira (also in its free plan) allows teams to organise tasks in sprints, track an
 
 During this class we will create a backlog of tasks, assign them to project memebers and map them to sprints.
 
+## User stories
+
 ```{note}
 [Stories/tasks should occupy one sprint](https://community.atlassian.com/t5/Jira-Software-questions/Jira-Roadmaps-how-to-extend-stories-across-multiple-sprints/qaq-p/1793636).
-
-Remember the [INVEST](https://www.agilealliance.org/glossary/invest/) acronym: a story is *I*ndependent, *N*egotiable, *V*aluable, *E*stimable, *S*mall and *T*estable.
-
-The common pattern of a story: `As a {user/role} I need {functionality} so that {benefit}`.
 ```
+
+What makes a good story is well-expressed by the [INVEST](https://www.agilealliance.org/glossary/invest/) acronym: a story is *I*ndependent, *N*egotiable, *V*aluable, *E*stimable, *S*mall and *T*estable.
+
+The common pattern of a story is:
+>As a {role} I need {functionality} so that {benefit}`.
+
+For example:
+
+> As a teaching assitance I need to prepare good materials so that I help my students to pass exams.
+
+## Configuring Jira
 
 See this roadmap with tasks mapped to sprints:
 
@@ -20,6 +29,7 @@ Jira offers a lot of configurable features. Under the project settings you can e
 
 ![configuring_jira](figures/Jira_configuration.png)
 
+## Git Workflow
 
 The recommended collaborative work strategy is to follow [github flow](https://docs.github.com/en/get-started/quickstart/github-flow).
 
