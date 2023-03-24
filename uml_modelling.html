@@ -325,6 +325,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-card-payment">Example: Card Payment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-github-game">Example: GitHub Game</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-web-app-by-model-view-controller">Example: Web App by Model-View-Controller</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-examples">More examples</a></li>
@@ -341,10 +342,31 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="class-5-modelling-with-uml-diagrams">
 <h1>Class 5: Modelling with UML diagrams<a class="headerlink" href="#class-5-modelling-with-uml-diagrams" title="Permalink to this heading">#</a></h1>
-<p>UML diagrams can be created by many tools. Those into graphic design may like drawing tools like <a class="reference external" href="https://www.diagrams.net/">diagrams.net</a>,
-while developers should appreciate <em>diagrams created from markup descriptions</em> with <a class="reference external" href="https://plantuml.com/">PlantUML</a> or simplistic <a class="reference external" href="https://mermaid.js.org/">Mermaid</a>.
+<p>UML diagrams are used to illustrate broadly understood <em>systems</em>, such as architectures, state dynamics or workflows. They are many tools to draw them: those into graphic design may like drawing tools like <a class="reference external" href="https://www.diagrams.net/">diagrams.net</a>,
+while developers should appreciate <em>diagrams created from markup descriptions</em> by <a class="reference external" href="https://plantuml.com/">PlantUML</a> or by more simplistic <a class="reference external" href="https://mermaid.js.org/">Mermaid</a>.
 It is worth looking into examples shared online, see in particular <a class="reference external" href="https://real-world-plantuml.com/">https://real-world-plantuml.com/</a> or <a class="reference external" href="https://www.planttext.com/">https://www.planttext.com/</a>.
 For more on UML modelling, see dedicated courses like <a class="reference external" href="https://nus-cs2103-ay1718s2.github.io/website/book/uml/">here</a> or <a class="reference external" href="https://www.uml-diagrams.org/">here</a>.</p>
+<section id="example-card-payment">
+<h2>Example: Card Payment<a class="headerlink" href="#example-card-payment" title="Permalink to this heading">#</a></h2>
+<p>The <em>use-case diagram</em> below shows actors and interactions in the “CardPayment” system. Note that <a class="reference external" href="https://www.ibm.com/docs/en/rational-soft-arch/9.6.1?topic=model-lesson-13-identify-actors">actors can be computer systems as well as human users</a>.</p>
+<p class="plantuml">
+<img src="_images/plantuml-9ed41322ea4656e538ea3831f13f1f1e54b32f11.png" alt="&#64;startuml
+
+actor Customer
+actor Shop
+actor PaymentService
+package CardPayment {
+    usecase &quot;Checkout&quot; as UC1
+    usecase &quot;Payment&quot; as UC2
+    UC1 .&gt; UC2 :include
+}
+Customer --&gt; UC1
+Shop--&gt; UC1
+PaymentService --&gt; UC2
+
+&#64;enduml"/>
+</p>
+</section>
 <section id="example-github-game">
 <h2>Example: GitHub Game<a class="headerlink" href="#example-github-game" title="Permalink to this heading">#</a></h2>
 <p>As an exmple, let’s model an educational game which challenges users with questions about coding practices based on Github repositories.</p>
@@ -512,6 +534,7 @@ deactivate user
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-card-payment">Example: Card Payment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-github-game">Example: GitHub Game</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-web-app-by-model-view-controller">Example: Web App by Model-View-Controller</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-examples">More examples</a></li>

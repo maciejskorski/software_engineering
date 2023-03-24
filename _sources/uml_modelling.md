@@ -1,9 +1,33 @@
 # Class 5: Modelling with UML diagrams
 
-UML diagrams can be created by many tools. Those into graphic design may like drawing tools like [diagrams.net](https://www.diagrams.net/), 
-while developers should appreciate *diagrams created from markup descriptions* with [PlantUML](https://plantuml.com/) or simplistic [Mermaid](https://mermaid.js.org/).
+UML diagrams are used to illustrate broadly understood *systems*, such as architectures, state dynamics or workflows. They are many tools to draw them: those into graphic design may like drawing tools like [diagrams.net](https://www.diagrams.net/), 
+while developers should appreciate *diagrams created from markup descriptions* by [PlantUML](https://plantuml.com/) or by more simplistic [Mermaid](https://mermaid.js.org/).
 It is worth looking into examples shared online, see in particular https://real-world-plantuml.com/ or https://www.planttext.com/.
 For more on UML modelling, see dedicated courses like [here](https://nus-cs2103-ay1718s2.github.io/website/book/uml/) or [here](https://www.uml-diagrams.org/).
+
+## Example: Card Payment
+
+The *use-case diagram* below shows actors and interactions in the "CardPayment" system. Note that [actors can be computer systems as well as human users](https://www.ibm.com/docs/en/rational-soft-arch/9.6.1?topic=model-lesson-13-identify-actors).
+
+```{uml}
+@startuml
+
+actor Customer
+actor Shop
+actor PaymentService
+package CardPayment {
+    usecase "Checkout" as UC1
+    usecase "Payment" as UC2
+    UC1 .> UC2 :include
+}
+Customer --> UC1
+Shop--> UC1
+PaymentService --> UC2
+
+@enduml
+```
+
+
 
 ## Example: GitHub Game
 
