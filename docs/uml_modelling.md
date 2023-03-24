@@ -7,7 +7,13 @@ For more on UML modelling, see dedicated courses like [here](https://nus-cs2103-
 
 ## Example: Card Payment
 
-The *use-case diagram* below shows actors and interactions in the "CardPayment" system. Note that [actors can be computer systems as well as human users](https://www.ibm.com/docs/en/rational-soft-arch/9.6.1?topic=model-lesson-13-identify-actors).
+User stories are best illustrated with (high-level) *use-case diagram*, which visualize how actors interract with a system to accomplish some actions.
+
+```{note}
+[Actors can be computer systems as well as human users](https://www.ibm.com/docs/en/rational-soft-arch/9.6.1?topic=model-lesson-13-identify-actors).
+```
+
+The example below visualizes a "card payment" process.
 
 ```{uml}
 @startuml
