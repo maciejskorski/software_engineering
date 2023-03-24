@@ -51,3 +51,5 @@ repeat while (approved?) is (no)
 stop
 @enduml
 ```
+
+This was a merkdown.
