@@ -37,7 +37,6 @@ Roughly speaking, developers *work on tasks in dedicated branches* and *integrat
 
 ```{uml}
 @startuml
-left to right direction
 start
 :task;
 :dedicated branch;
