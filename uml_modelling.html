@@ -366,6 +366,24 @@ PaymentService --&gt; UC2
 
 &#64;enduml"/>
 </p>
+<p>This was generated with the PlantUML code snippet</p>
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
+
+actor Customer
+actor Shop
+actor PaymentService
+package CardPayment {
+    usecase &quot;Checkout&quot; as UC1
+    usecase &quot;Payment&quot; as UC2
+    UC1 .&gt; UC2 :include
+}
+Customer --&gt; UC1
+Shop--&gt; UC1
+PaymentService --&gt; UC2
+
+@enduml
+</pre></div>
+</div>
 </section>
 <section id="example-github-game">
 <h2>Example: GitHub Game<a class="headerlink" href="#example-github-game" title="Permalink to this heading">#</a></h2>

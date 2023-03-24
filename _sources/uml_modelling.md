@@ -27,6 +27,25 @@ PaymentService --> UC2
 @enduml
 ```
 
+This was generated with the PlantUML code snippet
+```plantuml
+@startuml
+
+actor Customer
+actor Shop
+actor PaymentService
+package CardPayment {
+    usecase "Checkout" as UC1
+    usecase "Payment" as UC2
+    UC1 .> UC2 :include
+}
+Customer --> UC1
+Shop--> UC1
+PaymentService --> UC2
+
+@enduml
+```
+
 
 
 ## Example: GitHub Game
