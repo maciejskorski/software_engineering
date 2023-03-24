@@ -11,7 +11,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install jupyter-book
-          pip install sphinxcontrib-mermaid
           pip install sphinxcontrib-plantuml
       - name: Compile Docs
         run: |

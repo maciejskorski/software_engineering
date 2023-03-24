@@ -13,5 +13,4 @@ html:
 
 sphinx:
   extra_extensions:
-    - sphinxcontrib.mermaid
     - sphinxcontrib.plantuml
