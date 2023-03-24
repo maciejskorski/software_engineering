@@ -304,7 +304,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -320,6 +322,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-stories">User stories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-jira">Configuring Jira</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-workflow">Git Workflow</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -333,18 +345,34 @@ document.write(`
 <h1>Class 4: Software project management<a class="headerlink" href="#class-4-software-project-management" title="Permalink to this heading">#</a></h1>
 <p>Jira (also in its free plan) allows teams to organise tasks in sprints, track and document the progress.</p>
 <p>During this class we will create a backlog of tasks, assign them to project memebers and map them to sprints.</p>
+<section id="user-stories">
+<h2>User stories<a class="headerlink" href="#user-stories" title="Permalink to this heading">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><a class="reference external" href="https://community.atlassian.com/t5/Jira-Software-questions/Jira-Roadmaps-how-to-extend-stories-across-multiple-sprints/qaq-p/1793636">Stories/tasks should occupy one sprint</a>.</p>
-<p>Remember the <a class="reference external" href="https://www.agilealliance.org/glossary/invest/">INVEST</a> acronym: a story is <em>I</em>ndependent, <em>N</em>egotiable, <em>V</em>aluable, <em>E</em>stimable, <em>S</em>mall and <em>T</em>estable.</p>
-<p>The common pattern of a story: <code class="docutils literal notranslate"><span class="pre">As</span> <span class="pre">a</span> <span class="pre">{user/role}</span> <span class="pre">I</span> <span class="pre">need</span> <span class="pre">{functionality}</span> <span class="pre">so</span> <span class="pre">that</span> <span class="pre">{benefit}</span></code>.</p>
 </div>
+<p>What makes a good story is well-expressed by the <a class="reference external" href="https://www.agilealliance.org/glossary/invest/">INVEST</a> acronym: a story is <em>I</em>ndependent, <em>N</em>egotiable, <em>V</em>aluable, <em>E</em>stimable, <em>S</em>mall and <em>T</em>estable.</p>
+<p>The common pattern of a story is:</p>
+<blockquote>
+<div><p>As a {role} I need {functionality} so that {benefit}`.</p>
+</div></blockquote>
+<p>For example:</p>
+<blockquote>
+<div><p>As a teaching assitance I need to prepare good materials so that I help my students to pass exams.</p>
+</div></blockquote>
+</section>
+<section id="configuring-jira">
+<h2>Configuring Jira<a class="headerlink" href="#configuring-jira" title="Permalink to this heading">#</a></h2>
 <p>See this roadmap with tasks mapped to sprints:</p>
 <p><img alt="planned_tasks" src="_images/class_harmonogram.png" /></p>
 <p>Jira offers a lot of configurable features. Under the project settings you can enable reporting modules, adjust notifications, and so on.</p>
 <p><img alt="configuring_jira" src="_images/Jira_configuration.png" /></p>
+</section>
+<section id="git-workflow">
+<h2>Git Workflow<a class="headerlink" href="#git-workflow" title="Permalink to this heading">#</a></h2>
 <p>The recommended collaborative work strategy is to follow <a class="reference external" href="https://docs.github.com/en/get-started/quickstart/github-flow">github flow</a>.</p>
 <p>Roughly speaking, a developer is <em>working on tasks in dedicated branches</em> and <em>integrates via reviewed pull requests</em> once a feature or a bug fix is ready.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -399,6 +427,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-stories">User stories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-jira">Configuring Jira</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-workflow">Git Workflow</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

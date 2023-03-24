@@ -11,7 +11,7 @@ As an exmple, let's model an educational game which challenges users with questi
 
 With the PlantUML code snippet shown below
 
-```
+```plantuml
 @startuml
 autonumber
 
@@ -113,3 +113,4 @@ and renders as follows
 * [an overview of various diagrams for an ATM system](https://github.com/mehedi9339/UML-Diagrams---ATM-System/blob/master/ATM%20System.pdf)
 * [a research paper of modelling ETL processes](https://www.sciencedirect.com/science/article/pii/S0950584910001023)
 * [an article the Model-View-Controller (MVC) Framework](https://www.cybermedian.com/what-is-model-view-controller-mvc-framework-model-mvc-with-uml-robustness-analysis/)
+* [PlantUML documentation](https://plantuml-documentation.readthedocs.io/)

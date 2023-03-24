@@ -351,25 +351,25 @@ For more on UML modelling, see dedicated courses like <a class="reference extern
 <h2>Example: GitHub Game<a class="headerlink" href="#example-github-game" title="Permalink to this heading">#</a></h2>
 <p>As an exmple, let’s model an educational game which challenges users with questions about coding practices based on Github repositories.</p>
 <p>With the PlantUML code snippet shown below</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@startuml</span>
-<span class="n">autonumber</span>
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
+autonumber
 
-<span class="n">actor</span> <span class="n">User</span> <span class="k">as</span> <span class="n">user</span>
-<span class="n">participant</span> <span class="s2">&quot;Application&quot;</span> <span class="k">as</span> <span class="n">app</span>
-<span class="n">participant</span> <span class="s2">&quot;GitHub&quot;</span> <span class="k">as</span> <span class="n">github</span>
+actor User as user
+participant &quot;Application&quot; as app
+participant &quot;GitHub&quot; as github
 
-<span class="n">skinparam</span> <span class="n">actorStyle</span> <span class="n">awesome</span>
+skinparam actorStyle awesome
 
-<span class="n">loop</span> <span class="n">until</span> <span class="n">user</span> <span class="n">ends</span>
-    <span class="n">user</span> <span class="o">-&gt;</span> <span class="n">app</span><span class="p">:</span> <span class="n">challenge</span> <span class="n">request</span>
-    <span class="n">app</span> <span class="o">-&gt;</span> <span class="n">github</span><span class="p">:</span> <span class="n">sample</span> <span class="n">a</span> <span class="n">repo</span>
-    <span class="n">github</span> <span class="o">-&gt;</span> <span class="n">app</span><span class="p">:</span> <span class="k">return</span> <span class="n">the</span> <span class="n">repo</span> <span class="n">information</span>
-    <span class="n">app</span> <span class="o">-&gt;</span> <span class="n">user</span><span class="p">:</span> <span class="n">puzzle</span>
-    <span class="n">note</span> <span class="n">left</span> <span class="n">of</span> <span class="n">app</span><span class="p">:</span> <span class="n">question</span> <span class="n">about</span> <span class="n">filetypes</span><span class="o">/</span><span class="n">locations</span>
-    <span class="n">user</span> <span class="o">-&gt;</span> <span class="n">app</span><span class="p">:</span> <span class="n">answer</span>
-    <span class="n">app</span> <span class="o">-&gt;</span> <span class="n">user</span><span class="p">:</span> <span class="n">evaluation</span>
-<span class="n">end</span> 
-<span class="nd">@enduml</span>
+loop until user ends
+    user -&gt; app: challenge request
+    app -&gt; github: sample a repo
+    github -&gt; app: return the repo information
+    app -&gt; user: puzzle
+    note left of app: question about filetypes/locations
+    user -&gt; app: answer
+    app -&gt; user: evaluation
+end 
+@enduml
 </pre></div>
 </div>
 <p>we create the following sequence diagram (<a class="reference external" href="http://www.plantuml.com/plantuml/uml/ROynJWGn34NxdCBQ7j5lWPOABi01F8Dd9v9ZcyG6iQSdaqW814sYn4_F_r-QO_Ked31S9Sf2DILSNIkyDAg03QBVoJgMrsme3gT7CyuhUbOv7GIQ_GQUiZ_7CcRNx7iiAR6gGOXd7a8WUMq90ERhxk6Gd67TaPdaIb3fBQZvGFhe8ARg30sBCG5sndG0S_9jgUHH1NodWK2MJMiPUN_unkOpMDnkJEDVr0cODWVTfcbao2g0YuR3bfdyqwZTiyx-_tH0QHzK_owYT-IO8NfvI9T-Hk4l">test it live here</a>):</p>
@@ -448,6 +448,7 @@ deactivate user
 <li><p><a class="reference external" href="https://github.com/mehedi9339/UML-Diagrams---ATM-System/blob/master/ATM%20System.pdf">an overview of various diagrams for an ATM system</a></p></li>
 <li><p><a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0950584910001023">a research paper of modelling ETL processes</a></p></li>
 <li><p><a class="reference external" href="https://www.cybermedian.com/what-is-model-view-controller-mvc-framework-model-mvc-with-uml-robustness-analysis/">an article the Model-View-Controller (MVC) Framework</a></p></li>
+<li><p><a class="reference external" href="https://plantuml-documentation.readthedocs.io/">PlantUML documentation</a></p></li>
 </ul>
 </section>
 </section>
