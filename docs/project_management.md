@@ -33,4 +33,21 @@ Jira offers a lot of configurable features. Under the project settings you can e
 
 The recommended collaborative work strategy is to follow [github flow](https://docs.github.com/en/get-started/quickstart/github-flow).
 
-Roughly speaking, a developer is *working on tasks in dedicated branches* and *integrates via reviewed pull requests* once a feature or a bug fix is ready.
+Roughly speaking, developers *work on tasks in dedicated branches* and *integrate with main branch via reviewed pull requests* once a feature or a bug fix is ready.
+
+```uml
+@startuml
+start
+:task;
+:dedicated branch;
+:code the feature;
+:pull request;
+repeat 
+    :review;
+    :address comments;
+repeat while (approved?) is (no)
+-> yes;
+:merge into main;
+stop
+@enduml
+```
