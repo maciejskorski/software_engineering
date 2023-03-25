@@ -348,13 +348,13 @@ It is worth looking into examples shared online, see in particular <a class="ref
 For more on UML modelling, see dedicated courses like <a class="reference external" href="https://nus-cs2103-ay1718s2.github.io/website/book/uml/">here</a> or <a class="reference external" href="https://www.uml-diagrams.org/">here</a>.</p>
 <section id="example-card-payment">
 <h2>Example: Card Payment<a class="headerlink" href="#example-card-payment" title="Permalink to this heading">#</a></h2>
-<p>User stories are best illustrated with (high-level) <em>use-case diagram</em>, which visualize how actors interract with a system to accomplish some actions. Note
+<p>Business requirements are best illustrated with (high-level) <em>use-case diagram</em>, which visualize how actors interract with a system to accomplish some actions. Note
 that <a class="reference external" href="https://www.ibm.com/docs/en/rational-soft-arch/9.6.1?topic=model-lesson-13-identify-actors">actors can be computer systems or services as well as human users</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A good use-case describes a situation bringing added value. Some events don’t have enough impact to be good use-cases, <a class="reference external" href="https://stackoverflow.com/questions/53907281/does-every-use-case-action-have-to-include-a-login/53908056#53908056">see this discussion on user logging</a>.</p>
 </div>
-<p>The example below visualizes a we application which <em>visualizes/summarizes extracted content</em> to its users</p>
+<p>The example below visualizes a we application which <em>visualizes/summarizes extracted content</em> to its users. Note that, in this case, daily data update is considered an added value inedendent of visualization.</p>
 <p class="plantuml">
 <img src="_images/plantuml-97feda19c5a20bd16ca74ebc119ca1b3ab9b88f7.png" alt="&#64;startuml
 
@@ -380,17 +380,22 @@ UC2 .&gt; UC1: extend
 <p>This was generated with the following PlantUML code snippet:</p>
 <div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
 
-actor Customer
-actor Shop
-actor PaymentService
-package CardPayment {
-    usecase &quot;Checkout&quot; as UC1
-    usecase &quot;Payment&quot; as UC2
-    UC1 .&gt; UC2 :include
+actor &quot;User&quot; as user
+actor &quot;Information Service&quot; as web
+package &quot;Web Application&quot; as webapp {
+    usecase &quot;Search Data&quot; as UC1
+    usecase &quot;Visualize Data&quot; as UC2
+    usecase &quot;Update Data&quot; as UC3
 }
-Customer --&gt; UC1
-Shop--&gt; UC1
-PaymentService --&gt; UC2
+
+user -- UC1
+web -- UC3
+note bottom of UC3: extract by scraping daily
+note bottom of UC2: show statistics
+note bottom of UC1: advanced search
+
+UC1 .&gt; UC3: include
+UC2 .&gt; UC1: extend
 
 @enduml
 </pre></div>
