@@ -28,8 +28,7 @@ jobs:
       - name: Install sudo dependencies
         run: |
           sudo mkdir -p ./.cache/apt
-          apt-get -o Dir::Cache=".cache/apt" update
-          apt-get -o Dir::Cache=".cache/apt" install plantuml
+          sudo apt-get -o Dir::Cache=".cache/apt" install plantuml
       - run: |
           apt-config dump | grep Dir::Cache
       - name: Compile Docs
