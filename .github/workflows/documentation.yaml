@@ -14,7 +14,7 @@ jobs:
       - name: cache Python dependencies
         uses: actions/cache@v3
         env:
-            cache-name: cache-pip-dependencies
+            cache-name: cache-dependencies
         with:
           path: | 
             .venv
