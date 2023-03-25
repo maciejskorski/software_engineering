@@ -18,7 +18,6 @@ jobs:
         with:
           path: | 
             .venv
-            /var/cache/apt/archives
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('.github/workflows/*') }}
       - name: Install dependencies
         run: |
