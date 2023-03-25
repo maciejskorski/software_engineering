@@ -38,4 +38,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./docs/_build/html
-          #destination_dir: docs # match the GitHub Pages repo settings
