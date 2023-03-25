@@ -18,4 +18,3 @@ UC1 .> UC3: include
 UC2 .> UC1: extend
 
 @enduml
-
