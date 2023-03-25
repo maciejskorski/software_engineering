@@ -11,7 +11,6 @@ jobs:
       - name: prepare virtual environment
         run: |
           python -m venv .venv
-          mkdir -p ./.apt/archives/partial
       - name: cache dependencies
         id: cache_deps
         uses: actions/cache@v3
@@ -30,6 +29,7 @@ jobs:
           pip install sphinxcontrib-plantuml
       - name: Install sudo dependencies
         run: |
+          mkdir -p .apt/archives/partial
           sudo apt-get -o Dir::Cache=".apt" update
           sudo apt-get -o Dir::Cache=".apt" install plantuml
       - run: |
