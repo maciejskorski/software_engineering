@@ -8,8 +8,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+      - name: Cache Python dependencies
+        uses: actions/cache@v3
+        env:
+            cache-name: cache-pip-dependencies
+        with:
+          path: .venv
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('docs') }}
+      - name: prepare virtual environment
+        run: |
+          python -m venv .venv
       - name: Install dependencies
         run: |
+          source .venv/bin/activate
           sudo apt-get install plantuml
           pip install jupyter-book
           pip install sphinxcontrib-plantuml
