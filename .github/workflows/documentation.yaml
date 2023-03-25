@@ -31,8 +31,8 @@ jobs:
           sudo apt-config dump | grep Dir::Cache
       - name: Install sudo dependencies
         run: |
-          mkdir -p $PWD/cache/apt/archives/partial
-          sudo chown _apt $PWD/cache/apt/archives/partial
+          mkdir -p $PWD/cache/apt/archives/partial/
+          sudo chown _apt $PWD/cache/apt/archives/partial/
           sudo apt-get -o Dir::Cache=$PWD/cache/apt install plantuml
       - name: Compile Docs
         run: |
