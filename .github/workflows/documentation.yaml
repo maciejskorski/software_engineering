@@ -32,6 +32,7 @@ jobs:
       - name: Install sudo dependencies
         run: |
           mkdir -p "$PWD/cache/apt/archives/partial/"
+          sudo chown "$PWD/cache/apt/archives/partial/"
           sudo apt-get -o Dir::Cache=$PWD/cache/apt install plantuml
       - name: Compile Docs
         run: |
