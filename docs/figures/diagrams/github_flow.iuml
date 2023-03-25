@@ -1,0 +1,18 @@
+@startuml
+start
+:task;
+:dedicated branch;
+:code the feature;
+:pull request;
+repeat 
+    :review;
+    :address comments;
+repeat while (approved?) is (no)
+-> yes;
+:merge into main;
+stop
+@enduml
+
+
+
+
