@@ -29,7 +29,8 @@ jobs:
           pip install sphinxcontrib-plantuml
       - name: Install sudo dependencies
         run: |
-          sudo apt-get -o dir::cache::archives=".cache/apt/archives" install plantuml
+          sudo apt-get update -o=Dir::Cache::archives=".cache/apt/archives"
+          sudo apt-get install plantuml
       - name: Compile Docs
         run: |
           source .venv/bin/activate
