@@ -16,8 +16,10 @@ jobs:
         env:
             cache-name: cache-pip-dependencies
         with:
-          path: .venv
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('docs/*') }}
+          path: | 
+            .venv
+            /var/cache/apt/archives
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('.github/workflows/*') }}
       - name: Install dependencies
         run: |
           source .venv/bin/activate
