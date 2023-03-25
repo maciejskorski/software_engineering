@@ -28,6 +28,9 @@ jobs:
           sudo apt-get -o dir::cache::archives=".cache/apt" install plantuml
           pip install jupyter-book
           pip install sphinxcontrib-plantuml
+      - name: install sudo dependencies
+        run: |
+          sudo apt-get install plantuml
       - name: Compile Docs
         run: |
           source .venv/bin/activate
