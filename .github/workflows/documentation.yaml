@@ -11,8 +11,7 @@ jobs:
       - name: prepare virtual environment
         run: |
           python -m venv .venv
-          mkdir .cache
-          mkdir .cache/apt
+          mkdir .apt
       - name: cache dependencies
         id: cache_deps
         uses: actions/cache@v3
