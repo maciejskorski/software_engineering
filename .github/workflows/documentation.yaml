@@ -17,7 +17,7 @@ jobs:
             cache-name: cache-pip-dependencies
         with:
           path: .venv
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('docs') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('docs/*') }}
       - name: Install dependencies
         run: |
           source .venv/bin/activate
@@ -26,7 +26,6 @@ jobs:
           pip install sphinxcontrib-plantuml
       - name: Compile Docs
         run: |
-          source .venv/bin/activate
           jupyter-book build docs
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
