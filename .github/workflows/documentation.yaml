@@ -32,6 +32,7 @@ jobs:
       - name: Install sudo dependencies
         run: |
           sudo apt-get update -o=Dir::Cache::archives=".cache/apt/"
+          apt-config dump | grep Dir::Cache
           sudo apt-get install plantuml
       - name: Compile Docs
         run: |
