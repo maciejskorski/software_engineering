@@ -26,6 +26,7 @@ jobs:
           pip install sphinxcontrib-plantuml
       - name: Compile Docs
         run: |
+          source .venv/bin/activate
           jupyter-book build docs
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
