@@ -8,24 +8,32 @@ For more on UML modelling, see dedicated courses like [here](https://nus-cs2103-
 ## Example: Card Payment
 
 User stories are best illustrated with (high-level) *use-case diagram*, which visualize how actors interract with a system to accomplish some actions. Note
-that [actors can be computer systems as well as human users](https://www.ibm.com/docs/en/rational-soft-arch/9.6.1?topic=model-lesson-13-identify-actors).
+that [actors can be computer systems or services as well as human users](https://www.ibm.com/docs/en/rational-soft-arch/9.6.1?topic=model-lesson-13-identify-actors).
+```{note}
+A good use-case describes a situation bringing added value. Some events don't have enough impact to be good use-cases, [see this discussion on user logging](https://stackoverflow.com/questions/53907281/does-every-use-case-action-have-to-include-a-login/53908056#53908056).
+```
 
-The example below visualizes a "card transaction" process:
+The example below visualizes a we application which *visualizes/summarizes extracted content* to its users
 
 ```{uml}
 @startuml
 
-actor Customer
-actor Shop
-actor PaymentService
-package CardTransaction {
-    usecase "Checkout" as UC1
-    usecase "Payment" as UC2
-    UC1 .> UC2 :include
+actor "User" as user
+actor "Information Service" as web
+package "Web Application" as webapp {
+    usecase "Search Data" as UC1
+    usecase "Visualize Data" as UC2
+    usecase "Update Data" as UC3
 }
-Customer --> UC1
-Shop--> UC1
-PaymentService --> UC2
+
+user -- UC1
+web -- UC3
+note bottom of UC3: extract by scraping daily
+note bottom of UC2: show statistics
+note bottom of UC1: advanced search
+
+UC1 .> UC3: include
+UC2 .> UC1: extend
 
 @enduml
 ```
