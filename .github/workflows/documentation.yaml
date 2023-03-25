@@ -31,6 +31,7 @@ jobs:
           sudo apt-get -o Dir::Cache::archives=".cache/apt/archives" -o Dir::Cache=".cache/apt" install plantuml
       - run: |
           echo 'Dir::Cache ".cache/apt";' | sudo tee -a /etc/apt/apt.conf
+          echo 'Dir::Cache:archives ".cache/apt/archives";' | sudo tee -a /etc/apt/apt.conf
           sudo apt-config dump | grep Dir::Cache
       - name: Compile Docs
         run: |
