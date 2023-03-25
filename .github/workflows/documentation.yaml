@@ -29,7 +29,6 @@ jobs:
           echo 'Dir::Cache ".cache/apt";' | sudo tee -a /etc/apt/apt.conf
           echo 'Dir::Cache::archives ".cache/apt/archives";' | sudo tee -a /etc/apt/apt.conf
           sudo apt-config dump | grep Dir::Cache
-          ls .cache/apt/archives
       - name: Install sudo dependencies
         run: |
           sudo mkdir -p /.cache/apt/archives/partial/
