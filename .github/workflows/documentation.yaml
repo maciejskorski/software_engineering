@@ -25,7 +25,7 @@ jobs:
         if: ${{ steps.cache_deps.outputs.cache-hit != 'true' }}
         run: |
           source .venv/bin/activate
-          sudo apt-get install plantuml
+          apt-get install plantuml
           pip install jupyter-book
           pip install sphinxcontrib-plantuml
       - name: Compile Docs
