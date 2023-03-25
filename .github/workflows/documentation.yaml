@@ -30,7 +30,7 @@ jobs:
           sudo mkdir -p /.cache/apt/archives/partial/
           sudo apt-get -o Dir::Cache::Archives="archives" -o Dir::Cache=".cache/apt" install plantuml
       - run: |
-          sudo ".cache/apt" >> /etc/apt/apt.conf
+          echo ".cache/apt" | sudo tee -a /etc/apt/apt.conf
           sudo apt-config dump | grep Dir::Cache
       - name: Compile Docs
         run: |
