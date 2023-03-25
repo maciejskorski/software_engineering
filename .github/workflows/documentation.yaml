@@ -21,7 +21,7 @@ jobs:
         with:
           path: |
             .venv 
-            /home/apt
+            .apt
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('.github/workflows/*') }}
       - name: Install python dependencies
         if: ${{ steps.cache_deps.outputs.cache-hit != 'true' }}
@@ -31,8 +31,8 @@ jobs:
           pip install sphinxcontrib-plantuml
       - name: Install sudo dependencies
         run: |
-          sudo apt-get -o dir::cache::archives="/home/apt" update
-          sudo apt-get -o dir::cache::archives="/home/apt" install plantuml
+          sudo apt-get -o dir::cache::archives=".apt" update
+          sudo apt-get -o dir::cache::archives=".apt" install plantuml
       - run: |
           apt-config dump | grep Dir::Cache
       - name: Compile Docs
