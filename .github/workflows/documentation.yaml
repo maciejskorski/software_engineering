@@ -33,7 +33,7 @@ jobs:
         run: |
           mkdir -p $PWD/cache/apt/archives/partial/
           sudo chown -R _apt $PWD/cache/apt/archives/partial/
-          sudo apt-get -o Dir::Cache=$PWD/cache/apt install plantuml
+          sudo apt-get install plantuml
       - name: Compile Docs
         run: |
           source .venv/bin/activate
