@@ -18,14 +18,14 @@ jobs:
             cache-name: cache-dependencies
         with:
           path: |
-            .venv
-            /var/cache/apt/archives
+            .venv 
+            .cache/apt
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('.github/workflows/*') }}
       - name: Install dependencies
         if: ${{ steps.cache_deps.outputs.cache-hit != 'true' }}
         run: |
           source .venv/bin/activate
-          sudo apt install plantuml
+          sudo apt-get -o dir::cache::archives=".cache/apt" install plantuml
           pip install jupyter-book
           pip install sphinxcontrib-plantuml
       - name: Compile Docs
