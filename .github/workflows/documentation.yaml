@@ -28,15 +28,16 @@ jobs:
           source .venv/bin/activate
           pip install jupyter-book
           pip install sphinxcontrib-plantuml
-          sudo mkdir -p /cache/apt/archives/partial
-          sudo apt-get install plantuml
+          sudo mkdir -p cache/apt/archives/partial
+          sudo apt-get -o Dir::Cache::archives=cache/apt/archives install plantuml
+          ls cache/apt/archives
       - name: Install sudo dependencies
         run: |
           sudo chown -Rv _apt /cache/apt/archives/partial/
           sudo dpkg -i /cache/apt/archives/*.deb
       - name: debug
         run: |
-          ls /cache/apt/archives
+          ls cache/apt/archives
       - name: Compile Docs
         run: |
           source .venv/bin/activate
