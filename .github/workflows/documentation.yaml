@@ -15,7 +15,7 @@ jobs:
             cache-name: cache-dependencies
         with:
           path: |
-            cache/apt
+            /cache/apt
             .venv 
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('.github/workflows/*') }}
       - run: |
@@ -30,7 +30,7 @@ jobs:
           pip install sphinxcontrib-plantuml
           sudo mkdir -p /cache/apt/archives/partial
           sudo apt-get -o Dir::Cache::archives=archives install plantuml
-          ls cache/apt/archives
+          ls /cache/apt/archives
       - name: Install sudo dependencies
         run: |
           sudo chown -Rv _apt /cache/apt/archives/partial/
