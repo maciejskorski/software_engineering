@@ -34,7 +34,7 @@ jobs:
       - name: Install sudo dependencies
         run: |
           sudo dpkg -i .cache/apt/archives/*.deb
-          sudo chown -Rv $(whoami) cache/apt
+          sudo chown -Rv $(whoami) .cache/apt
       - name: Compile Docs
         run: |
           source .venv/bin/activate
