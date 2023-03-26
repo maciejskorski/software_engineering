@@ -29,11 +29,11 @@ jobs:
           echo "Dir::Cache \"$PWD/.cache/apt\";" | sudo tee -a /etc/apt/apt.conf
           sudo mkdir -p .cache/apt/archives/partial
           sudo apt-get -o Dir::Cache::archives=archives install plantuml
-      - run: whereis plantuml
       - name: Install dependencies cache
         run: |
           sudo dpkg -i .cache/apt/archives/*.deb
           sudo chown -Rv $(whoami) .cache/apt
+          sudo chown -Rv $(whoami) /var/cache/apt/archives
       - name: Compile Docs
         run: |
           source .venv/bin/activate
