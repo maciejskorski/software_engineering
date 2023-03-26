@@ -26,7 +26,7 @@ jobs:
           pip install jupyter-book
           pip install sphinxcontrib-plantuml
           mkdir -p .cache/apt/archives/partial/
-          sudo apt-get -o Dir::Cache::archives=.cache/apt install plantuml
+          sudo apt-get -o Dir::Cache::archives=.cache/apt/archives install plantuml
       - run: |
           echo "Dir::Cache \".cache/apt\";" | sudo tee -a /etc/apt/apt.conf
           echo "Dir::Cache::archives \".cache/apt/archives\";" | sudo tee -a /etc/apt/apt.conf
