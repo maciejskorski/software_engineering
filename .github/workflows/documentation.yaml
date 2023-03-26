@@ -20,9 +20,6 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('.github/workflows/*') }}
       - run: |
           echo "Dir::Cache \"cache/apt\";" | sudo tee -a /etc/apt/apt.conf
-          echo "Dir::Cache::archives \"cache/apt/archives\";" | sudo tee -a /etc/apt/apt.conf
-          echo "Dir::Cache::srcpkgcache \"cache/apt/srcpkgcache.bin\";" | sudo tee -a /etc/apt/apt.conf
-          echo "Dir::Cache::pkgcache \"cache/apt/pkgcache.bin\";" | sudo tee -a /etc/apt/apt.conf
           sudo apt-config dump | grep Dir::Cache
       - name: Install python dependencies
         if: ${{ steps.cache_deps.outputs.cache-hit != 'true' }}
