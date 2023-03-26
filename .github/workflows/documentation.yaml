@@ -27,7 +27,7 @@ jobs:
           pip install sphinxcontrib-plantuml
           echo "Dir::Cache \"$PWD/.cache/apt\";" | sudo tee -a /etc/apt/apt.conf
           sudo mkdir -p .cache/apt/archives/partial
-          sudo apt-get -o Dir::Cache::archives=archives install plantuml
+          sudo apt-get install plantuml
       - name: Install dependencies cache
         run: |
           sudo dpkg -i .cache/apt/archives/*.deb
