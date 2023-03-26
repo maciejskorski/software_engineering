@@ -32,8 +32,8 @@ jobs:
           sudo apt-get install plantuml
       - name: Install sudo dependencies
         run: |
-          sudo chown -Rv _apt cache/apt/archives/partial/
-          sudo dpkg -i cache/apt/archives/*.deb
+          sudo chown -Rv _apt /cache/apt/archives/partial/
+          sudo dpkg -i /cache/apt/archives/*.deb
       - name: debug
         run: |
           ls cache/apt/archives
