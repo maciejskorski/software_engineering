@@ -15,7 +15,7 @@ jobs:
             cache-name: cache-dependencies
         with:
           path: |
-            $PWD/cache/apt
+            .cache/apt
             .venv 
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('.github/workflows/*') }}
       - name: Install python dependencies
@@ -25,21 +25,21 @@ jobs:
           source .venv/bin/activate
           pip install jupyter-book
           pip install sphinxcontrib-plantuml
-          mkdir -p $PWD/cache/apt/archives/partial/
-          sudo apt-get -o Dir::Cache::archives=$PWD/cache/apt/archives install plantuml
+          mkdir -p .cache/apt/archives/partial/
+          sudo apt-get -o Dir::Cache::archives=.cache/apt install plantuml
       - run: |
-          echo "Dir::Cache \"$PWD/cache/apt\";" | sudo tee -a /etc/apt/apt.conf
-          echo "Dir::Cache::archives \"$PWD/cache/apt/archives\";" | sudo tee -a /etc/apt/apt.conf
-          echo "Dir::Cache::srcpkgcache \"$PWD/cache/apt/srcpkgcache.bin\";" | sudo tee -a /etc/apt/apt.conf
-          echo "Dir::Cache::pkgcache \"$PWD/cache/apt/pkgcache.bin\";" | sudo tee -a /etc/apt/apt.conf
+          echo "Dir::Cache \".cache/apt\";" | sudo tee -a /etc/apt/apt.conf
+          echo "Dir::Cache::archives \".cache/apt/archives\";" | sudo tee -a /etc/apt/apt.conf
+          echo "Dir::Cache::srcpkgcache \".cache/apt/srcpkgcache.bin\";" | sudo tee -a /etc/apt/apt.conf
+          echo "Dir::Cache::pkgcache \".cache/apt/pkgcache.bin\";" | sudo tee -a /etc/apt/apt.conf
           sudo apt-config dump | grep Dir::Cache
       - name: Install sudo dependencies
         run: |
-          sudo chown -Rv _apt $PWD/cache/apt/archives/partial/
-          sudo dpkg -i $PWD/cache/apt/archives/*.deb
+          sudo chown -Rv _apt .cache/apt/archives/partial/
+          sudo dpkg -i .cache/apt/archives/*.deb
       - name: debug
         run: |
-          ls $PWD/cache/apt/archives
+          ls .cache/apt/archives
       - name: Compile Docs
         run: |
           source .venv/bin/activate
