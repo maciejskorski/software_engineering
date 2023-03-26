@@ -32,7 +32,7 @@ jobs:
           pip install jupyter-book
           pip install sphinxcontrib-plantuml
           mkdir -p cache/apt/archives/partial/
-          sudo apt-get -o Dir::Cache::archives=cache/apt/archives install plantuml
+          sudo apt-get install plantuml
       - name: Install sudo dependencies
         run: |
           sudo chown -Rv _apt cache/apt/archives/partial/
