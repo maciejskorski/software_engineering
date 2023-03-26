@@ -28,6 +28,8 @@ jobs:
       - run: |
           echo "Dir::Cache \"$PWD/cache/apt\";" | sudo tee -a /etc/apt/apt.conf
           echo "Dir::Cache::archives \"$PWD/cache/apt/archives\";" | sudo tee -a /etc/apt/apt.conf
+          echo "Dir::Cache::srcpkgcache \"$PWD/cache/apt/srcpkgcache.bin\";" | sudo tee -a /etc/apt/apt.conf
+          echo "Dir::Cache::pkgcache \"$PWD/cache/apt/pkgcache.bin\";" | sudo tee -a /etc/apt/apt.conf
           sudo apt-config dump | grep Dir::Cache
       - name: Install sudo dependencies
         run: |
