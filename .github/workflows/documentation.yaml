@@ -15,11 +15,11 @@ jobs:
             cache-name: cache-dependencies
         with:
           path: |
-            /cache/apt/archives
+            /home/cache/apt/archives
             .venv 
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('.github/workflows/*') }}
       - run: |
-          echo "Dir::Cache \"/cache/apt\";" | sudo tee -a /etc/apt/apt.conf
+          echo "Dir::Cache \"/home/cache/apt\";" | sudo tee -a /etc/apt/apt.conf
           sudo apt-config dump | grep Dir::Cache
       - name: Install python dependencies
         if: ${{ steps.cache_deps.outputs.cache-hit != 'true' }}
@@ -28,14 +28,13 @@ jobs:
           source .venv/bin/activate
           pip install jupyter-book
           pip install sphinxcontrib-plantuml
-          sudo mkdir -p /cache/apt/archives/partial
+          sudo mkdir -p /home/cache/apt/archives/partial
           sudo apt-get -o Dir::Cache::archives=archives install plantuml
-          ls /cache/apt/archives
+          ls /home/cache/apt/archives
       - name: Install sudo dependencies
         run: |
-          sudo chown -Rv _apt /cache/apt/archives
-          sudo chown -Rv /usr/bin/tar /cache/apt
-          sudo dpkg -i /cache/apt/archives/*.deb
+          sudo chown -Rv _apt /home/cache/apt/archives
+          sudo dpkg -i /home/cache/apt/archives/*.deb
       - name: Compile Docs
         run: |
           source .venv/bin/activate
