@@ -15,8 +15,8 @@ jobs:
             cache-name: cache-dependencies
         with:
           path: |
-            .venv 
             $PWD/cache/apt
+            .venv 
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('.github/workflows/*') }}
       - name: Install python dependencies
         if: ${{ steps.cache_deps.outputs.cache-hit != 'true' }}
