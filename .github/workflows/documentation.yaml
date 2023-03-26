@@ -26,14 +26,14 @@ jobs:
           pip install jupyter-book
           pip install sphinxcontrib-plantuml
       - run: |
-          echo "Dir::Cache $PWD/cache/apt;" | sudo tee -a /etc/apt/apt.conf
-          echo "Dir::Cache::archives $PWD/cache/apt/archives;" | sudo tee -a /etc/apt/apt.conf
+          echo "Dir::Cache \"$PWD/cache/apt\";" | sudo tee -a /etc/apt/apt.conf
+          echo "Dir::Cache::archives \"$PWD/cache/apt/archives\";" | sudo tee -a /etc/apt/apt.conf
           sudo apt-config dump | grep Dir::Cache
       - name: Install sudo dependencies
         run: |
           mkdir -p $PWD/cache/apt/archives/partial/
-          sudo chown -R _apt $PWD/cache/apt/archives/partial/
-          sudo chown -R _apt /home/runner/work/software_engineering/software_engineering/cache/apt/archives/partial/
+          sudo chown -Rv _apt $PWD/cache/apt/archives/partial/
+          sudo chown -Rv _apt /home/runner/work/software_engineering/software_engineering/cache/apt/archives/partial/
           sudo apt-get -o Dir::Cache::archives=$PWD/cache/apt/archives install plantuml
       - name: Compile Docs
         run: |
