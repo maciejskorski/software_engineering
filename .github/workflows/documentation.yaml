@@ -31,7 +31,7 @@ jobs:
       - run: whereis plantuml
       - name: Install dependencies cache
         run: |
-          sudo dpkg -i .cache/apt/archives/*.deb
+          sudo apt-get -o Dir::Cache::archives=archives install plantuml
           sudo chown -Rv $(whoami) .cache/apt
       - name: Compile Docs
         run: |
