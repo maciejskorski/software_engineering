@@ -33,8 +33,8 @@ jobs:
           ls .cache/apt/archives
       - name: Install sudo dependencies
         run: |
-          sudo chown -Rv _apt .cache/apt/archives
           sudo dpkg -i .cache/apt/archives/*.deb
+          sudo chown -Rv $(whoami) cache/apt
       - name: Compile Docs
         run: |
           source .venv/bin/activate
