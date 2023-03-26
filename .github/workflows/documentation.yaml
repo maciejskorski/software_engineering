@@ -19,7 +19,7 @@ jobs:
             .venv 
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('.github/workflows/*') }}
       - run: |
-          echo "Dir::Cache \"cache/apt\";" | sudo tee -a /etc/apt/apt.conf
+          echo "Dir::Cache \"/cache/apt\";" | sudo tee -a /etc/apt/apt.conf
           sudo apt-config dump | grep Dir::Cache
       - name: Install python dependencies
         if: ${{ steps.cache_deps.outputs.cache-hit != 'true' }}
@@ -36,7 +36,7 @@ jobs:
           sudo dpkg -i /cache/apt/archives/*.deb
       - name: debug
         run: |
-          ls cache/apt/archives
+          ls /cache/apt/archives
       - name: Compile Docs
         run: |
           source .venv/bin/activate
