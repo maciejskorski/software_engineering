@@ -15,7 +15,6 @@ jobs:
             cache-name: cache-dependencies
         with:
           path: |
-            /var/cache/apt/archives
             .cache/apt/archives
             .venv
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('.github/workflows/*') }}
@@ -33,7 +32,6 @@ jobs:
         run: |
           sudo dpkg -i .cache/apt/archives/*.deb
           sudo chown -Rv $(whoami) .cache/apt
-          sudo chown -Rv $(whoami) /var/cache/apt/archives
       - name: Compile Docs
         run: |
           source .venv/bin/activate
