@@ -15,7 +15,7 @@ jobs:
             cache-name: cache-dependencies
         with:
           path: |
-            /cache/apt
+            /cache/apt/archives
             .venv 
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('.github/workflows/*') }}
       - run: |
@@ -33,7 +33,8 @@ jobs:
           ls /cache/apt/archives
       - name: Install sudo dependencies
         run: |
-          sudo chown -Rv _apt /cache/apt/archives/partial/
+          sudo chown -Rv _apt /cache/apt/archives
+          sudo chown -Rv /usr/bin/tar /cache/apt
           sudo dpkg -i /cache/apt/archives/*.deb
       - name: Compile Docs
         run: |
