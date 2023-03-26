@@ -16,7 +16,7 @@ jobs:
         with:
           path: |
             .cache/apt/archives
-            .venv 
+            .venv
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('.github/workflows/*') }}
       - name: Install dependencies fresh
         if: ${{ steps.cache_deps.outputs.cache-hit != 'true' }}
@@ -28,7 +28,6 @@ jobs:
           echo "Dir::Cache \"$PWD/.cache/apt\";" | sudo tee -a /etc/apt/apt.conf
           sudo mkdir -p .cache/apt/archives/partial
           sudo apt-get -o Dir::Cache::archives=archives install plantuml
-          ls .cache/apt/archives
       - run: whereis plantuml
       - name: Install dependencies cache
         run: |
