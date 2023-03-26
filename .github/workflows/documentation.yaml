@@ -15,6 +15,7 @@ jobs:
             cache-name: cache-dependencies
         with:
           path: |
+            /var/cache/apt/archives
             .cache/apt/archives
             .venv
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('.github/workflows/*') }}
@@ -31,7 +32,7 @@ jobs:
       - run: whereis plantuml
       - name: Install dependencies cache
         run: |
-          sudo apt-get -o Dir::Cache::archives=archives install plantuml
+          sudo dpkg -i .cache/apt/archives/*.deb
           sudo chown -Rv $(whoami) .cache/apt
       - name: Compile Docs
         run: |
