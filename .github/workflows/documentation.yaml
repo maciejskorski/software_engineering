@@ -28,7 +28,6 @@ jobs:
           source .venv/bin/activate
           pip install jupyter-book
           pip install sphinxcontrib-plantuml
-          sudo mkdir -p /cache/apt/archives/partial
           sudo apt-get -o Dir::Cache::archives=archives install plantuml
           ls /cache/apt/archives
       - name: Install sudo dependencies
