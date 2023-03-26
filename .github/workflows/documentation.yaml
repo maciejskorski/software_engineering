@@ -34,7 +34,8 @@ jobs:
           mkdir -p $PWD/cache/apt/archives/partial/
           sudo chown -Rv _apt $PWD/cache/apt/archives/partial/
           sudo chown -Rv _apt /home/runner/work/software_engineering/software_engineering/cache/apt/archives/partial/
-          sudo apt-get -o Dir::Cache::archives=$PWD/cache/apt/archives install plantuml
+          sudo apt-get -o Dir::Cache::archives=$PWD/cache/apt/archives install --download-only plantuml
+          sudo dpkg -i PWD/cache/apt/archives/*.deb
       - name: debug
         run: |
           ls $PWD/cache/apt/archives
