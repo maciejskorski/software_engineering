@@ -35,6 +35,9 @@ jobs:
           sudo chown -Rv _apt $PWD/cache/apt/archives/partial/
           sudo chown -Rv _apt /home/runner/work/software_engineering/software_engineering/cache/apt/archives/partial/
           sudo apt-get -o Dir::Cache::archives=$PWD/cache/apt/archives install plantuml
+      - name: debug
+        run: |
+          ls $PWD/cache/apt/archives
       - name: Compile Docs
         run: |
           source .venv/bin/activate
