@@ -8,11 +8,8 @@ jobs:
     container: maciejskorski/jupyter-book-extentensions:latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          ls -a
       - name: Compile Docs
         run: |
-          . .venv/bin/activate
           jupyter-book build docs
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
