@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "feature/docker_image" ]
+    paths: ["Dockerfile",".github/workflows/docker-image.yaml"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: jupyter-book-gh
+      IMAGE_VERSION: latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Log in to DockerHub
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        echo "${{secrets.DOCKER_USER}}/$IMAGE_NAME:$IMAGE_VERSION"
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USER}}/$IMAGE_NAME:$IMAGE_VERSION
+    - name: Push the Docker image
+      run: docker push ${{secrets.DOCKER_USER}}/$IMAGE_NAME:$IMAGE_VERSION
