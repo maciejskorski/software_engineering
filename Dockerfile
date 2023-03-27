@@ -9,7 +9,7 @@ RUN \
     # APT packages for UML
     apt-get -y update \
     && apt-get -y install git \
-    # Python packages for Sphinx
+    # Python packages for Sphinx and UML
     && pip install jupyter-book \
     && pip install sphinxcontrib-plantuml
 
