@@ -13,6 +13,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Login to Docker
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}      
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag jupyter-book:$(date +%s)
     - name: Push the Docker image
