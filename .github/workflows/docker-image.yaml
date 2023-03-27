@@ -14,10 +14,11 @@ jobs:
     - name: Log in to DockerHub
       env:
         DOCKER_USER: ${{secrets.DOCKER_USER}}
-        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}      
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+        IMAGE_NAME: jupyter-book-env
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USER}}/jupyter-book-extentensions:latest
+      run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USER}}/$${IMAGE_NAME}:latest
     - name: Push the Docker image
-      run: docker push ${{secrets.DOCKER_USER}}/jupyter-book-extentensions:latest
+      run: docker push ${{secrets.DOCKER_USER}}/$${IMAGE_NAME}:latest
