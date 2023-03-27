@@ -8,10 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-      - name: prepare virtual environment
-        run: |
-          python -m venv .venv
-          mkdir .apt
       - name: cache dependencies
         id: cache_deps
         uses: actions/cache@v3
@@ -19,21 +15,23 @@ jobs:
             cache-name: cache-dependencies
         with:
           path: |
-            .venv 
-            .apt
+            .cache/apt/archives
+            .venv
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('.github/workflows/*') }}
-      - name: Install python dependencies
+      - name: Install dependencies fresh
         if: ${{ steps.cache_deps.outputs.cache-hit != 'true' }}
         run: |
+          python -m venv .venv
           source .venv/bin/activate
           pip install jupyter-book
           pip install sphinxcontrib-plantuml
-      - name: Install sudo dependencies
+          echo "Dir::Cache \"$PWD/.cache/apt\";" | sudo tee -a /etc/apt/apt.conf
+          sudo mkdir -p .cache/apt/archives/partial
+          sudo apt-get install plantuml
+      - name: Install dependencies cache
         run: |
-          sudo apt-get -o Dir::Cache=".apt" update
-          sudo apt-get -o Dir::Cache=".apt" install plantuml
-      - run: |
-          apt-config dump | grep Dir::Cache
+          sudo dpkg -i .cache/apt/archives/*.deb
+          sudo chown -Rv $(whoami) .cache/apt
       - name: Compile Docs
         run: |
           source .venv/bin/activate
