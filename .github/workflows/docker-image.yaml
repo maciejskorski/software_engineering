@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Docker Hub tag
     env:
       IMAGE_NAME: jupyter-book-gh
       IMAGE_VERSION: latest
