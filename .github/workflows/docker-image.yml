@@ -20,6 +20,6 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag jupyter-book:$(date +%s)
+      run: docker build . --file Dockerfile --tag v:$(date +%s)
     - name: Push the Docker image
-      run: docker push ${{secrets.DOCKER_USER}}/jupyter-book:$(date +%s)
+      run: docker push ${{secrets.DOCKER_USER}}/jupyter-book-extentensions
