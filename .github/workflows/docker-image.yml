@@ -21,4 +21,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag jupyter-book-plantuml:latest
     - name: Push the Docker image
-      run: docker push ${{secrets.DOCKER_USER}}/jupyter-book-extentensions:jupyter-book-plantuml:latest
+      run: docker push ${{secrets.DOCKER_USER}}/jupyter-book-extentensions/jupyter-book-plantuml:latest
