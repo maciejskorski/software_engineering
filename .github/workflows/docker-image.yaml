@@ -21,6 +21,6 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         echo "${{secrets.DOCKER_USER}}/$IMAGE_NAME:$IMAGE_VERSION"
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag "${{secrets.DOCKER_USER}}/$IMAGE_NAME:$IMAGE_VERSION"
+      run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USER}}/jupyter-book-gh:latest
     - name: Push the Docker image
-      run: docker push "${{secrets.DOCKER_USER}}/$IMAGE_NAME:$IMAGE_VERSION"
+      run: docker push ${{secrets.DOCKER_USER}}/jupyter-book-gh:latest
