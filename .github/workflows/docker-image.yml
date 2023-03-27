@@ -32,6 +32,6 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ steps.meta.outputs.tags }}
+        tags: maciejskorski/jupyter-book-extentensions:latest
 #    - name: Push the Docker image
 #      run: docker push ${{secrets.DOCKER_USER}}/jupyter-book-extentensions/jupyter-book-plantuml:latest
