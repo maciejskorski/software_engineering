@@ -22,4 +22,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag jupyter-book:$(date +%s)
     - name: Push the Docker image
-      run: docker push ${{secrets.DOCKER_USER}}/jupyter-book-extentensions 
+      run: docker push ${{secrets.DOCKER_USER}}/jupyter-book
