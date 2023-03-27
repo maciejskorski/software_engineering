@@ -1,0 +1,44 @@
+name: docs
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - name: cache dependencies
+        id: cache_deps
+        uses: actions/cache@v3
+        env:
+            cache-name: cache-dependencies
+        with:
+          path: |
+            .cache/apt/archives
+            .venv
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('.github/workflows/*') }}
+      - name: Install dependencies fresh
+        if: ${{ steps.cache_deps.outputs.cache-hit != 'true' }}
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install jupyter-book
+          pip install sphinxcontrib-plantuml
+          echo "Dir::Cache \"$PWD/.cache/apt\";" | sudo tee -a /etc/apt/apt.conf
+          sudo mkdir -p .cache/apt/archives/partial
+          sudo apt-get install plantuml
+      - name: Install dependencies cache
+        run: |
+          sudo dpkg -i .cache/apt/archives/*.deb
+          sudo chown -Rv $(whoami) .cache/apt
+      - name: Compile Docs
+        run: |
+          source .venv/bin/activate
+          jupyter-book build docs
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./docs/_build/html
