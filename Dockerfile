@@ -8,6 +8,7 @@ COPY Dockerfile .
 RUN \
     # APT packages for UML
     apt-get update \
+    apt-get install git \
     # Python packages for Sphinx
     && pip install jupyter-book \
     && pip install sphinxcontrib-plantuml
