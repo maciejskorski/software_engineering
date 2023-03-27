@@ -1,7 +1,9 @@
 # based on a slim image
 FROM python:3.10-slim
 
+# copy Docker file to working dir
 WORKDIR /usr/src/app
+COPY Dockerfile .
 
 RUN \
     # APT packages for UML
