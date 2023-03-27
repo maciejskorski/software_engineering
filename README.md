@@ -1,5 +1,5 @@
 ![license](https://img.shields.io/pypi/l/fpvgcc.svg?color=blue)
-![documentation](https://github.com/maciejskorski/software_engineering/actions/workflows/documentation.yaml/badge.svg)
+![documentation](https://github.com/maciejskorski/software_engineering/actions/workflows/documentation-docker.yaml/badge.svg)
 
 # Software Engineering
 
