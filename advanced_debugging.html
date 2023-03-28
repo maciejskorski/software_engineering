@@ -364,8 +364,7 @@ The environment can be created for every repo and is available as a <code class=
 Open the main file: <code class="docutils literal notranslate"><span class="pre">code/score.py</span></code>, you should see about 100 problems reported by Python linters.</p>
 <p><img alt="linter report" src="_images/linter_report.png" /></p>
 <p>Some issues are opinionated (formatting), some are breaking (missing imports in view of no install instructions).
-You can also run <code class="docutils literal notranslate"><span class="pre">pylint</span> <span class="pre">--errors-only</span> <span class="pre">--recursive=y</span> <span class="pre">code</span></code> to scan the whole code base.
-Modern linters are clever in discovering many issues, including the code logic, see this example where <a class="reference external" href="https://github.com/Pieski-Uw/Pieski-UW/actions/runs/4541474937/jobs/8003685163#step:5:29">linter warns about hanging requests</a>.</p>
+You can also run <code class="docutils literal notranslate"><span class="pre">pylint</span> <span class="pre">--errors-only</span> <span class="pre">--recursive=y</span> <span class="pre">code</span></code> to scan the whole code base.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When working with Python apps, double-check that the right environment is enabled.</p>
@@ -464,9 +463,11 @@ The workflow has to be rerun in the SSH mode from the CircleCI account, as shown
 </section>
 <section id="more-examples">
 <h2>More examples<a class="headerlink" href="#more-examples" title="Permalink to this heading">#</a></h2>
-<p>Check out this <a class="reference external" href="https://github.com/jieyu97/mvpp">implementation of ML models used in weather forecast</a>.
-Run the Python linter. What errors/bugs have you spot?</p>
-<p>TBD: more examples</p>
+<ul class="simple">
+<li><p>Check out this <a class="reference external" href="https://github.com/jieyu97/mvpp">implementation of ML models used in weather forecast</a>.
+Run the Python linter. What errors/bugs have you spot?</p></li>
+<li><p>Modern linters are clever in discovering many issues, including the code logic, see this example where <a class="reference external" href="https://github.com/Pieski-Uw/Pieski-UW/actions/runs/4541474937/jobs/8003685163#step:5:29">linter warns about hanging requests</a>.</p></li>
+</ul>
 </section>
 </section>
 

@@ -30,7 +30,6 @@ Open the main file: `code/score.py`, you should see about 100 problems reported 
 
 Some issues are opinionated (formatting), some are breaking (missing imports in view of no install instructions).
 You can also run `pylint --errors-only --recursive=y code` to scan the whole code base.
-Modern linters are clever in discovering many issues, including the code logic, see this example where [linter warns about hanging requests](https://github.com/Pieski-Uw/Pieski-UW/actions/runs/4541474937/jobs/8003685163#step:5:29).
 
 ```{note}
 When working with Python apps, double-check that the right environment is enabled.
@@ -141,7 +140,6 @@ Once the job is fixed, [confirm this by adding the status badge](https://circlec
 
 ## More examples
 
-Check out this [implementation of ML models used in weather forecast](https://github.com/jieyu97/mvpp).
+* Check out this [implementation of ML models used in weather forecast](https://github.com/jieyu97/mvpp).
 Run the Python linter. What errors/bugs have you spot?
-
-TBD: more examples
+* Modern linters are clever in discovering many issues, including the code logic, see this example where [linter warns about hanging requests](https://github.com/Pieski-Uw/Pieski-UW/actions/runs/4541474937/jobs/8003685163#step:5:29).
