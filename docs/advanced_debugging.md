@@ -30,6 +30,7 @@ Open the main file: `code/score.py`, you should see about 100 problems reported 
 
 Some issues are opinionated (formatting), some are breaking (missing imports in view of no install instructions).
 You can also run `pylint --errors-only --recursive=y code` to scan the whole code base.
+Modern linters are clever in discovering many issues, including the code logic, see this example where [linter warns about hanging requests](https://github.com/Pieski-Uw/Pieski-UW/actions/runs/4541474937/jobs/8003685163#step:5:29).
 
 ```{note}
 When working with Python apps, double-check that the right environment is enabled.
@@ -77,6 +78,7 @@ NPMI Var:0.00123
 
 Use `pip freeze > requirements.txt` to export requirements. 
 Commit this file and changes to the source code. Congrats!
+
 
 ## Debugging CircleCI with SSH
 
