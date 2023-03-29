@@ -1,6 +1,6 @@
 # Class 4: Software project management
 
-Jira (also in its free plan) allows teams to organise tasks in sprints, track and document the progress.
+[Jira in its free plan](https://www.atlassian.com/software/jira/pricing) allows small teams to organise tasks in sprints and track the work progress.
 
 During this class we will create a backlog of tasks, assign them to team memebers and map to sprints.
 
