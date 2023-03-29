@@ -2,7 +2,7 @@
 
 Jira (also in its free plan) allows teams to organise tasks in sprints, track and document the progress.
 
-During this class we will create a backlog of tasks, assign them to project memebers and map them to sprints.
+During this class we will create a backlog of tasks, assign them to team memebers and map to sprints.
 
 ## User stories
 
