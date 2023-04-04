@@ -59,7 +59,7 @@ The animation below shows how the browser react to subsequent code steps:
 
 ![selenium_showcase](figures/selenium_showcase_comments.gif)
 
-We can also wrap the code as a unit test
+We can also wrap the code as a unit test and run with [pytest](https://pytest.org):
 ```python
 # tests/test_webpage.py
 def test_webpage_search():
