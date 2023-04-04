@@ -1,10 +1,10 @@
 # Class 6: Testing Web Pages
 
-Install Selenium with `pip install selenium. 
+Install Selenium with `pip install selenium`. 
 
 ## Example 1: Test Webpage links
 
-Execute interactively (IPython) the following code snippet
+Execute interactively (IPython) the following code snippet, to test accessibility of webpage links
 ```python
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys 
@@ -37,7 +37,7 @@ See also [this Java tutorial](https://www.guru99.com/find-broken-links-selenium-
 
 ## Example 2: Test Page Search
 
-Execute interactively (IPython) the following code snippet, which tests searching the class page:
+Execute interactively (IPython) the following code snippet, to test searching the class webpage:
 ```python
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys 
