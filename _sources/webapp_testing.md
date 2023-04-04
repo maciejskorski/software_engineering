@@ -55,6 +55,13 @@ elem.send_keys(Keys.RETURN)
 assert "No results found." not in driver.page_source
 ```
 
+The animation below shows how the browser react to subsequent code steps:
+
+![selenium_showcase](figures/selenium_showcase_comments.gif)
+
+
 ## More
 
 * [Unoficial Python tutorial for Selenium](https://selenium-python.readthedocs.io/)
+
+* [Converting Chrome Timeline to GIF](https://hospodarets.com/demos/chrome-timeline-to-gif/)
