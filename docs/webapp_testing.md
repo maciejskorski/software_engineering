@@ -33,4 +33,5 @@ for link in all_links:
 
 driver.quit()
 ```
-Note: the code adapted from [this Selenium tutorial[(https://www.educative.io/answers/how-to-find-all-broken-links-using-selenium-webdriver-in-python)
+Note: the code adapted from [this Python tutorial on Selenium](https://www.educative.io/answers/how-to-find-all-broken-links-using-selenium-webdriver-in-python).
+See also [this Java tutorial](https://www.guru99.com/find-broken-links-selenium-webdriver.html).
