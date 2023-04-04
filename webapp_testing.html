@@ -388,12 +388,16 @@ See also <a class="reference external" href="https://www.guru99.com/find-broken-
 <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://maciejskorski.github.io/software_engineering&quot;</span><span class="p">)</span>
 <span class="n">elem</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span><span class="s2">&quot;search-button&quot;</span><span class="p">)</span>
 <span class="n">elem</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
-<span class="n">elem</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">NAME</span><span class="p">,</span><span class="s2">&quot;q&quot;</span><span class="p">)</span>
+<span class="n">elem</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">NAME</span><span class="p">,</span><span class="s2">&quot;q&quot;</span><span class="p">)</span> <span class="c1"># search boxes are often called &quot;q&quot;</span>
 <span class="n">elem</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s2">&quot;UML&quot;</span><span class="p">)</span>
 <span class="n">elem</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="n">Keys</span><span class="o">.</span><span class="n">RETURN</span><span class="p">)</span>
 
 <span class="k">assert</span> <span class="s2">&quot;No results found.&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">driver</span><span class="o">.</span><span class="n">page_source</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Interactive content makes scanning harder. In the above example, the search button has to be enabled with <code class="docutils literal notranslate"><span class="pre">click</span></code> before quering.</p>
 </div>
 <p>The animation below shows how the browser react to subsequent code steps:</p>
 <p><img alt="selenium_showcase" src="_images/selenium_showcase_comments.gif" /></p>
