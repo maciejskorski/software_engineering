@@ -62,6 +62,7 @@ The animation below shows how the browser react to subsequent code steps:
 We can also wrap the code as a unit test and run with [pytest](https://pytest.org):
 ```python
 # tests/test_webpage.py
+
 def test_webpage_search():
     from selenium import webdriver
     from selenium.webdriver.common.keys import Keys 
