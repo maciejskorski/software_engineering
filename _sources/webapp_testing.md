@@ -2,7 +2,7 @@
 
 Install Selenium with `pip install selenium`. 
 
-## Example 1: Test Webpage links
+## Example 1: Test webpage links
 
 Execute interactively (IPython) the following code snippet, to test accessibility of webpage links
 ```python
@@ -35,7 +35,7 @@ for link in all_links:
 Note: the code adapted from [this Python tutorial on Selenium](https://www.educative.io/answers/how-to-find-all-broken-links-using-selenium-webdriver-in-python).
 See also [this Java tutorial](https://www.guru99.com/find-broken-links-selenium-webdriver.html).
 
-## Example 2: Test Page Search
+## Example 2: Test page search
 
 Execute interactively (IPython) the following code snippet, to test searching the class webpage:
 ```python
