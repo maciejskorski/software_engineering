@@ -37,7 +37,7 @@ See also [this Java tutorial](https://www.guru99.com/find-broken-links-selenium-
 
 ## Example 2: Test Page Search
 
-Execute interactively (IPython) the following code snippet
+Execute interactively (IPython) the following code snippet, which tests searching the class page:
 ```python
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys 
