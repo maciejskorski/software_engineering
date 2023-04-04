@@ -1,6 +1,6 @@
 # Class 6: Testing Web Pages
 
-Install Selenium with `pip install selenium`. 
+Install [Selenium](https://www.selenium.dev/), a browser automation tool, with `pip install selenium`. 
 
 ## Example 1: Test webpage links
 
