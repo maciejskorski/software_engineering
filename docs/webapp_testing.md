@@ -1,6 +1,6 @@
 # Class 6: Testing Web Pages
 
-Install Selenium with `pip install selenium`, and look at this code snippet
+Install Selenium with `pip install selenium`, and execute interactively (IPython) this code snippet
 ```python
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -10,18 +10,18 @@ import requests
 # access chromedriver, may need to set its binary as trusted - remove quarantine attribute on MacOS
 driver = webdriver.Chrome()
 
-#provide website url here
+# provide website url here
 driver.get("http://demo.guru99.com/test/newtours/")
 
-#get all links
+# get all links
 all_links = driver.find_elements(By.CSS_SELECTOR,"a")
 
-#check each link if it is broken or not
+# check each link if it is broken or not
 for link in all_links:
-    #extract url from href attribute
+    # extract url from href attribute
     url = link.get_attribute('href')
 
-    #send request to the url and get the result
+    # end request to the url and get the result
     result = requests.head(url)
 
     #if status code is not 200 then print the url (customize the if condition according to the need)
