@@ -30,5 +30,7 @@ for link in all_links:
     #if status code is not 200 then print the url (customize the if condition according to the need)
     if result.status_code != 200:
         print(url, result.status_code)
+
+driver.quit()
 ```
 Note: the code adapted from [this Selenium tutorial[(https://www.educative.io/answers/how-to-find-all-broken-links-using-selenium-webdriver-in-python)
