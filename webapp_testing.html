@@ -336,11 +336,8 @@ document.write(`
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="c1"># valid on MacOS: use brew install chromedriver</span>
-<span class="n">WEBDRIVER_PATH</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;/usr/local/bin/chromedriver&quot;</span>
-
 <span class="c1"># access chromedriver, may need to set its binary as trusted - remove quarantine attribute on MacOS</span>
-<span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">WEBDRIVER_PATH</span><span class="p">)</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
 
 <span class="c1">#provide website url here</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://demo.guru99.com/test/newtours/&quot;</span><span class="p">)</span>

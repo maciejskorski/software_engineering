@@ -7,11 +7,8 @@ from selenium.webdriver.common.by import By
 import time
 import requests
 
-# valid on MacOS: use brew install chromedriver
-WEBDRIVER_PATH=r"/usr/local/bin/chromedriver"
-
 # access chromedriver, may need to set its binary as trusted - remove quarantine attribute on MacOS
-driver = webdriver.Chrome(WEBDRIVER_PATH)
+driver = webdriver.Chrome()
 
 #provide website url here
 driver.get("http://demo.guru99.com/test/newtours/")
