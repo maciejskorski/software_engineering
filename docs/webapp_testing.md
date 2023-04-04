@@ -48,11 +48,14 @@ driver = webdriver.Chrome()
 driver.get("https://maciejskorski.github.io/software_engineering")
 elem = driver.find_element(By.CLASS_NAME,"search-button")
 elem.click()
-elem = driver.find_element(By.NAME,"q")
+elem = driver.find_element(By.NAME,"q") # search boxes are often called "q"
 elem.send_keys("UML")
 elem.send_keys(Keys.RETURN)
 
 assert "No results found." not in driver.page_source
+```
+```{note}
+Interactive content makes scanning harder. In the above example, the search button has to be enabled with `click` before quering.
 ```
 
 The animation below shows how the browser react to subsequent code steps:
