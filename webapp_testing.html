@@ -330,7 +330,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="class-6-testing-web-pages">
 <h1>Class 6: Testing Web Pages<a class="headerlink" href="#class-6-testing-web-pages" title="Permalink to this heading">#</a></h1>
-<p>Install Selenium with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">selenium</span></code>, and look at this code snippet</p>
+<p>Install Selenium with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">selenium</span></code>, and execute interactively (IPython) this code snippet</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
 <span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -339,18 +339,18 @@ document.write(`
 <span class="c1"># access chromedriver, may need to set its binary as trusted - remove quarantine attribute on MacOS</span>
 <span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
 
-<span class="c1">#provide website url here</span>
+<span class="c1"># provide website url here</span>
 <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://demo.guru99.com/test/newtours/&quot;</span><span class="p">)</span>
 
-<span class="c1">#get all links</span>
+<span class="c1"># get all links</span>
 <span class="n">all_links</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CSS_SELECTOR</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
 
-<span class="c1">#check each link if it is broken or not</span>
+<span class="c1"># check each link if it is broken or not</span>
 <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">all_links</span><span class="p">:</span>
-    <span class="c1">#extract url from href attribute</span>
+    <span class="c1"># extract url from href attribute</span>
     <span class="n">url</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span>
 
-    <span class="c1">#send request to the url and get the result</span>
+    <span class="c1"># end request to the url and get the result</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
     <span class="c1">#if status code is not 200 then print the url (customize the if condition according to the need)</span>
