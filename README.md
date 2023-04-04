@@ -18,5 +18,5 @@ The materials here aim to demonstrate modern coding tools and good practices.
 * [Class 4](https://maciejskorski.github.io/software_engineering/project_management.html) *Project Planning*: Planning tasks and sprints in Jira, [GitHub flow](https://docs.github.com/en/get-started/quickstart/github-flow) paradigm.
 :warning: lab computers not available on March 21, bring your own laptops
 * [Class 5](https://maciejskorski.github.io/software_engineering/uml_modelling.html) *Unified Modeling Language*: modelling use cases, workflows, architectures
-* :new: [Class 6](https://maciejskorski.github.io/software_engineering/webapp_testing.md.html) *Testing Websites*: Selenium
+* :new: [Class 6](https://maciejskorski.github.io/software_engineering/webapp_testing.html) *Testing Websites*: Selenium
 * [Example Projects](docs/project_ideas.md): please bring your own ideas!
