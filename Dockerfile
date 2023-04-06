@@ -6,7 +6,6 @@ WORKDIR /usr/local/bin
 RUN apt-get -y update
 RUN apt-get install -y wget
 RUN wget https://sourceforge.net/projects/plantuml/files/plantuml-nodot.1.2023.5.jar/download -O plantuml.jar 
-RUN apt-get install -y libfreetype6
 COPY src/plantuml /usr/local/bin/
 COPY src/diagram.wsd .
 RUN chmod +x plantuml
@@ -23,7 +22,6 @@ RUN pip install jupyter-book
 RUN pip install sphinxcontrib-plantuml
 RUN \
     apt-get -y update \
-    && apt-get install -y libfreetype6 \
     && apt-get install -y graphviz \
     && apt-get -y install git
 
