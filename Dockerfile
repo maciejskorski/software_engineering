@@ -16,7 +16,7 @@ FROM python:3.10-slim AS python_docker
 WORKDIR /usr/local/
 COPY --from=java_docker /usr/local/ /usr/local/
 RUN echo "$(ls /usr/local/openjdk-8/bin)"
-RUN export PATH=$PATH:/usr/local/openjdk-8/bin:/usr/bin
+ENV PATH=/usr/local/openjdk-8/bin:/usr/bin
 RUN echo "$PATH"
 RUN /usr/local/openjdk-8/bin/java -version
 RUN echo "$(whereis java)"
