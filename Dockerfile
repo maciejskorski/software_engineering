@@ -10,7 +10,7 @@ RUN apt-get install -y libfreetype6
 COPY src/plantuml /usr/local/bin/
 COPY src/diagram.wsd .
 RUN chmod +x plantuml
-RUN echo "$(whereis java)"
+RUN echo "$(readlink -f $(which java)"
 
 # + Python packages for Sphinx and UML
 FROM python:3.10-slim AS python_docker
