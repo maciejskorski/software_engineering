@@ -15,14 +15,15 @@ FROM python:3.10-slim AS python
 WORKDIR /usr/src/app
 COPY --from=openjdk /usr/local/ /usr/local/
 RUN echo "$(ls /usr/local/)"
-RUN export PATH=$PATH:/usr/local/openjdk-8/bin/:/usr/bin/
+RUN export PATH=$PATH:/usr/local/openjdk-8/bin:/usr/bin
 RUN echo "$(whereis java)"
+RUN plantuml
 RUN pip install jupyter-book
 RUN pip install sphinxcontrib-plantuml
 RUN \
     apt-get -y update \
     && apt-get install -y graphviz \
     && apt-get -y install git
-RUN plantuml
+
 
 EXPOSE 8000
