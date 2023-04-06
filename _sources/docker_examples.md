@@ -1,5 +1,7 @@
 # Class 7: Using Docker
 
+## Docker to build jupyter book 
+
 The content of `Dockerfile` looks as follows:
 ```{docker}
 # use slim Python and Java Runtime Environment images 
@@ -26,6 +28,8 @@ RUN apt-get -y update \
 
 EXPOSE 8000
 ```
+
+See the [ready image on DockerHub](https://hub.docker.com/repository/docker/maciejskorski/jupyter-book-gh).
 
 
 ## More
