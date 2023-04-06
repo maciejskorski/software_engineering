@@ -4,7 +4,7 @@ FROM python:3.10-slim
 WORKDIR /usr/src/app
 RUN \
     # Python packages for Sphinx and UML
-    && pip install jupyter-book \
+    pip install jupyter-book \
     && pip install sphinxcontrib-plantuml
 
 
