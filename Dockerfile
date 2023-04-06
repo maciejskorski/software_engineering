@@ -8,6 +8,7 @@ RUN \
     apt-get -y update \
     && apt-get install default-jre -y \
     && apt-get install graphviz -y \
+    && apt-get install -y wget \
     && wget http://sourceforge.net/projects/plantuml/files/plantuml.jar/download -O plantuml.jar \
     && mv plantuml.jar /usr/bin \
     && apt-get -y install git \
