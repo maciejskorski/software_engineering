@@ -3,9 +3,8 @@
 # Python packages for Sphinx and UML
 FROM python:3.10-slim
 WORKDIR /usr/src/app
-RUN \
-    pip install jupyter-book \
-    && pip install sphinxcontrib-plantuml
+RUN pip install jupyter-book
+RUN pip install sphinxcontrib-plantuml
 
 # APT packages and JRE to plot UML
 FROM openjdk:8-jre-slim
