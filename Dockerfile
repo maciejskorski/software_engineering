@@ -6,12 +6,13 @@ WORKDIR /usr/bin
 RUN apt-get -y update
 RUN apt-get install -y wget
 RUN wget http://sourceforge.net/projects/plantuml/files/plantuml.jar/download -O plantuml.jar 
-COPY /usr/bin /usr/bin
-COPY /usr/local/openjdk-8 /usr/local/openjdk-8
 
 # Python packages for Sphinx and UML
 FROM python:3.10-slim AS python
 WORKDIR /usr/src/app
+COPY --from=openjdk /usr/bin /usr/bin
+COPY --from=openjdk /usr/local/openjdk-8 /usr/local/openjdk-8
+
 RUN pip install --user jupyter-book
 RUN pip install --user sphinxcontrib-plantuml
 RUN \
