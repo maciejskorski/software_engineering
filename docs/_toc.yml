@@ -7,4 +7,5 @@ sections:
 - file: project_management.md
 - file: uml_modelling.md
 - file: webapp_testing.md
+- file: docker_examples.md
 - file: project_ideas.md
