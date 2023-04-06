@@ -348,6 +348,31 @@ document.write(`
 <li></li>
 </ul>
 <p>The content of <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> looks as follows:</p>
+<div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="c"># use slim Python and Java Runtime Environment images </span>
+
+<span class="c"># APT packages and JRE to plot UMLs</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">openjdk:8-jre-slim</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">java_docker</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/usr/local/bin</span>
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>wget<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>wget<span class="w"> </span>https://sourceforge.net/projects/plantuml/files/plantuml-nodot.1.2023.5.jar/download<span class="w"> </span>-O<span class="w"> </span>plantuml.jar<span class="w"> </span>
+<span class="k">COPY</span><span class="w"> </span>src/plantuml<span class="w"> </span>/usr/local/bin/
+<span class="k">RUN</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>plantuml
+
+<span class="c"># + Python packages for Sphinx and UML (with dependencies)</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.10-slim</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">python_docker</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/usr/local/</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>java_docker<span class="w"> </span>/usr/local/<span class="w"> </span>/usr/local/
+<span class="k">ENV</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/openjdk-8/bin
+<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>jupyter-book<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sphinxcontrib-plantuml
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>graphviz<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>git
+
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">8000</span>
+</pre></div>
+</div>
 <p>See the <a class="reference external" href="https://hub.docker.com/repository/docker/maciejskorski/jupyter-book-gh">ready image on DockerHub</a>.</p>
 </section>
 <section id="more">
