@@ -16,7 +16,7 @@ RUN \
     && apt-get install -y graphviz \
     && apt-get install -y wget \
     && wget http://sourceforge.net/projects/plantuml/files/plantuml.jar/download -O plantuml.jar \
-    && mv plantuml.jar /usr/bin \
+    #&& mv plantuml.jar /usr/bin \
     && apt-get -y install git
 
 EXPOSE 8000
