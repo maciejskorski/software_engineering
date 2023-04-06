@@ -21,9 +21,9 @@ RUN export PATH=$PATH:/usr/local/openjdk-8/bin:/usr/bin
 RUN echo "$(whereis java)"
 RUN pip install jupyter-book
 RUN pip install sphinxcontrib-plantuml
-RUN apt-get install -y libfreetype6
 RUN \
     apt-get -y update \
+    && apt-get install -y libfreetype6 \
     && apt-get install -y graphviz \
     && apt-get -y install git
 
