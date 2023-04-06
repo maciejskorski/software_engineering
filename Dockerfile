@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 RUN \
     # APT packages for UML
     apt-get -y update \
-    && apt-get install default-jre \
+    && apt-get install default-jre -y \
     && apt-egt graphviz -y \
     && wget http://sourceforge.net/projects/plantuml/files/plantuml.jar/download -O plantuml.jar \
     && mv plantuml.jar /usr/bin \
