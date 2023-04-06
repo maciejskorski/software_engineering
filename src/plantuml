@@ -1,0 +1,4 @@
+% cat <<EOT > /usr/bin/plantuml
+#!/bin/sh -e
+java -jar /usr/bin/plantuml.jar "$@"
+EOT
