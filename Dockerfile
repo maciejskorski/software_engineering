@@ -5,16 +5,16 @@ FROM openjdk:8-jre-slim as java_docker
 WORKDIR /usr/local/bin
 RUN apt-get -y update
 RUN apt-get install -y wget
-RUN wget http://sourceforge.net/projects/plantuml/files/plantuml.jar/download -O plantuml.jar 
-COPY src/plantuml .
+RUN wget https://sourceforge.net/projects/plantuml/files/plantuml-nodot.1.2023.5.jar/download -O plantuml.jar 
+RUN apt-get install -y libfreetype6
+COPY src/plantuml /usr/local/bin/
 COPY src/diagram.wsd .
 RUN chmod +x plantuml
 RUN echo "$(whereis java)"
-RUN plantuml diagram.wsd
 
 # + Python packages for Sphinx and UML
 FROM python:3.10-slim AS python_docker
-WORKDIR /usr/src/app
+WORKDIR /usr/local/
 COPY --from=java_docker /usr/local/ /usr/local/
 RUN echo "$(ls /usr/local/)"
 RUN export PATH=$PATH:/usr/local/openjdk-8/bin:/usr/bin
