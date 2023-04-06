@@ -9,17 +9,12 @@ RUN wget https://sourceforge.net/projects/plantuml/files/plantuml-nodot.1.2023.5
 COPY src/plantuml /usr/local/bin/
 COPY src/diagram.wsd .
 RUN chmod +x plantuml
-RUN echo "$(readlink -f $(which java))"
 
 # + Python packages for Sphinx and UML
 FROM python:3.10-slim AS python_docker
 WORKDIR /usr/local/
 COPY --from=java_docker /usr/local/ /usr/local/
-RUN echo "$(ls /usr/local/openjdk-8/bin)"
-ENV PATH=/usr/local/openjdk-8/bin:/usr/bin
-RUN echo "$PATH"
-RUN /usr/local/openjdk-8/bin/java -version
-RUN echo "$(whereis java)"
+ENV PATH=$PATH:/usr/local/openjdk-8/bin
 RUN pip install jupyter-book
 RUN pip install sphinxcontrib-plantuml
 RUN \
