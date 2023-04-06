@@ -12,13 +12,12 @@ FROM python:3.10-slim AS python
 WORKDIR /usr/src/app
 COPY --from=openjdk /usr/bin /usr/bin
 COPY --from=openjdk /usr/local/openjdk-8 /usr/local/openjdk-8
-
-RUN pip install --user jupyter-book
-RUN pip install --user sphinxcontrib-plantuml
+RUN export PATH=$PATH:/usr/local/openjdk-8/bin
+RUN pip install jupyter-book
+RUN pip install sphinxcontrib-plantuml
 RUN \
     apt-get -y update \
     && apt-get install -y graphviz \
-    && apt-get -y install git \
-    && export PATH=$PATH:/usr/local/openjdk-8/bin
+    && apt-get -y install git
 
 EXPOSE 8000
