@@ -8,6 +8,7 @@ RUN apt-get install -y wget
 RUN wget http://sourceforge.net/projects/plantuml/files/plantuml.jar/download -O plantuml.jar 
 COPY src/plantuml .
 RUN chmod +x plantuml
+RUN echo "$(whereis java)"
 
 # + Python packages for Sphinx and UML
 FROM python:3.10-slim AS python
