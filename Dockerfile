@@ -1,6 +1,6 @@
 # use slim Python and Java Runtime Environment images 
 
-# APT packages and JRE to plot UML
+# APT packages and JRE to plot UMLs
 FROM openjdk:8-jre-slim as java_docker
 WORKDIR /usr/local/bin
 RUN apt-get -y update \
