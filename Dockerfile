@@ -7,9 +7,10 @@ RUN apt-get -y update
 RUN apt-get install -y wget
 RUN wget http://sourceforge.net/projects/plantuml/files/plantuml.jar/download -O plantuml.jar 
 COPY src/plantuml .
+COPY diagram.wsd .
 RUN chmod +x plantuml
 RUN echo "$(whereis java)"
-RUN plantuml
+RUN plantuml diagram.wsd
 
 # + Python packages for Sphinx and UML
 FROM python:3.10-slim AS python_docker
