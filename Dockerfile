@@ -5,7 +5,7 @@ FROM openjdk:8-jre-slim as java_docker
 WORKDIR /usr/local/bin
 RUN apt-get -y update \
     && apt-get install -y wget \
-    && wget https://sourceforge.net/projects/plantuml/files/1.2023.5/plantuml.1.2023.5.jar/download -O plantuml.jar 
+    && wget https://sourceforge.net/projects/plantuml/files/plantuml-nodot.1.2023.5.jar/download -O plantuml.jar 
 COPY src/plantuml /usr/local/bin/
 RUN chmod +x plantuml
 
@@ -17,6 +17,7 @@ ENV PATH=$PATH:/usr/local/openjdk-8/bin
 RUN pip install jupyter-book \
     && pip install sphinxcontrib-plantuml
 RUN apt-get -y update \
+    && apt-get install -y graphviz \
     && apt-get -y install git
 
 EXPOSE 8000
