@@ -8,7 +8,7 @@ RUN \
     && pip install sphinxcontrib-plantuml
 
 # APT packages and JRE to plot UML
-FROM openjdk:11.0.11-jre-slim
+FROM openjdk:8-jre-slim
 WORKDIR /usr/bin
 RUN \
     apt-get -y update \
