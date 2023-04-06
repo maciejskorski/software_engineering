@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Class 4: Software project management &#8212; Software Engineering</title>
+    <title>Class 7: Using Docker &#8212; Software Engineering</title>
   
   
   
@@ -68,11 +68,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'project_management';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docker_examples';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Class 5: Modelling with UML diagrams" href="uml_modelling.html" />
-    <link rel="prev" title="Class 3: Software project tracking" href="project_tracking.html" />
+    <link rel="next" title="Project Ideas" href="project_ideas.html" />
+    <link rel="prev" title="Class 6: Testing Web Pages" href="webapp_testing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -161,10 +161,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="modern_dev_environ.html">Class 1: Modern Development Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_debugging.html">Class 2: Advanced Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="project_tracking.html">Class 3: Software project tracking</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Class 4: Software project management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_management.html">Class 4: Software project management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uml_modelling.html">Class 5: Modelling with UML diagrams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="webapp_testing.html">Class 6: Testing Web Pages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docker_examples.html">Class 7: Using Docker</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Class 7: Using Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="project_ideas.html">Project Ideas</a></li>
 </ul>
 
@@ -235,7 +235,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/project_management.md" target="_blank"
+      <li><a href="_sources/docker_examples.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -317,7 +317,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Class 4: Software project management</h1>
+    <h1>Class 7: Using Docker</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -327,9 +327,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-stories">User stories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-jira">Configuring Jira</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-workflow">Git Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-to-build-jupyter-book">Docker to build jupyter book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a></li>
 </ul>
             </nav>
         </div>
@@ -341,53 +340,49 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="class-4-software-project-management">
-<h1>Class 4: Software project management<a class="headerlink" href="#class-4-software-project-management" title="Permalink to this heading">#</a></h1>
-<p><a class="reference external" href="https://www.atlassian.com/software/jira/pricing">Jira in its free plan</a> allows small teams to organise tasks in sprints and track the work progress.</p>
-<p>During this class we will create a backlog of tasks, assign them to team memebers and map to sprints.</p>
-<section id="user-stories">
-<h2>User stories<a class="headerlink" href="#user-stories" title="Permalink to this heading">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><a class="reference external" href="https://community.atlassian.com/t5/Jira-Software-questions/Jira-Roadmaps-how-to-extend-stories-across-multiple-sprints/qaq-p/1793636">Stories/tasks should occupy one sprint</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="class-7-using-docker">
+<h1>Class 7: Using Docker<a class="headerlink" href="#class-7-using-docker" title="Permalink to this heading">#</a></h1>
+<section id="docker-to-build-jupyter-book">
+<h2>Docker to build jupyter book<a class="headerlink" href="#docker-to-build-jupyter-book" title="Permalink to this heading">#</a></h2>
+<p>Optimization remarks:</p>
+<ul class="simple">
+<li><p>install <code class="docutils literal notranslate"><span class="pre">plantuml</span></code> <a class="reference external" href="https://blog.nillsf.com/index.php/2019/10/04/using-plantuml-to-generate-architecture-artifacts/">as a single library</a> on top of minimalistic JRE</p></li>
+<li></li>
+<li></li>
+</ul>
+<p>The content of <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> looks as follows:</p>
+<div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="c"># use slim Python and Java Runtime Environment images </span>
+
+<span class="c"># APT packages and JRE to plot UMLs</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">openjdk:8-jre-slim</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">java_docker</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/usr/local/bin</span>
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>wget<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>wget<span class="w"> </span>https://sourceforge.net/projects/plantuml/files/plantuml-nodot.1.2023.5.jar/download<span class="w"> </span>-O<span class="w"> </span>plantuml.jar<span class="w"> </span>
+<span class="k">COPY</span><span class="w"> </span>src/plantuml<span class="w"> </span>/usr/local/bin/
+<span class="k">RUN</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>plantuml
+
+<span class="c"># + Python packages for Sphinx and UML (with dependencies)</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.10-slim</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">python_docker</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/usr/local/</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>java_docker<span class="w"> </span>/usr/local/<span class="w"> </span>/usr/local/
+<span class="k">ENV</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/openjdk-8/bin
+<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>jupyter-book<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sphinxcontrib-plantuml
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>graphviz<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>git
+
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">8000</span>
+</pre></div>
 </div>
-<p>What makes a good story is well-expressed by the <a class="reference external" href="https://www.agilealliance.org/glossary/invest/">INVEST</a> acronym: a story is <em>I</em>ndependent, <em>N</em>egotiable, <em>V</em>aluable, <em>E</em>stimable, <em>S</em>mall and <em>T</em>estable.</p>
-<p>The common pattern of a story is:</p>
-<blockquote>
-<div><p>As a {role} I need {functionality} so that {benefit}`.</p>
-</div></blockquote>
-<p>For example:</p>
-<blockquote>
-<div><p>As a teaching assitance I need to prepare good materials so that I help my students to pass exams.</p>
-</div></blockquote>
+<p>See the <a class="reference external" href="https://hub.docker.com/repository/docker/maciejskorski/jupyter-book-gh">ready image on DockerHub</a>.</p>
 </section>
-<section id="configuring-jira">
-<h2>Configuring Jira<a class="headerlink" href="#configuring-jira" title="Permalink to this heading">#</a></h2>
-<p>See this roadmap with tasks mapped to sprints:</p>
-<p><img alt="planned_tasks" src="_images/class_harmonogram.png" /></p>
-<p>Jira offers a lot of configurable features. Under the project settings you can enable reporting modules, adjust notifications, and so on.</p>
-<p><img alt="configuring_jira" src="_images/Jira_configuration.png" /></p>
-</section>
-<section id="git-workflow">
-<h2>Git Workflow<a class="headerlink" href="#git-workflow" title="Permalink to this heading">#</a></h2>
-<p>The recommended collaborative work strategy is to follow <a class="reference external" href="https://docs.github.com/en/get-started/quickstart/github-flow">github flow</a>.</p>
-<p>Roughly speaking, developers <em>work on tasks in dedicated branches</em> and <em>integrate with main branch via reviewed pull requests</em>, once a feature or a bug fix is ready.</p>
-<p class="plantuml">
-<img src="_images/plantuml-8f3cf4c3feb4ca6fc600392ce1d4dec70b9a8108.png" alt="&#64;startuml
-start
-:task;
-:dedicated branch;
-:code the feature;
-:pull request;
-repeat 
-    :review;
-    :address comments;
-repeat while (approved?) is (no)
--&gt; yes;
-:merge into main;
-stop
-&#64;enduml"/>
-</p>
+<section id="more">
+<h2>More<a class="headerlink" href="#more" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>An article on <a class="reference external" href="https://testdriven.io/blog/docker-best-practices/">best docker practices</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -423,20 +418,20 @@ stop
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="project_tracking.html"
+       href="webapp_testing.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Class 3: Software project tracking</p>
+        <p class="prev-next-title">Class 6: Testing Web Pages</p>
       </div>
     </a>
     <a class="right-next"
-       href="uml_modelling.html"
+       href="project_ideas.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Class 5: Modelling with UML diagrams</p>
+        <p class="prev-next-title">Project Ideas</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -458,9 +453,8 @@ stop
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-stories">User stories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-jira">Configuring Jira</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-workflow">Git Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-to-build-jupyter-book">Docker to build jupyter book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a></li>
 </ul>
   </nav></div>
 
