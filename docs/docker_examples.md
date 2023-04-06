@@ -2,6 +2,11 @@
 
 ## Docker to build jupyter book 
 
+Optimization remarks:
+* install `plantuml` [as a single library](https://blog.nillsf.com/index.php/2019/10/04/using-plantuml-to-generate-architecture-artifacts/) on top of minimalistic JRE
+* 
+* 
+
 The content of `Dockerfile` looks as follows:
 ```{docker}
 # use slim Python and Java Runtime Environment images 
