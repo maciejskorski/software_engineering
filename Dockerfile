@@ -19,9 +19,9 @@ COPY --from=java_docker /usr/local/ /usr/local/
 RUN echo "$(ls /usr/local/openjdk-8/bin)"
 RUN export PATH=$PATH:/usr/local/openjdk-8/bin:/usr/bin
 RUN echo "$(whereis java)"
-RUN plantuml
 RUN pip install jupyter-book
 RUN pip install sphinxcontrib-plantuml
+RUN apt-get install -y libfreetype6
 RUN \
     apt-get -y update \
     && apt-get install -y graphviz \
