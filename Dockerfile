@@ -1,7 +1,7 @@
 # use slim Python and Java Runtime Environment images 
 
 # APT packages and JRE to plot UML
-FROM openjdk:8-jre-slim as openjdk
+FROM openjdk:8-jre-slim as java_docker
 WORKDIR /usr/local/bin
 RUN apt-get -y update
 RUN apt-get install -y wget
@@ -9,11 +9,12 @@ RUN wget http://sourceforge.net/projects/plantuml/files/plantuml.jar/download -O
 COPY src/plantuml .
 RUN chmod +x plantuml
 RUN echo "$(whereis java)"
+RUN plantuml
 
 # + Python packages for Sphinx and UML
-FROM python:3.10-slim AS python
+FROM python:3.10-slim AS python_docker
 WORKDIR /usr/src/app
-COPY --from=openjdk /usr/local/ /usr/local/
+COPY --from=java_docker /usr/local/ /usr/local/
 RUN echo "$(ls /usr/local/)"
 RUN export PATH=$PATH:/usr/local/openjdk-8/bin:/usr/bin
 RUN echo "$(whereis java)"
