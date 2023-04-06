@@ -3,6 +3,7 @@
 # APT packages and JRE to plot UML
 FROM openjdk:8-jre-slim as openjdk
 WORKDIR /usr/bin
+COPY src/plantuml .
 RUN apt-get -y update
 RUN apt-get install -y wget
 RUN wget http://sourceforge.net/projects/plantuml/files/plantuml.jar/download -O plantuml.jar 
