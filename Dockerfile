@@ -6,8 +6,8 @@ WORKDIR /usr/local/bin
 RUN apt-get -y update
 RUN apt-get install -y wget
 RUN wget http://sourceforge.net/projects/plantuml/files/plantuml.jar/download -O plantuml.jar 
-COPY src/plantuml plantuml
-COPY diagram.wsd diagram.wsd
+COPY src/plantuml .
+COPY src/diagram.wsd .
 RUN chmod +x plantuml
 RUN echo "$(whereis java)"
 RUN plantuml diagram.wsd
