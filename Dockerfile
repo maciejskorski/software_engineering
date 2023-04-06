@@ -1,11 +1,12 @@
-# based on a slim image
+# based on slim Python and Java Runtime Environment images
+
 FROM python:3.10-slim
 
 WORKDIR /usr/src/app
 
 RUN \
     # Python packages for Sphinx and UML
-    && pip install jupyter-book \
+    pip install jupyter-book \
     && pip install sphinxcontrib-plantuml
 
 FROM openjdk:11.0.11-jre-slim
