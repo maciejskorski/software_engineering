@@ -8,6 +8,7 @@ RUN pip install --user sphinxcontrib-plantuml
 
 # APT packages and JRE to plot UML
 FROM openjdk:8-jre-slim as openjdk
+COPY --from=python /usr/bin /usr/bin
 COPY --from=python /root/.local/bin /usr/bin
 WORKDIR /usr/bin
 RUN \
