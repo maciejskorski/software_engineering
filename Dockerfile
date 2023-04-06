@@ -17,7 +17,7 @@ WORKDIR /usr/local/
 COPY --from=java_docker /usr/local/ /usr/local/
 RUN echo "$(ls /usr/local/openjdk-8/bin)"
 RUN export PATH=$PATH:/usr/local/openjdk-8/bin:/usr/bin
-RUN echo "$(PATH)"
+RUN echo "$PATH"
 RUN /usr/local/openjdk-8/bin/java -version
 RUN echo "$(whereis java)"
 RUN pip install jupyter-book
