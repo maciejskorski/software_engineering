@@ -1,2 +1,2 @@
 #!/bin/sh -e
-/usr/local/openjdk-8/bin/java -jar /usr/local/bin/plantuml.jar "$@"
+java -jar /usr/local/bin/plantuml.jar "$@"
