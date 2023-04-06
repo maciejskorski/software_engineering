@@ -13,7 +13,8 @@ RUN echo "$(whereis java)"
 # + Python packages for Sphinx and UML
 FROM python:3.10-slim AS python
 WORKDIR /usr/src/app
-COPY --from=openjdk /usr/local /usr/local
+COPY --from=openjdk /usr/local/ /usr/local/
+RUN echo "$(ls /usr/local/)"
 RUN export PATH=$PATH:/usr/local/openjdk-8/bin/:/usr/bin/
 RUN echo "$(whereis java)"
 RUN pip install jupyter-book
