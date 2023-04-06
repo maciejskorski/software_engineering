@@ -8,7 +8,8 @@ Optimization remarks:
 * 
 
 The content of `Dockerfile` looks as follows:
-```{docker}
+
+```docker
 # use slim Python and Java Runtime Environment images 
 
 # APT packages and JRE to plot UMLs
