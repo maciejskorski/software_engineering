@@ -5,6 +5,7 @@ FROM python:3.10-slim AS python
 WORKDIR /usr/src/app
 RUN pip install --user jupyter-book
 RUN pip install --user sphinxcontrib-plantuml
+RUN whereis jupyter-book
 
 # APT packages and JRE to plot UML
 FROM openjdk:8-jre-slim as openjdk
