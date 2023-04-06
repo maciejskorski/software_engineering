@@ -4,6 +4,8 @@ on:
   push:
     branches: [ "main" ]
     paths: ["Dockerfile",".github/workflows/docker-image.yaml"]
+  workflow_dispatch:
+    
 
 jobs:
   build:
