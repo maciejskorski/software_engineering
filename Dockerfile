@@ -11,7 +11,7 @@ RUN $JAVA_HOME/bin/jlink \
          --no-man-pages \
          --no-header-files \
          --compress=2 \
-         --output /java
+         --output ./java
 ## add a Java library for plotting UMLs
 RUN apt-get -y update \
     && apt-get install -y wget \
