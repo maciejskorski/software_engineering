@@ -7,7 +7,7 @@ COPY src/plantuml .
 COPY src/diagram.wsd .
 RUN chmod +x plantuml
 RUN $JAVA_HOME/bin/jlink \
-         --add-modules java.base \
+         --add-modules java.base java.awt \
          --strip-debug \
          --no-man-pages \
          --no-header-files \
