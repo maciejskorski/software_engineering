@@ -15,7 +15,9 @@ jobs:
       IMAGE_NAME: jupyter-book-gh
       IMAGE_VERSION: simple-naive
     steps:
+    # checkout code
     - uses: actions/checkout@v3
+    # log to DockerHub
     - name: Log in to DockerHub
       env:
         DOCKER_USER: ${{secrets.DOCKER_USER}}
@@ -23,6 +25,7 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         echo "${{secrets.DOCKER_USER}}/$IMAGE_NAME:$IMAGE_VERSION"
+    # build and register the image
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USER}}/$IMAGE_NAME:$IMAGE_VERSION
     - name: Push the Docker image
