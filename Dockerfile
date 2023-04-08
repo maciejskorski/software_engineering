@@ -11,8 +11,7 @@ RUN $JAVA_HOME/bin/jlink \
          --no-man-pages \
          --no-header-files \
          --compress=2 \
-         --output ./java \
-    && chmod +x java
+         --output ./jre
 ## add a Java library for plotting UMLs
 RUN apt-get -y update \
     && apt-get install -y wget \
@@ -28,7 +27,7 @@ RUN apt-get -y update \
 FROM python:3.10-slim AS python_docker
 WORKDIR /usr/local/
 COPY --from=java_docker /usr/local/ /usr/local/
-ENV PATH=$PATH:/usr/local/bin/java
+ENV PATH=$PATH:/usr/local/bin/jre/bin
 RUN pip install jupyter-book \
     && pip install sphinxcontrib-plantuml
 RUN apt-get -y update \
