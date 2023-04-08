@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: docker-image
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
     # Docker Hub tag
     env:
       IMAGE_NAME: jupyter-book-gh
-      IMAGE_VERSION: latest
+      IMAGE_VERSION: simple-naive
     steps:
     - uses: actions/checkout@v3
     - name: Log in to DockerHub
