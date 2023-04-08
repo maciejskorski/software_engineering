@@ -10,14 +10,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # Docker Hub tag
+    # DockerHub tag - adapt accordingly!
     env:
       IMAGE_NAME: jupyter-book-gh
       IMAGE_VERSION: simple-naive
     steps:
     # checkout code
     - uses: actions/checkout@v3
-    # log to DockerHub
+    # log to DockerHub - store secrets on your GitHub account!
     - name: Log in to DockerHub
       env:
         DOCKER_USER: ${{secrets.DOCKER_USER}}
