@@ -164,6 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Class 4: Software project management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uml_modelling.html">Class 5: Modelling with UML diagrams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="webapp_testing.html">Class 6: Testing Web Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker_examples.html">Class 7: Using Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="project_ideas.html">Project Ideas</a></li>
 </ul>
 
@@ -371,22 +372,6 @@ document.write(`
 <h2>Git Workflow<a class="headerlink" href="#git-workflow" title="Permalink to this heading">#</a></h2>
 <p>The recommended collaborative work strategy is to follow <a class="reference external" href="https://docs.github.com/en/get-started/quickstart/github-flow">github flow</a>.</p>
 <p>Roughly speaking, developers <em>work on tasks in dedicated branches</em> and <em>integrate with main branch via reviewed pull requests</em>, once a feature or a bug fix is ready.</p>
-<p class="plantuml">
-<img src="_images/plantuml-8f3cf4c3feb4ca6fc600392ce1d4dec70b9a8108.png" alt="&#64;startuml
-start
-:task;
-:dedicated branch;
-:code the feature;
-:pull request;
-repeat 
-    :review;
-    :address comments;
-repeat while (approved?) is (no)
--&gt; yes;
-:merge into main;
-stop
-&#64;enduml"/>
-</p>
 </section>
 </section>
 

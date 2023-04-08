@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Class 1: Modern Development Environment &#8212; Software Engineering</title>
+    <title>Class 7: Using Docker &#8212; Software Engineering</title>
   
   
   
@@ -68,11 +68,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'modern_dev_environ';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docker_examples';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Class 2: Advanced Debugging" href="advanced_debugging.html" />
-    <link rel="prev" title="Software Engineering" href="intro.html" />
+    <link rel="next" title="Project Ideas" href="project_ideas.html" />
+    <link rel="prev" title="Class 6: Testing Web Pages" href="webapp_testing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -158,13 +158,13 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Class 1: Modern Development Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modern_dev_environ.html">Class 1: Modern Development Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_debugging.html">Class 2: Advanced Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="project_tracking.html">Class 3: Software project tracking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="project_management.html">Class 4: Software project management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uml_modelling.html">Class 5: Modelling with UML diagrams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="webapp_testing.html">Class 6: Testing Web Pages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docker_examples.html">Class 7: Using Docker</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Class 7: Using Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="project_ideas.html">Project Ideas</a></li>
 </ul>
 
@@ -235,7 +235,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/modern_dev_environ.md" target="_blank"
+      <li><a href="_sources/docker_examples.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -304,7 +304,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -315,11 +317,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Class 1: Modern Development Environment</h1>
+    <h1>Class 7: Using Docker</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-for-enhanced-jupyter-book-naive">Docker for enhanced jupyter book - Naive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-for-enhanced-jupyter-book-optimized">Docker for enhanced jupyter book - Optimized</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -329,17 +341,70 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="class-1-modern-development-environment">
-<h1>Class 1: Modern Development Environment<a class="headerlink" href="#class-1-modern-development-environment" title="Permalink to this heading">#</a></h1>
-<p>Preparation:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="class-7-using-docker">
+<h1>Class 7: Using Docker<a class="headerlink" href="#class-7-using-docker" title="Permalink to this heading">#</a></h1>
+<p>In this class we will discuss how to build and optimize docker supporting deployment of advanced documentation (Sphinx-based jupyterbook) to GitHub Pages.</p>
+<section id="docker-for-enhanced-jupyter-book-naive">
+<h2>Docker for enhanced jupyter book - Naive<a class="headerlink" href="#docker-for-enhanced-jupyter-book-naive" title="Permalink to this heading">#</a></h2>
+<div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="c"># based on a slim Python image</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.10-slim</span>
+
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/usr/src/app</span>
+
+<span class="k">RUN</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>#<span class="w"> </span>APT<span class="w"> </span>packages<span class="w"> </span><span class="k">for</span><span class="w"> </span>UML
+<span class="w">    </span>apt-get<span class="w"> </span>-y<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>plantuml<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>#<span class="w"> </span>Python<span class="w"> </span>packages<span class="w"> </span><span class="k">for</span><span class="w"> </span>Sphinx<span class="w"> </span>and<span class="w"> </span>UML
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>jupyter-book<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sphinxcontrib-plantuml
+
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">8000</span>
+</pre></div>
+</div>
+<p>This builds <a class="reference external" href="https://hub.docker.com/layers/maciejskorski/jupyter-book-gh/latest/images/sha256-6923e66b5e9f22202fde2df0276e76366ce8612a75c133b9d1f11a3a30b907fb?context=repo">the image of about ~500MB</a>, way too much!</p>
+</section>
+<section id="docker-for-enhanced-jupyter-book-optimized">
+<h2>Docker for enhanced jupyter book - Optimized<a class="headerlink" href="#docker-for-enhanced-jupyter-book-optimized" title="Permalink to this heading">#</a></h2>
+<p>Optimization remarks:</p>
 <ul class="simple">
-<li><p>Repository: Create GitHub accounts and test <a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">SSH access</a></p></li>
-<li><p>IDE: install locally <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a> and integrate with GitHub; alternatively, look into cloud-powered <a class="reference external" href="https://docs.github.com/en/codespaces/overview/">GitHub CodeSpaces</a></p></li>
-<li><p>Project templating: <a class="reference external" href="https://cookiecutter.readthedocs.io/en/1.7.0/README.html#a-pantry-full-of-cookiecutters">use Cookiecutter tool</a> to create a minimal Python or Java project.</p></li>
-<li><p>Add <a class="reference external" href="https://docs.github.com/en/actions/automating-builds-and-tests">continuous integration by GitHub Actions</a></p></li>
-<li><p>Add a <a class="reference external" href="https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge">workflow badge</a> to your repo, to confirm that it builds and tests properly!</p></li>
+<li><p>install <code class="docutils literal notranslate"><span class="pre">plantuml</span></code> <a class="reference external" href="https://blog.nillsf.com/index.php/2019/10/04/using-plantuml-to-generate-architecture-artifacts/">as a single library</a> on top of minimalistic JRE</p></li>
 </ul>
-<p>Note: the branches <code class="docutils literal notranslate"><span class="pre">template/java</span></code> and <code class="docutils literal notranslate"><span class="pre">template/python</span></code> show minimal projects in Java and Python. The Java project requires matching the right versions of JDK and Gradle.</p>
+<p>The content of <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> looks as follows:</p>
+<div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="c"># use slim Python and Java Runtime Environment images </span>
+
+<span class="c"># APT packages and JRE to plot UMLs</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">openjdk:8-jre-slim</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">java_docker</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/usr/local/bin</span>
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>wget<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>wget<span class="w"> </span>https://sourceforge.net/projects/plantuml/files/plantuml-nodot.1.2023.5.jar/download<span class="w"> </span>-O<span class="w"> </span>plantuml.jar<span class="w"> </span>
+<span class="k">COPY</span><span class="w"> </span>src/plantuml<span class="w"> </span>/usr/local/bin/
+<span class="k">RUN</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>plantuml
+
+<span class="c"># + Python packages for Sphinx and UML (with dependencies)</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.10-slim</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">python_docker</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/usr/local/</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>java_docker<span class="w"> </span>/usr/local/<span class="w"> </span>/usr/local/
+<span class="k">ENV</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/openjdk-8/bin
+<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>jupyter-book<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sphinxcontrib-plantuml
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>graphviz<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>git
+
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">8000</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://hub.docker.com/repository/docker/maciejskorski/jupyter-book-gh">ready image on DockerHub</a>.</p>
+</section>
+<section id="more">
+<h2>More<a class="headerlink" href="#more" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>An article on <a class="reference external" href="https://testdriven.io/blog/docker-best-practices/">best docker practices</a></p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -374,20 +439,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="webapp_testing.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Software Engineering</p>
+        <p class="prev-next-title">Class 6: Testing Web Pages</p>
       </div>
     </a>
     <a class="right-next"
-       href="advanced_debugging.html"
+       href="project_ideas.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Class 2: Advanced Debugging</p>
+        <p class="prev-next-title">Project Ideas</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -400,6 +465,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-for-enhanced-jupyter-book-naive">Docker for enhanced jupyter book - Naive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-for-enhanced-jupyter-book-optimized">Docker for enhanced jupyter book - Optimized</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
