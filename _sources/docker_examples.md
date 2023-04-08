@@ -1,11 +1,34 @@
 # Class 7: Using Docker
 
-## Docker to build jupyter book 
+In this class we will discuss how to build and optimize docker supporting deployment of advanced documentation (Sphinx-based jupyterbook) to GitHub Pages.
+
+## Docker for enhanced jupyter book - Naive
+
+```docker
+# based on a slim Python image
+FROM python:3.10-slim
+
+WORKDIR /usr/src/app
+
+RUN \
+    # APT packages for UML
+    apt-get -y update \
+    && apt-get -y install plantuml \
+    && apt-get -y install git \
+    # Python packages for Sphinx and UML
+    && pip install jupyter-book \
+    && pip install sphinxcontrib-plantuml
+
+EXPOSE 8000
+```
+
+This builds [the image of about ~500MB](https://hub.docker.com/layers/maciejskorski/jupyter-book-gh/latest/images/sha256-6923e66b5e9f22202fde2df0276e76366ce8612a75c133b9d1f11a3a30b907fb?context=repo), way too much!
+
+
+## Docker for enhanced jupyter book - Optimized
 
 Optimization remarks:
 * install `plantuml` [as a single library](https://blog.nillsf.com/index.php/2019/10/04/using-plantuml-to-generate-architecture-artifacts/) on top of minimalistic JRE
-* 
-* 
 
 The content of `Dockerfile` looks as follows:
 

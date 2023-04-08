@@ -327,7 +327,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-to-build-jupyter-book">Docker to build jupyter book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-for-enhanced-jupyter-book-naive">Docker for enhanced jupyter book - Naive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-for-enhanced-jupyter-book-optimized">Docker for enhanced jupyter book - Optimized</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a></li>
 </ul>
             </nav>
@@ -342,13 +343,33 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="class-7-using-docker">
 <h1>Class 7: Using Docker<a class="headerlink" href="#class-7-using-docker" title="Permalink to this heading">#</a></h1>
-<section id="docker-to-build-jupyter-book">
-<h2>Docker to build jupyter book<a class="headerlink" href="#docker-to-build-jupyter-book" title="Permalink to this heading">#</a></h2>
+<p>In this class we will discuss how to build and optimize docker supporting deployment of advanced documentation (Sphinx-based jupyterbook) to GitHub Pages.</p>
+<section id="docker-for-enhanced-jupyter-book-naive">
+<h2>Docker for enhanced jupyter book - Naive<a class="headerlink" href="#docker-for-enhanced-jupyter-book-naive" title="Permalink to this heading">#</a></h2>
+<div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="c"># based on a slim Python image</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.10-slim</span>
+
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/usr/src/app</span>
+
+<span class="k">RUN</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>#<span class="w"> </span>APT<span class="w"> </span>packages<span class="w"> </span><span class="k">for</span><span class="w"> </span>UML
+<span class="w">    </span>apt-get<span class="w"> </span>-y<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>plantuml<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>#<span class="w"> </span>Python<span class="w"> </span>packages<span class="w"> </span><span class="k">for</span><span class="w"> </span>Sphinx<span class="w"> </span>and<span class="w"> </span>UML
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>jupyter-book<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sphinxcontrib-plantuml
+
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">8000</span>
+</pre></div>
+</div>
+<p>This builds <a class="reference external" href="https://hub.docker.com/layers/maciejskorski/jupyter-book-gh/latest/images/sha256-6923e66b5e9f22202fde2df0276e76366ce8612a75c133b9d1f11a3a30b907fb?context=repo">the image of about ~500MB</a>, way too much!</p>
+</section>
+<section id="docker-for-enhanced-jupyter-book-optimized">
+<h2>Docker for enhanced jupyter book - Optimized<a class="headerlink" href="#docker-for-enhanced-jupyter-book-optimized" title="Permalink to this heading">#</a></h2>
 <p>Optimization remarks:</p>
 <ul class="simple">
 <li><p>install <code class="docutils literal notranslate"><span class="pre">plantuml</span></code> <a class="reference external" href="https://blog.nillsf.com/index.php/2019/10/04/using-plantuml-to-generate-architecture-artifacts/">as a single library</a> on top of minimalistic JRE</p></li>
-<li></li>
-<li></li>
 </ul>
 <p>The content of <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> looks as follows:</p>
 <div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="c"># use slim Python and Java Runtime Environment images </span>
@@ -453,7 +474,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-to-build-jupyter-book">Docker to build jupyter book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-for-enhanced-jupyter-book-naive">Docker for enhanced jupyter book - Naive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-for-enhanced-jupyter-book-optimized">Docker for enhanced jupyter book - Optimized</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a></li>
 </ul>
   </nav></div>
