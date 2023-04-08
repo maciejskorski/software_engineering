@@ -1,13 +1,20 @@
-@startuml Api Management in front of AKS
+@startuml
 
-title High Level Architecture - API Management in front of AKS
-
-frame VNET{
-    frame APIM-subnet{
-
-    }
-    frame AKS-subnet{
-
-    }
+actor "User" as user
+actor "Information Service" as web
+package "Web Application" as webapp {
+    usecase "Search Data" as UC1
+    usecase "Visualize Data" as UC2
+    usecase "Update Data" as UC3
 }
+
+user -- UC1
+web -- UC3
+note bottom of UC3: extract by scraping daily
+note bottom of UC2: show statistics
+note bottom of UC1: advanced search
+
+UC1 .> UC3: include
+UC2 .> UC1: extend
+
 @enduml
