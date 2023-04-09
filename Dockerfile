@@ -2,7 +2,6 @@
 FROM eclipse-temurin:11 as java_docker
 WORKDIR /usr/local/bin
 COPY src/plantuml .
-COPY src/diagram.wsd .
 RUN chmod +x plantuml
 RUN apt-get update \
     && apt-get install -y wget \
@@ -24,9 +23,7 @@ RUN pip install jupyter-book \
     sphinxcontrib-plantuml
 RUN apt-get update \
     && apt-get install -y \
-    graphviz
-
-#RUN plantuml ./bin/diagram.wsd
-#CMD ["/bin/bash"]
+    graphviz \
+    git
 
 EXPOSE 8000
