@@ -26,14 +26,14 @@ COPY --from=java_docker /usr/local/ /usr/local/
 ENV PATH=$PATH:/usr/local/bin:/usr/local/bin/jre/bin
 RUN pip install jupyter-book \
     && pip install sphinxcontrib-plantuml
-RUN apt-get -y update \
-    && apt-get install -y graphviz \
-    && apt-get -y install git
+RUN apt-get update && apt-get install -y \
+    graphviz \
+    git
 #RUN plantuml ./bin/diagram.wsd
 
 # APT packages and JRE to plot UMLs
 #FROM openjdk:8-jre-slim as 
 
-#CMD ["/bin/bash"]
+CMD ["/bin/bash"]
 
 EXPOSE 8000
