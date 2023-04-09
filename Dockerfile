@@ -1,7 +1,7 @@
 # use slim Python and Java Runtime Environment images 
 
 ## build a custom Java runtime
-FROM eclipse-temurin:15 as java_docker
+FROM eclipse-temurin:11 as java_docker
 WORKDIR /usr/local/bin
 COPY src/plantuml .
 COPY src/diagram.wsd .
