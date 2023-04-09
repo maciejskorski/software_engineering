@@ -34,6 +34,6 @@ RUN apt-get update && apt-get install -y \
 # APT packages and JRE to plot UMLs
 #FROM openjdk:8-jre-slim as 
 
-CMD ["/bin/bash"]
+#CMD ["/bin/bash"]
 
 EXPOSE 8000
