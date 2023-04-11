@@ -1,6 +1,12 @@
 # Class 7: Using Docker
 
-In this class we will discuss how to build and optimize docker supporting deployment of advanced documentation (Sphinx-based jupyterbook) to GitHub Pages.
+In this class we will discuss how to build and optimize a [docker](https://www.docker.com/) supporting creating UML diagrams a Java-based tool `plantuml`.
+
+## Automation: Build and Publish Docker with GitHub Actions
+
+* Template [this sample repository](https://github.com/maciejskorski/docker-build-push)
+* Customize [the docker workflow](https://github.com/maciejskorski/docker-build-push/blob/main/.github/workflows/docker-image.yaml) accordingly (in particular: sign up to DockerHub and for a GitHub access token)
+* Make sure that the workflow builds and publishes the provided (naive) Docker
 
 ## Docker for enhanced jupyter book - Naive
 
