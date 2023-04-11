@@ -388,9 +388,9 @@ java<span class="w"> </span>-jar<span class="w"> </span>/usr/local/bin/plantuml.
 <p class="admonition-title">Docker optimization techniques</p>
 <p>The general optimization strategy for Docker is to <em>avoid any unnecessary content</em>, which means</p>
 <ul class="simple">
-<li><p>inheriting from minimal Linux images, such as Alpine</p></li>
-<li><p>building minimalistic environments, e.g. use <code class="docutils literal notranslate"><span class="pre">jlink</span></code> to create scope-tailored JREs</p></li>
-<li><p>removing development tools in the end, e.g. Java building tools</p></li>
+<li><p>inheriting from minimal Linux images, such as <a class="reference external" href="https://www.alpinelinux.org/">Alpine Linux Distribution</a></p></li>
+<li><p>building minimalistic environments, e.g. <a class="reference external" href="https://www.baeldung.com/jlink">use jlink to create scope-tailored JREs</a></p></li>
+<li><p>removing development tools in the end, e.g. those used for building Java/Python</p></li>
 <li><p>clearing cache, e.g. downloaded package sources
 and so on.</p></li>
 </ul>

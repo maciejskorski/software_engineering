@@ -44,9 +44,9 @@ Docker optimization is important to save computational and environmental resourc
 ```{admonition} Docker optimization techniques
 :class: tip
 The general optimization strategy for Docker is to *avoid any unnecessary content*, which means
-* inheriting from minimal Linux images, such as Alpine
-* building minimalistic environments, e.g. use `jlink` to create scope-tailored JREs
-* removing development tools in the end, e.g. Java building tools
+* inheriting from minimal Linux images, such as [Alpine Linux Distribution](https://www.alpinelinux.org/)
+* building minimalistic environments, e.g. [use jlink to create scope-tailored JREs](https://www.baeldung.com/jlink)
+* removing development tools in the end, e.g. those used for building Java/Python
 * clearing cache, e.g. downloaded package sources
 and so on. 
 ```
