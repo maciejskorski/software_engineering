@@ -357,6 +357,28 @@ that <a class="reference external" href="https://www.ibm.com/docs/en/rational-so
 <p>A good use-case describes a situation bringing added value. Some events don’t have enough impact to be good use-cases, <a class="reference external" href="https://stackoverflow.com/questions/53907281/does-every-use-case-action-have-to-include-a-login/53908056#53908056">see this discussion on user logging</a>.</p>
 </div>
 <p>The example below visualizes a we application which <em>visualizes/summarizes extracted content</em> to its users. Note that, in this case, daily data update is considered an added value inedendent of visualization.</p>
+<p class="plantuml">
+<img src="_images/plantuml-97feda19c5a20bd16ca74ebc119ca1b3ab9b88f7.png" alt="&#64;startuml
+
+actor &quot;User&quot; as user
+actor &quot;Information Service&quot; as web
+package &quot;Web Application&quot; as webapp {
+    usecase &quot;Search Data&quot; as UC1
+    usecase &quot;Visualize Data&quot; as UC2
+    usecase &quot;Update Data&quot; as UC3
+}
+
+user -- UC1
+web -- UC3
+note bottom of UC3: extract by scraping daily
+note bottom of UC2: show statistics
+note bottom of UC1: advanced search
+
+UC1 .&gt; UC3: include
+UC2 .&gt; UC1: extend
+
+&#64;enduml"/>
+</p>
 <p>This was generated with the following PlantUML code snippet:</p>
 <div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
 
