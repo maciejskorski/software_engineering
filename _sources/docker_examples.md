@@ -51,7 +51,7 @@ The general optimization strategy for Docker is to *avoid any unnecessary conten
 and so on. 
 ```
 
-The following, more sophisticated, docker file consumes only 68MB
+The following, more sophisticated, docker file consumes only 66MB
 ```docker
 # build a light Java Runtime Environment tailored to run plantuml
 FROM eclipse-temurin:17-alpine as java_docker
@@ -75,10 +75,8 @@ WORKDIR /usr/local
 COPY --from=java_docker /usr/local/bin/plantuml* ./bin/
 COPY --from=java_docker /usr/local/bin/jre ./bin/jre
 ENV PATH=$PATH:/usr/local/bin:/usr/local/bin/jre/bin
-## package for vector grrahics
-RUN apk add --no-cache graphviz
-## package with fonts for off-screen rendering (https://hub.docker.com/r/bellsoft/liberica-openjre-alpine)
-RUN apk add --no-cache fontconfig ttf-dejavu
+## package for vector grrahics and fonts for off-screen rendering (https://hub.docker.com/r/bellsoft/liberica-openjre-alpine)
+RUN apk add --no-cache graphviz fontconfig ttf-dejavu
 ```
 For more details, visit [the DockerHub repo](https://hub.docker.com/r/maciejskorski/plantuml-docker/tags).
 

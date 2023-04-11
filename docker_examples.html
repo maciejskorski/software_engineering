@@ -395,7 +395,7 @@ java<span class="w"> </span>-jar<span class="w"> </span>/usr/local/bin/plantuml.
 and so on.</p></li>
 </ul>
 </div>
-<p>The following, more sophisticated, docker file consumes only 68MB</p>
+<p>The following, more sophisticated, docker file consumes only 66MB</p>
 <div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="c"># build a light Java Runtime Environment tailored to run plantuml</span>
 <span class="k">FROM</span><span class="w"> </span><span class="s">eclipse-temurin:17-alpine</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">java_docker</span>
 <span class="k">WORKDIR</span><span class="w"> </span><span class="s">/usr/local/bin</span>
@@ -418,10 +418,8 @@ and so on.</p></li>
 <span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>java_docker<span class="w"> </span>/usr/local/bin/plantuml*<span class="w"> </span>./bin/
 <span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>java_docker<span class="w"> </span>/usr/local/bin/jre<span class="w"> </span>./bin/jre
 <span class="k">ENV</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/bin:/usr/local/bin/jre/bin
-<span class="c">## package for vector grrahics</span>
-<span class="k">RUN</span><span class="w"> </span>apk<span class="w"> </span>add<span class="w"> </span>--no-cache<span class="w"> </span>graphviz
-<span class="c">## package with fonts for off-screen rendering (https://hub.docker.com/r/bellsoft/liberica-openjre-alpine)</span>
-<span class="k">RUN</span><span class="w"> </span>apk<span class="w"> </span>add<span class="w"> </span>--no-cache<span class="w"> </span>fontconfig<span class="w"> </span>ttf-dejavu
+<span class="c">## package for vector grrahics and fonts for off-screen rendering (https://hub.docker.com/r/bellsoft/liberica-openjre-alpine)</span>
+<span class="k">RUN</span><span class="w"> </span>apk<span class="w"> </span>add<span class="w"> </span>--no-cache<span class="w"> </span>graphviz<span class="w"> </span>fontconfig<span class="w"> </span>ttf-dejavu
 </pre></div>
 </div>
 <p>For more details, visit <a class="reference external" href="https://hub.docker.com/r/maciejskorski/plantuml-docker/tags">the DockerHub repo</a>.</p>
