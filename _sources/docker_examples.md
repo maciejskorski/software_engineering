@@ -30,9 +30,9 @@ where `plantuml` is a shell wrapper that calls the java module on input files (a
 java -jar /usr/local/bin/plantuml.jar "$@"
 ```
 
-Once you build and publish this image (the size should be ~160MB), test it:
+Once you build and publish this image (the size should be ~160 MB), test it:
 * run the docker image interactively, e.g. `docker run -it plantumldocker:latest`
-* create a sample plantuml diagram `diagram.iuml` and copy into the docker container, e.g. `docker cp diagram.iuml 3689309baac3:/usr/local` where `3689309baac3` should be replaced by the container id (check with `docker ps`)
+* create a sample plantuml diagram `diagram.iuml` and copy into the docker container, e.g. `docker cp diagram.iuml 3689309baac3:/usr/local` where `3689309baac3` should be replaced by the container ID (check with `docker ps`)
 * convert the diagram into a figure inside the container, e.g. `plantuml diagram.iuml`
 * copy the figure to the host, e.g. `docker cp 3689309baac3:/usr/local/diagram.png .`
 
@@ -51,7 +51,7 @@ The general optimization strategy for Docker is to *avoid any unnecessary conten
 and so on. 
 ```
 
-The following, more sophisticated, docker file consumes only 66MB
+The following, more sophisticated, docker file consumes only 66 MB
 ```docker
 # build a light Java Runtime Environment tailored to run plantuml
 FROM eclipse-temurin:17-alpine as java_docker

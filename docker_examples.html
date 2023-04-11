@@ -372,10 +372,10 @@ document.write(`
 java<span class="w"> </span>-jar<span class="w"> </span>/usr/local/bin/plantuml.jar<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
-<p>Once you build and publish this image (the size should be ~160MB), test it:</p>
+<p>Once you build and publish this image (the size should be ~160 MB), test it:</p>
 <ul class="simple">
 <li><p>run the docker image interactively, e.g. <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">plantumldocker:latest</span></code></p></li>
-<li><p>create a sample plantuml diagram <code class="docutils literal notranslate"><span class="pre">diagram.iuml</span></code> and copy into the docker container, e.g. <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">diagram.iuml</span> <span class="pre">3689309baac3:/usr/local</span></code> where <code class="docutils literal notranslate"><span class="pre">3689309baac3</span></code> should be replaced by the container id (check with <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>)</p></li>
+<li><p>create a sample plantuml diagram <code class="docutils literal notranslate"><span class="pre">diagram.iuml</span></code> and copy into the docker container, e.g. <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">diagram.iuml</span> <span class="pre">3689309baac3:/usr/local</span></code> where <code class="docutils literal notranslate"><span class="pre">3689309baac3</span></code> should be replaced by the container ID (check with <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>)</p></li>
 <li><p>convert the diagram into a figure inside the container, e.g. <code class="docutils literal notranslate"><span class="pre">plantuml</span> <span class="pre">diagram.iuml</span></code></p></li>
 <li><p>copy the figure to the host, e.g. <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">3689309baac3:/usr/local/diagram.png</span> <span class="pre">.</span></code></p></li>
 </ul>
@@ -395,7 +395,7 @@ java<span class="w"> </span>-jar<span class="w"> </span>/usr/local/bin/plantuml.
 and so on.</p></li>
 </ul>
 </div>
-<p>The following, more sophisticated, docker file consumes only 66MB</p>
+<p>The following, more sophisticated, docker file consumes only 66 MB</p>
 <div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="c"># build a light Java Runtime Environment tailored to run plantuml</span>
 <span class="k">FROM</span><span class="w"> </span><span class="s">eclipse-temurin:17-alpine</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">java_docker</span>
 <span class="k">WORKDIR</span><span class="w"> </span><span class="s">/usr/local/bin</span>
