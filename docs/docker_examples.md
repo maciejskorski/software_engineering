@@ -41,7 +41,7 @@ In case of problems, compare with [the working version here](https://github.com/
 ## Optimization: Lightweight Docker
 
 Docker optimization is important to save computational and environmental resources.
-```{admonition}
+```{admonition} Docker optimization techniques
 :class: tip
 The general optimization strategy for Docker is to *avoid any unnecessary content*, which means
 * inheriting from minimal Linux images, such as Alpine
@@ -87,3 +87,4 @@ For more details, visit [the DockerHub repo](https://hub.docker.com/r/maciejskor
 ## More
 
 * An article on [best docker practices](https://testdriven.io/blog/docker-best-practices/)
+* Ann article on [optimizing docker images](https://linuxhint.com/optimizing-docker-images/)
