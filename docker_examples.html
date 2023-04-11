@@ -384,6 +384,17 @@ java<span class="w"> </span>-jar<span class="w"> </span>/usr/local/bin/plantuml.
 <section id="optimization-lightweight-docker">
 <h2>Optimization: Lightweight Docker<a class="headerlink" href="#optimization-lightweight-docker" title="Permalink to this heading">#</a></h2>
 <p>Docker optimization is important to save computational and environmental resources.</p>
+<div class="tip admonition">
+<p class="admonition-title">Docker optimization techniques</p>
+<p>The general optimization strategy for Docker is to <em>avoid any unnecessary content</em>, which means</p>
+<ul class="simple">
+<li><p>inheriting from minimal Linux images, such as Alpine</p></li>
+<li><p>building minimalistic environments, e.g. use <code class="docutils literal notranslate"><span class="pre">jlink</span></code> to create scope-tailored JREs</p></li>
+<li><p>removing development tools in the end, e.g. Java building tools</p></li>
+<li><p>clearing cache, e.g. downloaded package sources
+and so on.</p></li>
+</ul>
+</div>
 <p>The following, more sophisticated, docker file consumes only 68MB</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># build a light Java Runtime Environment tailored to run plantuml
 FROM eclipse-temurin:17-alpine as java_docker
@@ -419,6 +430,7 @@ RUN apk add --no-cache fontconfig ttf-dejavu
 <h2>More<a class="headerlink" href="#more" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>An article on <a class="reference external" href="https://testdriven.io/blog/docker-best-practices/">best docker practices</a></p></li>
+<li><p>Ann article on <a class="reference external" href="https://linuxhint.com/optimizing-docker-images/">optimizing docker images</a></p></li>
 </ul>
 </section>
 </section>
