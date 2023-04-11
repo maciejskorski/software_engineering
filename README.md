@@ -19,5 +19,5 @@ The materials here aim to demonstrate modern coding tools and good practices.
 :warning: lab computers not available on March 21, bring your own laptops
 * [Class 5](https://maciejskorski.github.io/software_engineering/uml_modelling.html) *Unified Modeling Language*: modelling use cases, workflows, architectures
 * :new: [Class 6](https://maciejskorski.github.io/software_engineering/webapp_testing.html) *Testing Websites*: [Selenium](https://www.selenium.dev/) and [Python API](https://selenium-python.readthedocs.io/api.html)
-* :new: [Class 7](https://maciejskorski.github.io/software_engineering/docker_examples.html) *Docker*
+* :new: [Class 7](https://maciejskorski.github.io/software_engineering/docker_examples.html) *Docker*: Automating, using, and optimizing Docker images
 * [Example Projects](docs/project_ideas.md): please bring your own ideas!
