@@ -52,7 +52,7 @@ and so on.
 ```
 
 The following, more sophisticated, docker file consumes only 68MB
-```
+```docker
 # build a light Java Runtime Environment tailored to run plantuml
 FROM eclipse-temurin:17-alpine as java_docker
 WORKDIR /usr/local/bin

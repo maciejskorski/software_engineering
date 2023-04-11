@@ -396,32 +396,32 @@ and so on.</p></li>
 </ul>
 </div>
 <p>The following, more sophisticated, docker file consumes only 68MB</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># build a light Java Runtime Environment tailored to run plantuml
-FROM eclipse-temurin:17-alpine as java_docker
-WORKDIR /usr/local/bin
-COPY src/plantuml .
-RUN chmod +x plantuml
-RUN apk update &amp;&amp; apk add wget \
-    &amp;&amp; wget http://sourceforge.net/projects/plantuml/files/plantuml-nodot.1.2023.5.jar/download -O plantuml.jar
-RUN apk add binutils
-RUN $JAVA_HOME/bin/jlink \
-         --add-modules java.base,java.datatransfer,java.desktop,java.logging,java.prefs,java.scripting,java.xml  \
-         --strip-debug \
-         --no-man-pages \
-         --no-header-files \
-         --compress=2 \
-         --output ./jre
+<div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="c"># build a light Java Runtime Environment tailored to run plantuml</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">eclipse-temurin:17-alpine</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">java_docker</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/usr/local/bin</span>
+<span class="k">COPY</span><span class="w"> </span>src/plantuml<span class="w"> </span>.
+<span class="k">RUN</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>plantuml
+<span class="k">RUN</span><span class="w"> </span>apk<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apk<span class="w"> </span>add<span class="w"> </span>wget<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>wget<span class="w"> </span>http://sourceforge.net/projects/plantuml/files/plantuml-nodot.1.2023.5.jar/download<span class="w"> </span>-O<span class="w"> </span>plantuml.jar
+<span class="k">RUN</span><span class="w"> </span>apk<span class="w"> </span>add<span class="w"> </span>binutils
+<span class="k">RUN</span><span class="w"> </span><span class="nv">$JAVA_HOME</span>/bin/jlink<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>--add-modules<span class="w"> </span>java.base,java.datatransfer,java.desktop,java.logging,java.prefs,java.scripting,java.xml<span class="w">  </span><span class="se">\</span>
+<span class="w">         </span>--strip-debug<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>--no-man-pages<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>--no-header-files<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>--compress<span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>--output<span class="w"> </span>./jre
 
-# move to a lightweight image and add other dependencies
-FROM alpine:latest AS base_docker
-WORKDIR /usr/local
-COPY --from=java_docker /usr/local/bin/plantuml* ./bin/
-COPY --from=java_docker /usr/local/bin/jre ./bin/jre
-ENV PATH=$PATH:/usr/local/bin:/usr/local/bin/jre/bin
-## package for vector grrahics
-RUN apk add --no-cache graphviz
-## package with fonts for off-screen rendering (https://hub.docker.com/r/bellsoft/liberica-openjre-alpine)
-RUN apk add --no-cache fontconfig ttf-dejavu
+<span class="c"># move to a lightweight image and add other dependencies</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">alpine:latest</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">base_docker</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/usr/local</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>java_docker<span class="w"> </span>/usr/local/bin/plantuml*<span class="w"> </span>./bin/
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>java_docker<span class="w"> </span>/usr/local/bin/jre<span class="w"> </span>./bin/jre
+<span class="k">ENV</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/bin:/usr/local/bin/jre/bin
+<span class="c">## package for vector grrahics</span>
+<span class="k">RUN</span><span class="w"> </span>apk<span class="w"> </span>add<span class="w"> </span>--no-cache<span class="w"> </span>graphviz
+<span class="c">## package with fonts for off-screen rendering (https://hub.docker.com/r/bellsoft/liberica-openjre-alpine)</span>
+<span class="k">RUN</span><span class="w"> </span>apk<span class="w"> </span>add<span class="w"> </span>--no-cache<span class="w"> </span>fontconfig<span class="w"> </span>ttf-dejavu
 </pre></div>
 </div>
 <p>For more details, visit <a class="reference external" href="https://hub.docker.com/r/maciejskorski/plantuml-docker/tags">the DockerHub repo</a>.</p>
