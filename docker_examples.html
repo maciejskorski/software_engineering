@@ -327,6 +327,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automation-build-and-publish-docker-with-github-actions">Automation: Build and Publish Docker with GitHub Actions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-for-enhanced-jupyter-book-naive">Docker for enhanced jupyter book - Naive</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-for-enhanced-jupyter-book-optimized">Docker for enhanced jupyter book - Optimized</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a></li>
@@ -343,7 +344,15 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="class-7-using-docker">
 <h1>Class 7: Using Docker<a class="headerlink" href="#class-7-using-docker" title="Permalink to this heading">#</a></h1>
-<p>In this class we will discuss how to build and optimize docker supporting deployment of advanced documentation (Sphinx-based jupyterbook) to GitHub Pages.</p>
+<p>In this class we will discuss how to build and optimize a <a class="reference external" href="https://www.docker.com/">docker</a> supporting creating UML diagrams a Java-based tool <code class="docutils literal notranslate"><span class="pre">plantuml</span></code>.</p>
+<section id="automation-build-and-publish-docker-with-github-actions">
+<h2>Automation: Build and Publish Docker with GitHub Actions<a class="headerlink" href="#automation-build-and-publish-docker-with-github-actions" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Template <a class="reference external" href="https://github.com/maciejskorski/docker-build-push">this sample repository</a></p></li>
+<li><p>Customize <a class="reference external" href="https://github.com/maciejskorski/docker-build-push/blob/main/.github/workflows/docker-image.yaml">the docker workflow</a> accordingly (in particular: sign up to DockerHub and for a GitHub access token)</p></li>
+<li><p>Make sure that the workflow builds and publishes the provided (naive) Docker</p></li>
+</ul>
+</section>
 <section id="docker-for-enhanced-jupyter-book-naive">
 <h2>Docker for enhanced jupyter book - Naive<a class="headerlink" href="#docker-for-enhanced-jupyter-book-naive" title="Permalink to this heading">#</a></h2>
 <div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="c"># based on a slim Python image</span>
@@ -474,6 +483,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automation-build-and-publish-docker-with-github-actions">Automation: Build and Publish Docker with GitHub Actions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-for-enhanced-jupyter-book-naive">Docker for enhanced jupyter book - Naive</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-for-enhanced-jupyter-book-optimized">Docker for enhanced jupyter book - Optimized</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a></li>
