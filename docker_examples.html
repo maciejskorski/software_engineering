@@ -328,8 +328,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automation-build-and-publish-docker-with-github-actions">Automation: Build and Publish Docker with GitHub Actions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-for-enhanced-jupyter-book-naive">Docker for enhanced jupyter book - Naive</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-for-enhanced-jupyter-book-optimized">Docker for enhanced jupyter book - Optimized</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-but-suboptimal-docker">Working but Suboptimal Docker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-lightweight-docker">Optimization: Lightweight Docker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a></li>
 </ul>
             </nav>
@@ -348,65 +348,72 @@ document.write(`
 <section id="automation-build-and-publish-docker-with-github-actions">
 <h2>Automation: Build and Publish Docker with GitHub Actions<a class="headerlink" href="#automation-build-and-publish-docker-with-github-actions" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Template <a class="reference external" href="https://github.com/maciejskorski/docker-build-push">this sample repository</a></p></li>
+<li><p>Template <a class="reference external" href="https://github.com/maciejskorski/docker-build-push">this sample repository</a> under your GitHub account</p></li>
 <li><p>Customize <a class="reference external" href="https://github.com/maciejskorski/docker-build-push/blob/main/.github/workflows/docker-image.yaml">the docker workflow</a> accordingly (in particular: sign up to DockerHub and for a GitHub access token)</p></li>
 <li><p>Make sure that the workflow builds and publishes the provided (naive) Docker</p></li>
 </ul>
 </section>
-<section id="docker-for-enhanced-jupyter-book-naive">
-<h2>Docker for enhanced jupyter book - Naive<a class="headerlink" href="#docker-for-enhanced-jupyter-book-naive" title="Permalink to this heading">#</a></h2>
-<div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="c"># based on a slim Python image</span>
-<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.10-slim</span>
-
-<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/usr/src/app</span>
-
-<span class="k">RUN</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>#<span class="w"> </span>APT<span class="w"> </span>packages<span class="w"> </span><span class="k">for</span><span class="w"> </span>UML
-<span class="w">    </span>apt-get<span class="w"> </span>-y<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>plantuml<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>#<span class="w"> </span>Python<span class="w"> </span>packages<span class="w"> </span><span class="k">for</span><span class="w"> </span>Sphinx<span class="w"> </span>and<span class="w"> </span>UML
-<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>jupyter-book<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sphinxcontrib-plantuml
-
-<span class="k">EXPOSE</span><span class="w"> </span><span class="s">8000</span>
-</pre></div>
-</div>
-<p>This builds <a class="reference external" href="https://hub.docker.com/layers/maciejskorski/jupyter-book-gh/latest/images/sha256-6923e66b5e9f22202fde2df0276e76366ce8612a75c133b9d1f11a3a30b907fb?context=repo">the image of about ~500MB</a>, way too much!</p>
-</section>
-<section id="docker-for-enhanced-jupyter-book-optimized">
-<h2>Docker for enhanced jupyter book - Optimized<a class="headerlink" href="#docker-for-enhanced-jupyter-book-optimized" title="Permalink to this heading">#</a></h2>
-<p>Optimization remarks:</p>
-<ul class="simple">
-<li><p>install <code class="docutils literal notranslate"><span class="pre">plantuml</span></code> <a class="reference external" href="https://blog.nillsf.com/index.php/2019/10/04/using-plantuml-to-generate-architecture-artifacts/">as a single library</a> on top of minimalistic JRE</p></li>
-</ul>
-<p>The content of <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> looks as follows:</p>
-<div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="c"># use slim Python and Java Runtime Environment images </span>
-
-<span class="c"># APT packages and JRE to plot UMLs</span>
-<span class="k">FROM</span><span class="w"> </span><span class="s">openjdk:8-jre-slim</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s">java_docker</span>
+<section id="working-but-suboptimal-docker">
+<h2>Working but Suboptimal Docker<a class="headerlink" href="#working-but-suboptimal-docker" title="Permalink to this heading">#</a></h2>
+<p>The tool <code class="docutils literal notranslate"><span class="pre">plantuml</span></code> is shipped as a Java module, and needs <code class="docutils literal notranslate"><span class="pre">Java</span> <span class="pre">Runtime</span> <span class="pre">Environment</span></code> along with visualization software <code class="docutils literal notranslate"><span class="pre">graphviz</span></code> at runtime.</p>
+<p>Hence, the content of <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> may look as follows:</p>
+<div class="highlight-docker notranslate"><div class="highlight"><pre><span></span><span class="c"># Ubuntu-based image with Java Runtime Environment</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">eclipse-temurin:20-jre</span>
 <span class="k">WORKDIR</span><span class="w"> </span><span class="s">/usr/local/bin</span>
-<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>wget<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>wget<span class="w"> </span>https://sourceforge.net/projects/plantuml/files/plantuml-nodot.1.2023.5.jar/download<span class="w"> </span>-O<span class="w"> </span>plantuml.jar<span class="w"> </span>
-<span class="k">COPY</span><span class="w"> </span>src/plantuml<span class="w"> </span>/usr/local/bin/
+<span class="k">COPY</span><span class="w"> </span>./plantuml<span class="w"> </span>.
 <span class="k">RUN</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>plantuml
-
-<span class="c"># + Python packages for Sphinx and UML (with dependencies)</span>
-<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.10-slim</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">python_docker</span>
-<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/usr/local/</span>
-<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>java_docker<span class="w"> </span>/usr/local/<span class="w"> </span>/usr/local/
-<span class="k">ENV</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/openjdk-8/bin
-<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>jupyter-book<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sphinxcontrib-plantuml
-<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>graphviz<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>git
-
-<span class="k">EXPOSE</span><span class="w"> </span><span class="s">8000</span>
+<span class="k">RUN</span><span class="w"> </span>wget<span class="w"> </span>http://sourceforge.net/projects/plantuml/files/plantuml-nodot.1.2023.5.jar/download<span class="w"> </span>-O<span class="w"> </span>plantuml.jar
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>graphviz
 </pre></div>
 </div>
-<p>See the <a class="reference external" href="https://hub.docker.com/repository/docker/maciejskorski/jupyter-book-gh">ready image on DockerHub</a>.</p>
+<p>where <code class="docutils literal notranslate"><span class="pre">plantuml</span></code> is a shell wrapper that calls the java module on input files (add it to your repo)</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh -e</span>
+java<span class="w"> </span>-jar<span class="w"> </span>/usr/local/bin/plantuml.jar<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Once you build and publish this image (the size should be ~160MB), test it:</p>
+<ul class="simple">
+<li><p>run the docker image interactively, e.g. <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">plantumldocker:latest</span></code></p></li>
+<li><p>create a sample plantuml diagram <code class="docutils literal notranslate"><span class="pre">diagram.iuml</span></code> and copy into the docker container, e.g. <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">diagram.iuml</span> <span class="pre">3689309baac3:/usr/local</span></code> where <code class="docutils literal notranslate"><span class="pre">3689309baac3</span></code> should be replaced by the container id (check with <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>)</p></li>
+<li><p>convert the diagram into a figure inside the container, e.g. <code class="docutils literal notranslate"><span class="pre">plantuml</span> <span class="pre">diagram.iuml</span></code></p></li>
+<li><p>copy the figure from the container to the host, e.g. <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">3689309baac3:/usr/local/diagram.png</span> <span class="pre">.</span></code></p></li>
+</ul>
+<p>In case of problems, compare with <a class="reference external" href="https://github.com/maciejskorski/plantuml-docker">the working version here</a>.</p>
+</section>
+<section id="optimization-lightweight-docker">
+<h2>Optimization: Lightweight Docker<a class="headerlink" href="#optimization-lightweight-docker" title="Permalink to this heading">#</a></h2>
+<p>Docker optimization is important to save computational and environmental resources.</p>
+<p>The following, more sophisticated, docker file consumes only 68MB</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># build a light Java Runtime Environment tailored to run plantuml
+FROM eclipse-temurin:17-alpine as java_docker
+WORKDIR /usr/local/bin
+COPY src/plantuml .
+RUN chmod +x plantuml
+RUN apk update &amp;&amp; apk add wget \
+    &amp;&amp; wget http://sourceforge.net/projects/plantuml/files/plantuml-nodot.1.2023.5.jar/download -O plantuml.jar
+RUN apk add binutils
+RUN $JAVA_HOME/bin/jlink \
+         --add-modules java.base,java.datatransfer,java.desktop,java.logging,java.prefs,java.scripting,java.xml  \
+         --strip-debug \
+         --no-man-pages \
+         --no-header-files \
+         --compress=2 \
+         --output ./jre
+
+# move to a lightweight image and add other dependencies
+FROM alpine:latest AS base_docker
+WORKDIR /usr/local
+COPY --from=java_docker /usr/local/bin/plantuml* ./bin/
+COPY --from=java_docker /usr/local/bin/jre ./bin/jre
+ENV PATH=$PATH:/usr/local/bin:/usr/local/bin/jre/bin
+## package for vector grrahics
+RUN apk add --no-cache graphviz
+## package with fonts for off-screen rendering (https://hub.docker.com/r/bellsoft/liberica-openjre-alpine)
+RUN apk add --no-cache fontconfig ttf-dejavu
+</pre></div>
+</div>
+<p>For more details, visit <a class="reference external" href="https://hub.docker.com/r/maciejskorski/plantuml-docker/tags">the DockerHub repo</a>.</p>
 </section>
 <section id="more">
 <h2>More<a class="headerlink" href="#more" title="Permalink to this heading">#</a></h2>
@@ -484,8 +491,8 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automation-build-and-publish-docker-with-github-actions">Automation: Build and Publish Docker with GitHub Actions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-for-enhanced-jupyter-book-naive">Docker for enhanced jupyter book - Naive</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-for-enhanced-jupyter-book-optimized">Docker for enhanced jupyter book - Optimized</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-but-suboptimal-docker">Working but Suboptimal Docker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-lightweight-docker">Optimization: Lightweight Docker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a></li>
 </ul>
   </nav></div>
