@@ -304,7 +304,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -320,6 +322,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-overview">Tools Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -331,6 +342,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="class-1-modern-development-environment">
 <h1>Class 1: Modern Development Environment<a class="headerlink" href="#class-1-modern-development-environment" title="Permalink to this heading">#</a></h1>
+<section id="tools-overview">
+<h2>Tools Overview<a class="headerlink" href="#tools-overview" title="Permalink to this heading">#</a></h2>
 <p>Preparation:</p>
 <ul class="simple">
 <li><p>Repository: Create GitHub accounts and test <a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">SSH access</a></p></li>
@@ -340,6 +353,13 @@ document.write(`
 <li><p>Add a <a class="reference external" href="https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge">workflow badge</a> to your repo, to confirm that it builds and tests properly!</p></li>
 </ul>
 <p>Note: the branches <code class="docutils literal notranslate"><span class="pre">template/java</span></code> and <code class="docutils literal notranslate"><span class="pre">template/python</span></code> show minimal projects in Java and Python. The Java project requires matching the right versions of JDK and Gradle.</p>
+</section>
+<section id="more">
+<h2>More<a class="headerlink" href="#more" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://dataingovernment.blog.gov.uk/2021/07/20/govcookiecutter-a-template-for-data-science-projects/">UK gov cookiecutter simplifies development and improves</a></p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -400,6 +420,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-overview">Tools Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more">More</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
