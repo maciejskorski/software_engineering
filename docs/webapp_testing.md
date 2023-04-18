@@ -80,7 +80,7 @@ def test_webpage_search():
     elem.send_keys("UML")
     elem.send_keys(Keys.RETURN)
 
-    assert "Modelling with UML diagrams" in driver.page_source
+    assert "uml diagrams are used to" in driver.page_source
     driver.quit()
 ```
 
