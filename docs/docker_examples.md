@@ -5,7 +5,7 @@ In this class we will discuss how to build and optimize a [docker](https://www.d
 
 ## Automation: Build and Publish Docker with GitHub Actions
 
-* Template [this sample repository](https://github.com/maciejskorski/docker-build-push) under your GitHub account
+* Template [this example repository](https://github.com/maciejskorski/docker-build-push) under your GitHub account
 * Customize [the docker workflow](https://github.com/maciejskorski/docker-build-push/blob/main/.github/workflows/docker-image.yaml) accordingly (in particular: sign up to DockerHub and for a GitHub access token)
 * Make sure that the workflow builds and publishes the provided (naive) Docker
 
