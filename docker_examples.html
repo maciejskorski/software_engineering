@@ -349,7 +349,7 @@ document.write(`
 <h2>Automation: Build and Publish Docker with GitHub Actions<a class="headerlink" href="#automation-build-and-publish-docker-with-github-actions" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Template <a class="reference external" href="https://github.com/maciejskorski/docker-build-push">this example repository</a> under your GitHub account</p></li>
-<li><p>Customize <a class="reference external" href="https://github.com/maciejskorski/docker-build-push/blob/main/.github/workflows/docker-image.yaml">the docker workflow</a> accordingly (in particular: sign up to DockerHub and for a GitHub access token)</p></li>
+<li><p>Customize <a class="reference external" href="https://github.com/maciejskorski/docker-build-push/blob/main/.github/workflows/docker-image.yaml">the docker workflow</a> accordingly (in particular: sign up to <a class="reference external" href="https://hub.docker.com/signup">DockerHub</a> and for a <a class="reference external" href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">GitHub Personal Access Token</a>)</p></li>
 <li><p>Make sure that the workflow builds and publishes the provided (naive) Docker</p></li>
 </ul>
 </section>
@@ -367,7 +367,7 @@ document.write(`
 <span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>graphviz
 </pre></div>
 </div>
-<p>where <code class="docutils literal notranslate"><span class="pre">plantuml</span></code> is a shell wrapper that calls the java module on input files (add it to your repo)</p>
+<p>where <code class="docutils literal notranslate"><span class="pre">plantuml</span></code> is a shell wrapper that calls the java module on input files (add it on the top of your repo)</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh -e</span>
 java<span class="w"> </span>-jar<span class="w"> </span>/usr/local/bin/plantuml.jar<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
 </pre></div>
