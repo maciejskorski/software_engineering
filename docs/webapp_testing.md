@@ -52,7 +52,7 @@ elem = driver.find_element(By.NAME,"q") # search boxes are often called "q"
 elem.send_keys("UML")
 elem.send_keys(Keys.RETURN)
 
-assert "No results found." not in driver.page_source
+assert "uml diagrams are used to" in driver.page_source
 ```
 ```{note}
 Interactive content makes scanning harder. In the above example, the search button has to be enabled with `click` before quering.
