@@ -6,7 +6,7 @@ In this class we will discuss how to build and optimize a [docker](https://www.d
 ## Automation: Build and Publish Docker with GitHub Actions
 
 * Template [this example repository](https://github.com/maciejskorski/docker-build-push) under your GitHub account
-* Customize [the docker workflow](https://github.com/maciejskorski/docker-build-push/blob/main/.github/workflows/docker-image.yaml) accordingly (in particular: sign up to DockerHub and for a GitHub access token)
+* Customize [the docker workflow](https://github.com/maciejskorski/docker-build-push/blob/main/.github/workflows/docker-image.yaml) accordingly (in particular: sign up to [DockerHub](https://hub.docker.com/signup) and for a [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token))
 * Make sure that the workflow builds and publishes the provided (naive) Docker
 
 ## Working but Suboptimal Docker
@@ -24,7 +24,7 @@ RUN wget http://sourceforge.net/projects/plantuml/files/plantuml-nodot.1.2023.5.
 RUN apt-get update \
     && apt-get install -y graphviz
 ```
-where `plantuml` is a shell wrapper that calls the java module on input files (add it to your repo)
+where `plantuml` is a shell wrapper that calls the java module on input files (add it on the top of your repo)
 ```shell
 #!/bin/sh -e
 java -jar /usr/local/bin/plantuml.jar "$@"
