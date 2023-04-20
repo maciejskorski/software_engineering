@@ -55,7 +55,7 @@ elem.send_keys(Keys.RETURN)
 assert "uml diagrams are used to" in driver.page_source
 ```
 ```{note}
-Interactive content makes scanning harder. In the above example, the search button has to be enabled with `click` before quering.
+Interactive content makes scanning harder. In the above example, the search button has to be enabled with `click` before querying.
 ```
 
 The animation below shows how the browser react to subsequent code steps:
@@ -87,6 +87,6 @@ def test_webpage_search():
 
 ## More
 
-* [Unoficial Python tutorial for Selenium](https://selenium-python.readthedocs.io/)
+* [Unofficial Python tutorial for Selenium](https://selenium-python.readthedocs.io/)
 
 * [Converting Chrome Timeline to GIF](https://hospodarets.com/demos/chrome-timeline-to-gif/)
