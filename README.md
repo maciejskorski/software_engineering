@@ -20,5 +20,5 @@ The materials here aim to demonstrate modern coding tools and good practices.
 * [Class 5](https://maciejskorski.github.io/software_engineering/uml_modelling.html) *Unified Modeling Language*: modelling use cases, workflows, architectures
 * :new: [Class 6](https://maciejskorski.github.io/software_engineering/webapp_testing.html) *Testing Websites*: [Selenium](https://www.selenium.dev/) and [Python API](https://selenium-python.readthedocs.io/api.html)
 * :new: [Class 7](https://maciejskorski.github.io/software_engineering/docker_examples.html) *Docker*: Building, using, and optimizing [Docker](https://www.docker.com/) images
-* :new: [Class 8](https://maciejskorski.github.io/software_engineering/testing_code.html) *Testing*: white-box and black-box tests, continuous integration testing, cache-based optimization
+* :new: [Class 8](https://maciejskorski.github.io/software_engineering/testing_code.html) *Testing*: white-box and black-box tests, continuous integration testing with pre-commit, cache-based optimization
 * [Example Projects](docs/project_ideas.md): please bring your own ideas!
