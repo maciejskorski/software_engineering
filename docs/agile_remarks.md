@@ -47,7 +47,7 @@ During sprint reviews
 * Ensure psychological safety, take actions if the experience is not positive
 ```
 
-```{tips}
+```{tip}
 The problems may be caused, for instance, by:
 * unclear objectives
 * too much of workload
