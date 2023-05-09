@@ -29,6 +29,15 @@ The following figure (source: www.atlassian.com/agile/scrum) illustrates sprint 
 Unlike in sport, in scrum we are sprinting continuously, delivering and learning.
 ```
 
+## Stand-up
+
+Short update meetings.
+```{tip}
+* What I did yesterday?
+* What to do today?
+* Any blockers?
+```
+
 ## Sprint Reviews
 
 ```{important}
