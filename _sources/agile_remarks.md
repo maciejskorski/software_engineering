@@ -31,4 +31,5 @@ Unlike in sport, in scrum we sprint continuously, delivering and learning.
 
 ## To Read
 
+* [Agile Manifesto](https://agilemanifesto.org/)
 * [Scrum explanation by Atlassian](https://www.atlassian.com/agile/scrum)
