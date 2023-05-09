@@ -7,6 +7,7 @@ There are 3 roles:
 * scrum development team member
 * product owner
 * scrum master
+
 Scrum roles != job titles
 ```
 
