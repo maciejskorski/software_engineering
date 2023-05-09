@@ -46,15 +46,17 @@ During sprint reviews
 * Ensure psychological safety, take actions if the experience is not positive
 ```
 
-```{note}
+```{tips}
 The problems may be caused, for instance, by:
 * unclear objectives
-* workload
-* technical debt
+* too much of workload
+* **technical debt** ([tips how to mitigate](https://www.atlassian.com/blog/jira-software/3-steps-taming-technical-debt))
 * scope creep 
 ```
 
 Sprint reviews are not retrospectives. Reviews focused on deliveries while retrospectives reflect on the human side of work. 
+
+
 
 ## To Read
 
