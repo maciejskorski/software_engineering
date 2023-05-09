@@ -9,4 +9,5 @@ sections:
 - file: webapp_testing.md
 - file: docker_examples.md
 - file: testing_code.md
+- file: agile_remarks.md
 - file: project_ideas.md
