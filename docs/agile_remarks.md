@@ -13,17 +13,18 @@ Scrum roles != job titles
 
 ## Sprint Planning
 
+The whole team defines what will be delivered in the sprint and how to achieve that.
+
 ```{important}
 Follow these guideliness
 * enforce time limit
-* goeal 
-* scrum master
-
-Scrum roles != job titles
+* keep backlog updated
+* goal first, solutions next 
 ```
 
+The sprint 
 ![Spring Planning (source: www.atlassian.com/agile/scrum)](https://wac-cdn.atlassian.com/dam/jcr:d898416a-7850-4cb8-a283-915a1f377ad6/sprint%20planning%20diagram.svg?cdnVersion=1001)
 
 ## To Read
 
-* Scrum explanation by [Atlassian](https://www.atlassian.com/agile/scrum)
+* [Scrum explanation by Atlassian](https://www.atlassian.com/agile/scrum)
