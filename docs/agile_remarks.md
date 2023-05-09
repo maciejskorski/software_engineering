@@ -22,8 +22,12 @@ Follow these guideliness
 * goal first, solutions next 
 ```
 
-The sprint 
+The following figure (source: www.atlassian.com/agile/scrum) illustrates sprint planning
 ![Spring Planning (source: www.atlassian.com/agile/scrum)](https://wac-cdn.atlassian.com/dam/jcr:d898416a-7850-4cb8-a283-915a1f377ad6/sprint%20planning%20diagram.svg?cdnVersion=1001)
+
+```{note}
+Unlike in sport, in scrum we sprint continuously, delivering and learning.
+```
 
 ## To Read
 
