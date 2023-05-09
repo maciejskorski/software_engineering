@@ -29,8 +29,27 @@ The following figure (source: www.atlassian.com/agile/scrum) illustrates sprint 
 Unlike in sport, in scrum we sprint continuously, delivering and learning.
 ```
 
+## Sprint Reviews
+
+```{important}
+During sprint reviews
+* Celebrate work done (do demos, ask questions, give feedback)
+* Ensure psychological safety, take actions if the experience is not positive
+```
+
+```{note}
+The problems may be caused, for instance, by:
+* unclear objectives
+* workload
+* technical debt
+* scope creep 
+```
+
+Sprint reviews are not retrospectives. Reviews focused on deliveries while retrospectives reflect on the human side of work. 
+
 ## To Read
 
 * [Agile Manifesto](https://agilemanifesto.org/)
 * [Scrum explanation by Atlassian](https://www.atlassian.com/agile/scrum)
 * [Scrum Guide](https://scrumguides.org/)
+* [Sprint Reviews vs Retrospectives](https://www.parabol.co/blog/sprint-reviews-vs-retrospectives/)
