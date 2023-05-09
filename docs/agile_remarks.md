@@ -33,6 +33,7 @@ Unlike in sport, in scrum we are sprinting continuously, delivering and learning
 
 Short update meetings.
 ```{tip}
+A good template:
 * What I did yesterday?
 * What to do today?
 * Any blockers?
