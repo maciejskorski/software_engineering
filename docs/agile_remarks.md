@@ -13,7 +13,7 @@ Scrum roles != job titles
 
 ## Sprint Planning
 
-The whole team defines what will be delivered in the sprint and how to achieve that.
+The team *collaboratively* defines what will be delivered in the sprint and how to achieve that.
 
 ```{important}
 Follow these guideliness
