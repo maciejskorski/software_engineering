@@ -19,7 +19,7 @@ Access the admin panel of the server from the forwarded address. In VS Code/Code
 ```
 https://maciejskorski-stunning-space-orbit-p7xwrv9q455376q4-9000.preview.app.github.dev/
 ```
-Configure your project as shown below:
+Change your password when requested, then configure your project as shown below:
 ![SonarQube Configuration](figures/sonarqube.png)
 
 ## Client
