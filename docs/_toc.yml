@@ -10,4 +10,6 @@ sections:
 - file: docker_examples.md
 - file: testing_code.md
 - file: agile_remarks.md
+- file: sonarqube.md
 - file: project_ideas.md
+

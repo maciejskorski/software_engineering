@@ -22,4 +22,5 @@ The materials here aim to demonstrate modern coding tools and good practices.
 * [Class 7](https://maciejskorski.github.io/software_engineering/docker_examples.html) *Docker*: Building, using, and optimizing [Docker](https://www.docker.com/) images
 * [Class 8](https://maciejskorski.github.io/software_engineering/testing_code.html) *Testing*: white-box and black-box tests, continuous integration testing with pre-commit, cache-based optimization
 * :new:[Class 9](https://maciejskorski.github.io/software_engineering/agile_remarks.html) *More on Agile*: remarks on methodology
+* :new:[Class 10](https://maciejskorski.github.io/software_engineering/sonar.html) *SonarQube*: code quality check by composing docker services
 * [Example Projects](docs/project_ideas.md): please bring your own ideas!
