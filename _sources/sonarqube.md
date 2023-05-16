@@ -24,7 +24,7 @@ Configure your project as shown below:
 
 ## Client
 
-Run the scanner from its Docker image, mounting your source code dir
+Run the scanner from its Docker image, mounting your source code directory:
 ```bash
 docker run \
     --rm \
