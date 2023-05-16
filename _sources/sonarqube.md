@@ -15,11 +15,12 @@ docker run \
     -p 9000:9000 \
     sonarqube:latest
 ```
-Access the admin panel of the server from the forwarded address. In VS Code/Code Spaces, the forwarded address can be checked under the tab "Ports" and looks like below:
+Access the admin panel of the server from the forwarded address. In VS Code/Code Spaces, the forwarded address can be checked under the tab "Ports" and looks like this:
 ```
 https://maciejskorski-stunning-space-orbit-p7xwrv9q455376q4-9000.preview.app.github.dev/
 ```
-
+Configure your project as shown below:
+![SonarQube Configuration](figures/sonarqube.png)
 
 ## Client
 
