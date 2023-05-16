@@ -35,3 +35,11 @@ docker run \
     -v "/home/maciej.skorski/duplicate-detection:/usr/src" \
     sonarsource/sonar-scanner-cli -Dsonar.projectKey="test-project"
 ```
+
+## Inspect Results
+Once the client tests are done, you can inspect the dashboard on the server
+![SonarQube Dashboard](figures/sonarqube_dashboard.png)
+
+## Read more
+
+* [SonarQube Documentation](https://docs.sonarqube.org/latest/)
