@@ -1,4 +1,4 @@
-# Class 10: Code Profiling
+# Class 11: Code Profiling
 
 In this class we will use code profiling to investigate problems with parallelization of NLP pipelines.
 
