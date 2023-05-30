@@ -42,7 +42,7 @@ Access the application under the public url. Enjoy!
 ```console
 Tracking URL: https://e108-35-184-192-139.ngrok-free.app
 ```
-As a bonus, we can set up OAuth:
+As a bonus we can set up OAuth 2.0 authentication, here with google accounts:
 ```console
 !ngrok http --oauth google 5000
 # https://5bd6-35-197-38-167.ngrok-free.app
@@ -53,3 +53,8 @@ As a bonus, we can set up OAuth:
 ## Code
 
 The example is [available on GitHub](https://colab.research.google.com/gist/maciejskorski/b6185a0f1a48abbc63e3a82b89a86b42/nginx-demo.ipynb).
+
+## References
+
+* [ngrok homepage](https://ngrok.com/)
+* [OAuth 2.0 homepage](https://oauth.net/2/)
