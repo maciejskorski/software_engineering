@@ -53,3 +53,8 @@ As a bonus we can set up OAuth 2.0 authentication, here with google accounts:
 ## Code
 
 The example is [available on GitHub](https://colab.research.google.com/gist/maciejskorski/b6185a0f1a48abbc63e3a82b89a86b42/nginx-demo.ipynb).
+
+## References
+
+* [ngrok homepage](https://ngrok.com/)
+* [OAuth 2.0 homepage](https://oauth.net/2/)
