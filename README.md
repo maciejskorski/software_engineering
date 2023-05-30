@@ -24,5 +24,5 @@ The materials here aim to demonstrate modern coding tools and good practices.
 * [Class 9](https://maciejskorski.github.io/software_engineering/agile_remarks.html) *More on Agile*: remarks on methodology
 * [Class 10](https://maciejskorski.github.io/software_engineering/sonarqube.html) *SonarQube*: code quality check by composing docker services
 * [Class 11](https://maciejskorski.github.io/software_engineering/code_profiling.html) *Code Profiling*: debug parallelization of NLP pipelines
-* :new: [Class 12](https://maciejskorski.github.io/software_engineering/ngrok.html) *ngrok*: securly publishing apps with reverse proxy
+* :new: [Class 12](https://maciejskorski.github.io/software_engineering/ngrok.html) *ngrok*: securly [publishing apps with reverse proxy](https://5bd6-35-197-38-167.ngrok-free.app)
 * [Example Projects](docs/project_ideas.md): please bring your own ideas!
