@@ -351,7 +351,7 @@ document.write(`
 <p>We will use <span class="xref myst">ngrok</span> to publish a server running on a private Colab Virtual Machine.</p>
 <section id="proxying-http-from-vm">
 <h2>Proxying HTTP from VM<a class="headerlink" href="#proxying-http-from-vm" title="Permalink to this heading">#</a></h2>
-<p>Access a Virtual Machine on Colab or Codespaces. Install the Python wrapper <code class="docutils literal notranslate"><span class="pre">ngrok</span></code> with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyngrok</span> <span class="pre">--quiet</span></code>.</p>
+<p>Access a Virtual Machine on Colab or Codespaces.</p>
 <p>Start a simple http deamon (here on port 5000):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">_thread</span> <span class="k">as</span> <span class="nn">thread</span>
 <span class="kn">import</span> <span class="nn">http.server</span>
@@ -368,7 +368,7 @@ document.write(`
 <span class="n">thread</span><span class="o">.</span><span class="n">start_new_thread</span><span class="p">(</span><span class="n">start_server</span><span class="p">,</span> <span class="p">())</span>
 </pre></div>
 </div>
-<p>As the last step, start the ngrok server:</p>
+<p>As the last step, start the ngrok server. The code below runs with the Python wrapper (install with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyngrok</span> <span class="pre">--quiet</span></code>).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyngrok</span> <span class="kn">import</span> <span class="n">ngrok</span>
 
 <span class="c1"># Terminate open tunnels if exist</span>
@@ -387,10 +387,22 @@ document.write(`
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Tracking URL: https://e108-35-184-192-139.ngrok-free.app</span>
 </pre></div>
 </div>
-<p>As a bonus we can set up OAuth 2.0 authentication, here with google accounts:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">!ngrok http --oauth google 5000</span>
-<span class="gp"># </span>https://5bd6-35-197-38-167.ngrok-free.app
+<p>As a bonus we can set up OAuth 2.0 authentication, here with Google:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ngrok http 5000 --oauth=google --log=stdout --log-level=info</span>
+<span class="go">INFO[05-30|09:06:27] no configuration paths supplied </span>
+<span class="go">WARN[05-30|09:06:27] ngrok config file found at legacy location, move to XDG location xdg_path=/root/.config/ngrok/ngrok.yml legacy_path=/root/.ngrok2/ngrok.yml</span>
+<span class="go">INFO[05-30|09:06:27] using configuration at default config path path=/root/.ngrok2/ngrok.yml</span>
+<span class="go">INFO[05-30|09:06:27] open config file                         path=/root/.ngrok2/ngrok.yml err=nil</span>
+<span class="go">t=2023-05-30T09:06:27+0000 lvl=info msg=&quot;starting web service&quot; obj=web addr=127.0.0.1:4040 allow_hosts=[]</span>
+<span class="go">t=2023-05-30T09:06:27+0000 lvl=info msg=&quot;client session established&quot; obj=tunnels.session obj=csess id=e091fe4f2de3</span>
+<span class="go">t=2023-05-30T09:06:27+0000 lvl=info msg=&quot;tunnel session started&quot; obj=tunnels.session</span>
+<span class="go">t=2023-05-30T09:06:27+0000 lvl=info msg=&quot;started tunnel&quot; obj=tunnels name=command_line addr=http://localhost:5000 url=https://8e00-35-197-38-167.ngrok-free.app</span>
 </pre></div>
+</div>
+<p>Visit the address <code class="docutils literal notranslate"><span class="pre">https://8e00-35-197-38-167.ngrok-free.app</span></code> and go through Google logging!</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For brevity and more features, the command line interface is preferred over the Python wrapper.</p>
 </div>
 </section>
 <section id="code">
@@ -401,6 +413,7 @@ document.write(`
 <h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://ngrok.com/">ngrok homepage</a></p></li>
+<li><p><a class="reference external" href="https://pyngrok.readthedocs.io/">ngrok Python wrapper</a></p></li>
 <li><p><a class="reference external" href="https://oauth.net/2/">OAuth 2.0 homepage</a></p></li>
 </ul>
 </section>
