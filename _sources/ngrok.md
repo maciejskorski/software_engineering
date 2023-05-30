@@ -2,10 +2,11 @@
 
 We will use [ngrok]() to publish a server running on a private Colab Virtual Machine.
 
+## Proxying HTTP from VM
 
 Access a Virtual Machine on Colab or Codespaces. Install the Python wrapper `ngrok` with `pip install pyngrok --quiet`. 
 
-Start a simple http server (here on port 5000):
+Start a simple http deamon (here on port 5000):
 ```python
 import _thread as thread
 import http.server
@@ -35,7 +36,14 @@ NGROK_AUTH_TOKEN = "2FSPi7SWydYp4hJlGzr3XDDT2qZ_2nRDVc628Fc4he4znxSSV"
 ngrok.set_auth_token(NGROK_AUTH_TOKEN)
 
 # Open an HTTPs tunnel on port 5000 for http://localhost:5000
-public_url = ngrok.connect(5000,oauth_provider='google').public_url
+public_url = ngrok.connect(5000).public_url
 print("Tracking URL:", public_url)
 ```
 Access the application under the public url. Enjoy!
+```console
+Tracking URL: https://e108-35-184-192-139.ngrok-free.app
+```
+
+## Code
+
+The example is [available on GitHub](https://colab.research.google.com/gist/maciejskorski/b6185a0f1a48abbc63e3a82b89a86b42/nginx-demo.ipynb).

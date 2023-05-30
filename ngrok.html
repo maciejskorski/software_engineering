@@ -309,7 +309,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -325,6 +327,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proxying-http-from-vm">Proxying HTTP from VM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -337,8 +348,10 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="class-12-ngrok">
 <h1>Class 12: ngrok<a class="headerlink" href="#class-12-ngrok" title="Permalink to this heading">#</a></h1>
 <p>We will use <span class="xref myst">ngrok</span> to publish a server running on a private Colab Virtual Machine.</p>
+<section id="proxying-http-from-vm">
+<h2>Proxying HTTP from VM<a class="headerlink" href="#proxying-http-from-vm" title="Permalink to this heading">#</a></h2>
 <p>Access a Virtual Machine on Colab or Codespaces. Install the Python wrapper <code class="docutils literal notranslate"><span class="pre">ngrok</span></code> with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyngrok</span> <span class="pre">--quiet</span></code>.</p>
-<p>Start a simple http server (here on port 5000):</p>
+<p>Start a simple http deamon (here on port 5000):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">_thread</span> <span class="k">as</span> <span class="nn">thread</span>
 <span class="kn">import</span> <span class="nn">http.server</span>
 <span class="kn">import</span> <span class="nn">socketserver</span>
@@ -366,11 +379,19 @@ document.write(`
 <span class="n">ngrok</span><span class="o">.</span><span class="n">set_auth_token</span><span class="p">(</span><span class="n">NGROK_AUTH_TOKEN</span><span class="p">)</span>
 
 <span class="c1"># Open an HTTPs tunnel on port 5000 for http://localhost:5000</span>
-<span class="n">public_url</span> <span class="o">=</span> <span class="n">ngrok</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span><span class="n">oauth_provider</span><span class="o">=</span><span class="s1">&#39;google&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">public_url</span>
+<span class="n">public_url</span> <span class="o">=</span> <span class="n">ngrok</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span><span class="o">.</span><span class="n">public_url</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tracking URL:&quot;</span><span class="p">,</span> <span class="n">public_url</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Access the application under the public url. Enjoy!</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Tracking URL: https://e108-35-184-192-139.ngrok-free.app</span>
+</pre></div>
+</div>
+</section>
+<section id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this heading">#</a></h2>
+<p>The example is <a class="reference external" href="https://colab.research.google.com/gist/maciejskorski/b6185a0f1a48abbc63e3a82b89a86b42/nginx-demo.ipynb">available on GitHub</a>.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -431,6 +452,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proxying-http-from-vm">Proxying HTTP from VM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
