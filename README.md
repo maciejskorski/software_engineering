@@ -23,5 +23,6 @@ The materials here aim to demonstrate modern coding tools and good practices.
 * [Class 8](https://maciejskorski.github.io/software_engineering/testing_code.html) *Testing*: white-box and black-box tests, continuous integration testing with pre-commit, cache-based optimization
 * [Class 9](https://maciejskorski.github.io/software_engineering/agile_remarks.html) *More on Agile*: remarks on methodology
 * [Class 10](https://maciejskorski.github.io/software_engineering/sonarqube.html) *SonarQube*: code quality check by composing docker services
-* :new: [Class 11](https://maciejskorski.github.io/software_engineering/code_profiling.html) *Code Profiling*: debug parallelization of NLP pipelines
+* [Class 11](https://maciejskorski.github.io/software_engineering/code_profiling.html) *Code Profiling*: debug parallelization of NLP pipelines
+* :new: [Class 12]() *ngrok* securly publishing apps with reverse proxy
 * [Example Projects](docs/project_ideas.md): please bring your own ideas!

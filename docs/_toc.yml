@@ -11,5 +11,8 @@ sections:
 - file: testing_code.md
 - file: agile_remarks.md
 - file: sonarqube.md
+- file: code_profiling
+- file: ngrok.md
 - file: project_ideas.md
+
 
