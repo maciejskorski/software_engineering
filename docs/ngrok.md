@@ -55,7 +55,7 @@ t=2023-05-30T09:06:27+0000 lvl=info msg="client session established" obj=tunnels
 t=2023-05-30T09:06:27+0000 lvl=info msg="tunnel session started" obj=tunnels.session
 t=2023-05-30T09:06:27+0000 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5000 url=https://8e00-35-197-38-167.ngrok-free.app
 ```
-Visit the address `https://8e00-35-197-38-167.ngrok-free.app` and go through Google logging!
+Visit the address `https://8e00-35-197-38-167.ngrok-free.app` and go through Google sign-in!
 
 ```{tip}
 For brevity and more features, the command line interface is preferred over the Python wrapper.
