@@ -42,6 +42,7 @@ Access the application under the public url. Enjoy!
 ```console
 Tracking URL: https://e108-35-184-192-139.ngrok-free.app
 
+## Authentication with OAuth 2.0 
 ```
 As a bonus we can set up OAuth 2.0 authentication, here with Google:
 ```console
