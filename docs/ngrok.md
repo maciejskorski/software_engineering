@@ -31,8 +31,7 @@ from pyngrok import ngrok
 ngrok.kill()
 
 # Setting the authtoken (optional)
-# Get your authtoken from https://dashboard.ngrok.com/auth
-NGROK_AUTH_TOKEN = "2FSPi7SWydYp4hJlGzr3XDDT2qZ_2nRDVc628Fc4he4znxSSV"
+NGROK_AUTH_TOKEN = "<Get your authtoken from https://dashboard.ngrok.com/auth>"
 ngrok.set_auth_token(NGROK_AUTH_TOKEN)
 
 # Open an HTTPs tunnel on port 5000 for http://localhost:5000
