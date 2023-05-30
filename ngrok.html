@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Class 3: Software project tracking &#8212; Software Engineering</title>
+    <title>Class 12: ngrok &#8212; Software Engineering</title>
   
   
   
@@ -68,11 +68,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'project_tracking';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ngrok';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Class 4: Software project management" href="project_management.html" />
-    <link rel="prev" title="Class 2: Advanced Debugging" href="advanced_debugging.html" />
+    <link rel="next" title="Project Ideas" href="project_ideas.html" />
+    <link rel="prev" title="Class 11: Code Profiling" href="code_profiling.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -160,7 +160,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="modern_dev_environ.html">Class 1: Modern Development Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_debugging.html">Class 2: Advanced Debugging</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Class 3: Software project tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_tracking.html">Class 3: Software project tracking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="project_management.html">Class 4: Software project management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uml_modelling.html">Class 5: Modelling with UML diagrams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="webapp_testing.html">Class 6: Testing Web Pages</a></li>
@@ -169,7 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="agile_remarks.html">Class 9: More on Agile</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sonarqube.html">Class 10: Sonar Qube</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_profiling.html">Class 11: Code Profiling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ngrok.html">Class 12: ngrok</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Class 12: ngrok</a></li>
 <li class="toctree-l1"><a class="reference internal" href="project_ideas.html">Project Ideas</a></li>
 </ul>
 
@@ -240,7 +240,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/project_tracking.md" target="_blank"
+      <li><a href="_sources/ngrok.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -320,7 +320,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Class 3: Software project tracking</h1>
+    <h1>Class 12: ngrok</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -334,28 +334,43 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="class-3-software-project-tracking">
-<h1>Class 3: Software project tracking<a class="headerlink" href="#class-3-software-project-tracking" title="Permalink to this heading">#</a></h1>
-<ol class="arabic simple">
-<li><p>Set up a project repository on GitHub and invite team members</p></li>
-<li><p>Set up a JIRA project (use the Scrum template) and connect to the GitHub repo
-<img alt="Jira app for GitHub" src="_images/Jira_GitHub_app.png" /></p></li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The Scrum template on Jira presents the roadmap as a “waterfall” of sprints, as shown below.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="class-12-ngrok">
+<h1>Class 12: ngrok<a class="headerlink" href="#class-12-ngrok" title="Permalink to this heading">#</a></h1>
+<p>We will use <span class="xref myst">ngrok</span> to publish a server running on a private Colab Virtual Machine.</p>
+<p>Access a Virtual Machine on Colab or Codespaces. Install the Python wrapper <code class="docutils literal notranslate"><span class="pre">ngrok</span></code> with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyngrok</span> <span class="pre">--quiet</span></code>.</p>
+<p>Start a simple http server (here on port 5000):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">_thread</span> <span class="k">as</span> <span class="nn">thread</span>
+<span class="kn">import</span> <span class="nn">http.server</span>
+<span class="kn">import</span> <span class="nn">socketserver</span>
+
+<span class="n">Handler</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">SimpleHTTPRequestHandler</span>
+
+<span class="k">def</span> <span class="nf">start_server</span><span class="p">():</span>
+    <span class="c1"># Setup stuff here...</span>
+    <span class="k">with</span> <span class="n">socketserver</span><span class="o">.</span><span class="n">TCPServer</span><span class="p">((</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">5000</span><span class="p">),</span> <span class="n">Handler</span><span class="p">)</span> <span class="k">as</span> <span class="n">httpd</span><span class="p">:</span>
+      <span class="n">httpd</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
+    
+<span class="c1"># start the server in a background thread</span>
+<span class="n">thread</span><span class="o">.</span><span class="n">start_new_thread</span><span class="p">(</span><span class="n">start_server</span><span class="p">,</span> <span class="p">())</span>
+</pre></div>
 </div>
-<ol class="arabic simple" start="3">
-<li><p>Test that GitHub changes are tracked by Jira, by committing with issue keys!
-<img alt="Jira tracking GitHub" src="_images/Jira_GitHub_tracking.png" /></p></li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Remember to reference Jira’s issue keys in git commits, to ensure proper tracking.</p>
+<p>As the last step, start the ngrok server:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyngrok</span> <span class="kn">import</span> <span class="n">ngrok</span>
+
+<span class="c1"># Terminate open tunnels if exist</span>
+<span class="n">ngrok</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span>
+
+<span class="c1"># Setting the authtoken (optional)</span>
+<span class="c1"># Get your authtoken from https://dashboard.ngrok.com/auth</span>
+<span class="n">NGROK_AUTH_TOKEN</span> <span class="o">=</span> <span class="s2">&quot;2FSPi7SWydYp4hJlGzr3XDDT2qZ_2nRDVc628Fc4he4znxSSV&quot;</span>
+<span class="n">ngrok</span><span class="o">.</span><span class="n">set_auth_token</span><span class="p">(</span><span class="n">NGROK_AUTH_TOKEN</span><span class="p">)</span>
+
+<span class="c1"># Open an HTTPs tunnel on port 5000 for http://localhost:5000</span>
+<span class="n">public_url</span> <span class="o">=</span> <span class="n">ngrok</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span><span class="n">oauth_provider</span><span class="o">=</span><span class="s1">&#39;google&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">public_url</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tracking URL:&quot;</span><span class="p">,</span> <span class="n">public_url</span><span class="p">)</span>
+</pre></div>
 </div>
-<ol class="arabic simple" start="4">
-<li><p>The advantage of Jira over Trello (as of now, March 2023) is Scrum support in its free plan.</p></li>
-</ol>
+<p>Access the application under the public url. Enjoy!</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -390,20 +405,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="advanced_debugging.html"
+       href="code_profiling.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Class 2: Advanced Debugging</p>
+        <p class="prev-next-title">Class 11: Code Profiling</p>
       </div>
     </a>
     <a class="right-next"
-       href="project_management.html"
+       href="project_ideas.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Class 4: Software project management</p>
+        <p class="prev-next-title">Project Ideas</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
