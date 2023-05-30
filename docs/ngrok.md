@@ -4,7 +4,7 @@ We will use [ngrok]() to publish a server running on a private Colab Virtual Mac
 
 ## Proxying HTTP from VM
 
-Access a Virtual Machine on Colab or Codespaces. Install the Python wrapper `ngrok` with `pip install pyngrok --quiet`. 
+Access a Virtual Machine on Colab or Codespaces.
 
 Start a simple http deamon (here on port 5000):
 ```python
@@ -23,7 +23,7 @@ def start_server():
 thread.start_new_thread(start_server, ())
 ```
 
-As the last step, start the ngrok server:
+As the last step, start the ngrok server. The code below runs with the Python wrapper (install with `pip install pyngrok --quiet`).
 ```python
 from pyngrok import ngrok
 
@@ -41,11 +41,24 @@ print("Tracking URL:", public_url)
 Access the application under the public url. Enjoy!
 ```console
 Tracking URL: https://e108-35-184-192-139.ngrok-free.app
+
 ```
-As a bonus we can set up OAuth 2.0 authentication, here with google accounts:
+As a bonus we can set up OAuth 2.0 authentication, here with Google:
 ```console
-!ngrok http --oauth google 5000
-# https://5bd6-35-197-38-167.ngrok-free.app
+ngrok http 5000 --oauth=google --log=stdout --log-level=info
+INFO[05-30|09:06:27] no configuration paths supplied 
+WARN[05-30|09:06:27] ngrok config file found at legacy location, move to XDG location xdg_path=/root/.config/ngrok/ngrok.yml legacy_path=/root/.ngrok2/ngrok.yml
+INFO[05-30|09:06:27] using configuration at default config path path=/root/.ngrok2/ngrok.yml
+INFO[05-30|09:06:27] open config file                         path=/root/.ngrok2/ngrok.yml err=nil
+t=2023-05-30T09:06:27+0000 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2023-05-30T09:06:27+0000 lvl=info msg="client session established" obj=tunnels.session obj=csess id=e091fe4f2de3
+t=2023-05-30T09:06:27+0000 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2023-05-30T09:06:27+0000 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:5000 url=https://8e00-35-197-38-167.ngrok-free.app
+```
+Visit the address `https://8e00-35-197-38-167.ngrok-free.app` and go through Google logging!
+
+```{tip}
+For brevity and more features, the command line interface is preferred over the Python wrapper.
 ```
 
 
@@ -57,4 +70,5 @@ The example is [available on GitHub](https://colab.research.google.com/gist/maci
 ## References
 
 * [ngrok homepage](https://ngrok.com/)
+* [ngrok Python wrapper](https://pyngrok.readthedocs.io/)
 * [OAuth 2.0 homepage](https://oauth.net/2/)
