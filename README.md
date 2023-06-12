@@ -25,5 +25,6 @@ The materials here aim to demonstrate modern coding tools and good practices.
 * [Class 10](https://maciejskorski.github.io/software_engineering/sonarqube.html) *SonarQube*: code quality check by composing docker services
 * [Class 11](https://maciejskorski.github.io/software_engineering/code_profiling.html) *Code Profiling*: debug parallelization of NLP pipelines
 * [Class 12](https://maciejskorski.github.io/software_engineering/ngrok.html) *ngrok and OAuth2.0*: securely [publishing apps with reverse proxy](https://5bd6-35-197-38-167.ngrok-free.app)
-* :new: [Class 13] [Google Meet link](https://ibb.co/hFdZ1q6)
+* [Class 13] [Google Meet link](https://ibb.co/hFdZ1q6)
+* :new:[Class 14] [Google Meet Links] [group V](https://meet.google.com/tek-hwus-wdj) and [group VII](https://meet.google.com/bdi-ydph-aqc)
 * [Example Projects](docs/project_ideas.md): please bring your own ideas!
